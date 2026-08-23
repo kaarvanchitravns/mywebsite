@@ -1543,7 +1543,7 @@
           <div class="order-product-list" id="orderProductList">
         <p class="order-loading-msg">Loading products…</p>
       </div>
-          <div class="form-row" style="max-width:220px;margin-top:28px;">
+          <div class="form-row" id="orderBankRow" style="max-width:360px;margin-top:28px;display:none;"><label for="orderBank">Preferred FASTag Bank</label>label><select id="orderBank"><option value="">Select a bank</option>option><option>IDFC First Bank</option><option>ICICI Bank</option><option>Omnicard</option><option>Livquick</option><option>Bajaj</option></select>select><p class="order-promo-msg" id="orderBankMsg"></p>p></div></option></option><div class="form-row" style="max-width:220px;margin-top:28px;">
             <label for="orderQty">Quantity</label>
             <input type="number" id="orderQty" min="1" value="1" step="1">
           </div>
@@ -1559,7 +1559,7 @@
         <div class="order-summary-col">
           <div class="order-summary-panel">
             <span class="split-label" style="color:var(--steel);">Order Summary</span>
-            <div class="order-summary-row"><span>Product</span><strong id="sumProduct">—</strong></div>
+            <div class="order-summary-row"><span>Product</span><strong id="sumProduct">—</strong></div><div class="order-summary-row" id="sumBankRow" style="display:none;"><span>FASTag Bank</span><strong id="sumBank">—</strong>strong></div></span>
             <div class="order-summary-row"><span>Unit Price</span><strong id="sumUnitPrice">—</strong></div>
             <div class="order-summary-row"><span>Quantity</span><strong id="sumQty">1</strong></div>
             <div class="order-summary-row"><span>Subtotal</span><strong id="sumSubtotal">—</strong></div>
@@ -1614,7 +1614,7 @@
         <div class="order-summary-col">
           <div class="order-summary-panel">
             <span class="split-label" style="color:var(--steel);">Review &amp; Confirm</span>
-            <div class="order-summary-row"><span>Product</span><strong id="revProduct">—</strong></div>
+            <div class="order-summary-row"><span>Product</span><strong id="revProduct">—</strong></div><div class="order-summary-row" id="revBankRow" style="display:none;"><span>FASTag Bank</span><strong id="revBank">—</strong>strong></div></span>
             <div class="order-summary-row"><span>Quantity</span><strong id="revQty">—</strong></div>
             <div class="order-summary-row"><span>Deliver To</span><strong id="revAddress">—</strong></div>
             <div class="order-summary-row"><span>Mobile</span><strong id="revMobile">—</strong></div>
@@ -1635,7 +1635,7 @@
         <p class="order-ref">Reference: <strong id="confRef">—</strong></p>
         <p class="order-confirm-lede">Thank you — our team will call <strong id="confMobile">—</strong> within 24 hours to confirm payment and schedule dispatch. Once your order ships, courier and tracking details will be sent to you by SMS and email.</p>
         <div class="order-summary-panel" style="margin-top:28px;max-width:480px;margin-left:auto;margin-right:auto;">
-          <div class="order-summary-row"><span>Product</span><strong id="confProduct">—</strong></div>
+          <div class="order-summary-row"><span>Product</span><strong id="confProduct">—</strong></div><div class="order-summary-row" id="confBankRow" style="display:none;"><span>FASTag Bank</span><strong id="confBank">—</strong>strong></div></span>
           <div class="order-summary-row"><span>Quantity</span><strong id="confQty">—</strong></div>
           <div class="order-summary-row"><span>Deliver To</span><strong id="confAddress">—</strong></div>
           <div class="order-summary-row order-summary-total"><span>Total</span><strong id="confTotal">—</strong></div>
@@ -1866,7 +1866,7 @@
   var promoInput = document.getElementById('orderPromo');
   var promoApplyBtn = document.getElementById('orderPromoApply');
   var promoMsg = document.getElementById('orderPromoMsg');
-  var productListEl = document.getElementById('orderProductList');
+  var productListEl = document.getElementById('orderProductList'); var bankRow = document.getElementById('orderBankRow'); var bankSelect = document.getElementById('orderBank'); var bankMsg = document.getElementById('orderBankMsg');
 
   // Pricing comes from prices.js (window.KAARVAN_PRICING) when that file is present
   // alongside this page (real hosting); otherwise falls back to the built-in defaults
@@ -1894,7 +1894,7 @@
     if(!products.length){ productListEl.innerHTML = '<p class="order-loading-msg">No products configured yet.</p>'; return; }
     var html = '';
     products.forEach(function(p, i){
-      html += '<label class="order-product-card" data-price="' + Number(p.price || 0) + '" data-unit="' + escHtml(p.unit) + '">'
+      html += '<label class="order-product-card" data-price="' + Number(p.price || 0) + '" data-unit="' + escHtml(p.unit) + '" data-id="' + escHtml(p.id) + '">'
         + '<input type="radio" name="kvProduct" value="' + escHtml(p.name) + '"' + (i === 0 ? ' checked' : '') + '>'
         + '<span class="opc-icon">' + (ICONS[p.icon] || '') + '</span>'
         + '<span class="opc-body"><span class="opc-name">' + escHtml(p.name) + '</span><span class="opc-note">' + escHtml(p.note) + '</span></span>'
@@ -1911,7 +1911,7 @@
     return checked ? checked.closest('.order-product-card') : null;
   }
   function currentPrice(){ var c = selectedCard(); return c ? parseFloat(c.getAttribute('data-price')) : 0; }
-  function currentUnit(){ var c = selectedCard(); return c ? c.getAttribute('data-unit') : ''; }
+  function currentUnit(){ var c = selectedCard(); return c ? c.getAttribute('data-unit') : ''; } function currentProductId(){ var c = selectedCard(); return c ? c.getAttribute('data-id') : ''; } function updateBankVisibility(){ if(!bankRow) return; var isFastag = currentProductId() === 'fastag'; bankRow.style.display = isFastag ? 'block' : 'none'; if(!isFastag && bankMsg){ bankMsg.textContent = ''; } }
   function currentName(){ var checked = document.querySelector('input[name="kvProduct"]:checked'); return checked ? checked.value : ''; }
   function currentQty(){ var q = parseInt(qtyInput.value, 10); if(!q || q < 1) q = 1; return q; }
 
@@ -1926,7 +1926,7 @@
     var qty = currentQty(), price = currentPrice(), name = currentName(), unit = currentUnit();
     var subtotal = price * qty;
     var discount = computeDiscount(subtotal, qty);
-    var total = subtotal - discount;
+    var total = subtotal - discount; var isFastag = currentProductId() === 'fastag'; var bankVal = bankSelect ? bankSelect.value : '';
 
     setText('sumProduct', name);
     setText('sumUnitPrice', fmtINR(price) + ' ' + unit);
@@ -1937,25 +1937,25 @@
       if(discount > 0){ discRow.style.display = 'flex'; setText('sumDiscount', '-' + fmtINR(discount)); }
       else { discRow.style.display = 'none'; }
     }
-    setText('sumTotal', fmtINR(total));
+    setText('sumTotal', fmtINR(total)); var sumBankRow = document.getElementById('sumBankRow'); if(sumBankRow){ if(isFastag){ sumBankRow.style.display = 'flex'; setText('sumBank', bankVal || 'Not selected yet'); } else { sumBankRow.style.display = 'none'; } }
     setText('revProduct', name);
     setText('revQty', qty + ' (' + unit + ')');
-    setText('revTotal', fmtINR(total));
+    setText('revTotal', fmtINR(total)); var revBankRow = document.getElementById('revBankRow'); if(revBankRow){ if(isFastag){ revBankRow.style.display = 'flex'; setText('revBank', bankVal || 'Not selected yet'); } else { revBankRow.style.display = 'none'; } }
 
-    return {name:name, unit:unit, qty:qty, price:price, subtotal:subtotal, discount:discount, total:total};
+    return {name:name, unit:unit, qty:qty, price:price, subtotal:subtotal, discount:discount, total:total, bank: isFastag ? bankVal : ''};
   }
 
   productCards.forEach(function(card){
     card.addEventListener('click', function(){
       productCards.forEach(function(c){ c.classList.remove('is-checked'); });
-      card.classList.add('is-checked');
+      card.classList.add('is-checked'); updateBankVisibility();
       renderSummary();
     });
     var input = card.querySelector('input[name="kvProduct"]');
     if(input && input.checked) card.classList.add('is-checked');
   });
 
-  if(qtyInput) qtyInput.addEventListener('input', renderSummary);
+  updateBankVisibility(); if(bankSelect){ bankSelect.addEventListener('change', function(){ if(bankMsg) bankMsg.textContent = ''; renderSummary(); }); } if(qtyInput) qtyInput.addEventListener('input', renderSummary);
 
   if(promoApplyBtn){
     promoApplyBtn.addEventListener('click', function(){
@@ -1998,7 +1998,7 @@
 
   var toCheckoutBtn = document.getElementById('orderToCheckout');
   if(toCheckoutBtn){
-    toCheckoutBtn.addEventListener('click', function(){ renderSummary(); goToStep(2); });
+    toCheckoutBtn.addEventListener('click', function(){ if(currentProductId() === 'fastag' && (!bankSelect || !bankSelect.value)){ if(bankMsg){ bankMsg.textContent = 'Please select a bank for your FASTag.'; bankMsg.className = 'order-promo-msg err'; } if(bankRow) bankRow.scrollIntoView({behavior:'smooth', block:'center'}); return; } if(bankMsg) bankMsg.textContent = ''; renderSummary(); goToStep(2); });
   }
 
   var toPaymentBtn = document.getElementById('orderToPayment');
@@ -2038,7 +2038,7 @@
       setText('confProduct', summary.name);
       setText('confQty', summary.qty + ' (' + summary.unit + ')');
       setText('confAddress', address + ', ' + city + ', ' + state + ' - ' + pin);
-      setText('confTotal', fmtINR(summary.total));
+      setText('confTotal', fmtINR(summary.total)); var confBankRow = document.getElementById('confBankRow'); if(confBankRow){ if(summary.bank){ confBankRow.style.display = 'flex'; setText('confBank', summary.bank); } else { confBankRow.style.display = 'none'; } }
       goToStep(4);
     });
   }
@@ -2047,7 +2047,7 @@
   if(restartBtn){
     restartBtn.addEventListener('click', function(){
       document.getElementById('orderCheckoutForm').reset();
-      qtyInput.value = 1;
+      qtyInput.value = 1; if(bankSelect) bankSelect.value = ''; if(bankMsg) bankMsg.textContent = ''; updateBankVisibility();
       promoInput.value = '';
       appliedPromo = null;
       promoMsg.textContent = '';
