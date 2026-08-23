@@ -1,0 +1,2151 @@
+<title>KAARVAN</title>
+<meta name="description" content="KAARVAN is a connected technology platform for India's commercial vehicles — bringing FASTag for trucks, GPS vehicle tracking, AI dashcams and fleet management system India-wide onto one operational platform.">
+<meta name="keywords" content="FASTag for commercial vehicles, FASTag for trucks, GPS vehicle tracking, truck GPS tracker, fleet management system India, AI dashcam for trucks, commercial vehicle tracking, fleet tracking India, truck fleet management, transport management technology">
+<meta name="theme-color" content="#0A1420">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --ink:#10151c;
+    --paper:#f5f1e9;
+    --paper-dim:#eae4d7;
+    --navy-950:#0a1420;
+    --navy-900:#0d1826;
+    --navy-800:#142238;
+    --navy-700:#1c3049;
+    --steel:#5b87ad;
+    --steel-soft:#8fa9c2;
+    --amber:#ff7a2e;
+    --amber-soft:#ffb27a;
+    --line-on-dark:rgba(255,255,255,.14);
+    --line-on-dark-strong:rgba(255,255,255,.28);
+    --line-on-light:rgba(16,21,28,.13);
+    --line-on-light-strong:rgba(16,21,28,.26);
+    --text-on-dark-dim:rgba(245,241,233,.62);
+    --text-on-light-dim:rgba(16,21,28,.62);
+
+    --font-display:'Bricolage Grotesque', 'Arial Black', sans-serif;
+    --font-body:'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    --font-mono:'IBM Plex Mono', 'Courier New', monospace;
+
+    --fs-hero: clamp(2.6rem, 6vw, 5.4rem);
+    --fs-h2: clamp(2rem, 4vw, 3.2rem);
+    --fs-h3: clamp(1.3rem, 2.2vw, 1.7rem);
+    --fs-lead: clamp(1.05rem, 1.6vw, 1.3rem);
+    --fs-body: 1.05rem;
+    --fs-small: .875rem;
+    --fs-eyebrow: .78rem;
+
+    --container: 1320px;
+    --pad: clamp(24px, 5vw, 64px);
+    --section-pad: clamp(72px, 10vw, 152px);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:var(--fs-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em;}
+  p{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  section[id]{scroll-margin-top:88px;}
+
+  .container{max-width:var(--container);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:var(--fs-eyebrow);
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-weight:500;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--amber);display:inline-block;}
+  .eyebrow.on-dark{color:var(--amber-soft);}
+  .eyebrow.on-light{color:var(--steel);}
+
+  .lede{font-size:var(--fs-lead);max-width:46ch;}
+  .on-dark{color:var(--paper);}
+  .dim-on-dark{color:var(--text-on-dark-dim);}
+  .dim-on-light{color:var(--text-on-light-dim);}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:var(--font-body);font-weight:700;font-size:.95rem;
+    padding:15px 28px;border-radius:2px;border:1px solid transparent;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--amber);color:var(--navy-950);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(255,122,46,.55);}
+  .btn-ghost-dark{border-color:var(--line-on-dark-strong);color:var(--paper);}
+  .btn-ghost-dark:hover{background:rgba(255,255,255,.08);border-color:var(--paper);transform:translateY(-2px);}
+  .btn-ghost-light{border-color:var(--line-on-light-strong);color:var(--ink);}
+  .btn-ghost-light:hover{background:rgba(16,21,28,.05);border-color:var(--ink);transform:translateY(-2px);}
+  .btn-text{font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor;padding-bottom:2px;}
+  .btn-text svg{width:14px;height:14px;transition:transform .18s ease;}
+  .btn-text:hover svg{transform:translateX(4px);}
+
+  /* ============ NAV ============ */
+  .nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(10,20,32,.72);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .nav.scrolled{border-bottom-color:var(--line-on-dark);background:rgba(10,20,32,.92);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px;}
+  .logo{font-family:var(--font-display);font-weight:800;font-size:1.35rem;color:var(--paper);letter-spacing:.01em;}
+  .logo span{color:var(--amber);}
+  .nav-links{display:flex;align-items:center;gap:36px;}
+  .nav-links a{font-size:.92rem;font-weight:600;color:var(--text-on-dark-dim);transition:color .15s ease;}
+  .nav-links a:hover{color:var(--paper);}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .nav-cta{padding:11px 22px;font-size:.88rem;}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;}
+  .hamburger span{width:22px;height:2px;background:var(--paper);border-radius:2px;}
+  .mobile-menu{
+    display:none;position:fixed;inset:0 0 auto 0;top:64px;background:var(--navy-950);
+    padding:24px var(--pad) 40px;z-index:99;border-bottom:1px solid var(--line-on-dark);
+    flex-direction:column;gap:22px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:1.1rem;font-weight:600;color:var(--paper);}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;background:var(--navy-950);color:var(--paper);overflow:hidden;}
+  .hero-visual{position:absolute;inset:0;z-index:0;}
+  .hero-visual svg{width:100%;height:100%;object-fit:cover;}
+  .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,20,32,.35) 0%, rgba(10,20,32,.15) 30%, rgba(10,20,32,.55) 78%, var(--navy-950) 100%);z-index:1;}
+  .hero-content{position:relative;z-index:2;padding-top:clamp(90px,14vw,168px);padding-bottom:clamp(64px,10vw,120px);}
+  .hero-content h1{font-size:var(--fs-hero);max-width:14ch;margin-top:22px;}
+  .hero-content .lede{margin-top:24px;color:rgba(245,241,233,.85);font-size:var(--fs-lead);max-width:42ch;}
+  .hero-ctas{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
+
+  /* trust strip */
+  .trust-strip{background:var(--navy-950);border-top:1px solid var(--line-on-dark);position:relative;z-index:2;}
+  .trust-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px;gap:16px 0;}
+  .trust-row span{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.16em;color:var(--text-on-dark-dim);text-transform:uppercase;position:relative;padding:0 22px;}
+  .trust-row span:first-child{padding-left:0;}
+  .trust-row span:not(:first-child)::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:14px;background:var(--line-on-dark-strong);}
+
+  /* ============ generic section spacing ============ */
+  .section{padding-top:var(--section-pad);padding-bottom:var(--section-pad);}
+  .section-light{background:var(--paper);color:var(--ink);}
+  .section-dark{background:var(--navy-950);color:var(--paper);}
+  .section-navy800{background:var(--navy-900);color:var(--paper);}
+
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:56px;}
+  .head-row h2{max-width:16ch;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  /* ============ STORY / SPLIT ============ */
+  .story-head{max-width:20ch;margin-bottom:20px;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-on-light);border:1px solid var(--line-on-light);margin-top:64px;}
+  .split-panel{background:var(--paper);padding:44px clamp(24px,4vw,52px) 52px;}
+  .split-panel.connected{background:var(--navy-950);color:var(--paper);}
+  .split-label{font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-on-light-dim);margin-bottom:28px;display:block;}
+  .connected .split-label{color:var(--amber-soft);}
+  .chip-field{position:relative;height:220px;margin-bottom:8px;}
+  .chip{
+    position:absolute;font-family:var(--font-mono);font-size:.76rem;
+    padding:8px 12px;border-radius:3px;white-space:nowrap;
+  }
+  .fragmented .chip{background:transparent;border:1px dashed var(--line-on-light-strong);color:var(--text-on-light-dim);}
+  .connected .chip{background:rgba(255,255,255,.06);border:1px solid var(--line-on-dark-strong);color:var(--paper);}
+  .connected .chip.hub{background:var(--amber);color:var(--navy-950);border-color:var(--amber);font-weight:700;}
+  .split-panel h4{font-size:1.25rem;margin-bottom:10px;}
+  .split-panel p.desc{color:var(--text-on-light-dim);max-width:34ch;}
+  .connected p.desc{color:var(--text-on-dark-dim);}
+
+  /* ============ ECOSYSTEM PRODUCT CARDS ============ */
+  .eco-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-on-light);border:1px solid var(--line-on-light);}
+  .eco-card{background:var(--paper);padding:36px 30px 34px;display:flex;flex-direction:column;min-height:460px;transition:background .2s ease;}
+  .eco-card:hover{background:#fbf9f5;}
+  .eco-tag{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:26px;}
+  .eco-icon{width:44px;height:44px;margin-bottom:22px;}
+  .eco-card h3{font-size:1.3rem;margin-bottom:6px;}
+  .eco-hook{font-weight:700;color:var(--amber);font-size:.98rem;margin-bottom:14px;}
+  .eco-card p.eco-desc{color:var(--text-on-light-dim);margin-bottom:20px;font-size:.96rem;}
+  .eco-features{margin-bottom:auto;display:flex;flex-direction:column;gap:9px;}
+  .eco-features li{font-size:.88rem;color:var(--ink);padding-left:16px;position:relative;}
+  .eco-features li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:1px;background:var(--amber);}
+  .eco-card .btn-text{margin-top:26px;color:var(--ink);}
+
+  /* ============ SIGNATURE MAP ============ */
+  .signature{background:var(--navy-950);position:relative;overflow:hidden;}
+  .signature h2{font-size:var(--fs-h2);max-width:16ch;}
+  .signature-copy{margin-top:18px;}
+  .map-wrap{position:relative;margin-top:64px;display:flex;justify-content:center;}
+  .map-wrap svg{width:100%;max-width:560px;height:auto;}
+  .map-note{margin-top:20px;text-align:center;font-size:.82rem;color:var(--text-on-dark-dim);max-width:44ch;margin-left:auto;margin-right:auto;}
+  .map-overlay-text{text-align:center;margin-top:56px;}
+  .map-overlay-text .line1{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:700;}
+  .map-overlay-text .line2{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:700;color:var(--amber);}
+
+  /* ============ WHO WE SERVE ============ */
+  .serve-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line-on-light);border:1px solid var(--line-on-light);margin-top:56px;}
+  .serve-card{background:var(--paper);padding:34px 26px;grid-column:span 2;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;transition:background .2s ease;}
+  .serve-card:hover{background:#fbf9f5;}
+  .serve-card:nth-child(1),.serve-card:nth-child(2){grid-column:span 3;min-height:300px;}
+  .serve-card .num{position:absolute;top:26px;right:26px;font-family:var(--font-mono);font-size:.72rem;color:var(--text-on-light-dim);}
+  .serve-card svg{width:34px;height:34px;margin-bottom:18px;color:var(--amber);}
+  .serve-card h4{font-size:1.15rem;margin-bottom:8px;}
+  .serve-card p{font-size:.9rem;color:var(--text-on-light-dim);max-width:30ch;}
+
+  /* ============ DASHBOARD SHOWCASE ============ */
+  .dash-showcase{background:var(--paper-dim);}
+  .dash-frame{
+    margin-top:56px;background:var(--navy-950);border-radius:10px;overflow:hidden;
+    box-shadow:0 40px 80px -30px rgba(10,20,32,.45);border:1px solid var(--navy-700);
+  }
+  .dash-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line-on-dark);}
+  .dash-bar .dots{display:flex;gap:6px;}
+  .dash-bar .dots span{width:9px;height:9px;border-radius:50%;background:var(--line-on-dark-strong);}
+  .dash-bar .label{font-family:var(--font-mono);font-size:.74rem;color:var(--text-on-dark-dim);letter-spacing:.08em;}
+  .dash-stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line-on-dark);}
+  .dash-stat{padding:26px 24px;border-right:1px solid var(--line-on-dark);}
+  .dash-stat:last-child{border-right:none;}
+  .dash-stat .val{font-family:var(--font-mono);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:600;color:var(--paper);}
+  .dash-stat .val.moving{color:#5fd98a;}
+  .dash-stat .val.stopped{color:var(--steel-soft);}
+  .dash-stat .val.alerts{color:var(--amber);}
+  .dash-stat .lbl{font-size:.76rem;color:var(--text-on-dark-dim);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;}
+  .dash-body{display:grid;grid-template-columns:1.3fr 1fr;}
+  .dash-map{padding:20px;border-right:1px solid var(--line-on-dark);position:relative;min-height:300px;}
+  .dash-map svg{width:100%;height:100%;}
+  .dash-list{padding:20px;}
+  .dash-list h5{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-on-dark-dim);margin-bottom:14px;}
+  .veh-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line-on-dark);font-size:.86rem;}
+  .veh-row:last-child{border-bottom:none;}
+  .veh-id{font-family:var(--font-mono);color:var(--paper);}
+  .veh-loc{color:var(--text-on-dark-dim);font-size:.8rem;}
+  .pill{font-family:var(--font-mono);font-size:.68rem;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em;}
+  .pill.moving{background:rgba(95,217,138,.14);color:#5fd98a;}
+  .pill.stopped{background:rgba(139,168,194,.14);color:var(--steel-soft);}
+  .pill.alert{background:rgba(255,122,46,.16);color:var(--amber);}
+  .dash-footer-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-on-dark);}
+  .dash-mini{padding:18px 24px;border-right:1px solid var(--line-on-dark);}
+  .dash-mini:last-child{border-right:none;}
+  .dash-mini .t{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-on-dark-dim);margin-bottom:8px;}
+  .dash-mini .v{font-size:.9rem;color:var(--paper);}
+  .dash-disclaimer{margin-top:18px;font-size:.78rem;color:var(--text-on-light-dim);font-family:var(--font-mono);}
+
+  /* ============ MOBILE APP ============ */
+  .app-section{background:var(--navy-950);overflow:hidden;}
+  .phones{display:flex;gap:24px;margin-top:64px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none;}
+  .phones::-webkit-scrollbar{display:none;}
+  .phone{
+    flex:0 0 auto;width:222px;height:452px;background:var(--navy-800);
+    border:8px solid var(--navy-700);border-radius:30px;position:relative;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.6);overflow:hidden;
+  }
+  .phone::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:18px;background:var(--navy-700);border-radius:0 0 10px 10px;z-index:3;}
+  .phone-screen{position:absolute;inset:0;padding:26px 14px 14px;display:flex;flex-direction:column;gap:10px;}
+  .phone-tag{position:absolute;bottom:-30px;left:0;width:100%;text-align:center;font-family:var(--font-mono);font-size:.74rem;color:var(--text-on-dark-dim);}
+  .ph-bar{height:8px;border-radius:2px;background:rgba(255,255,255,.08);}
+  .ph-bar.w60{width:60%;} .ph-bar.w40{width:40%;} .ph-bar.w80{width:80%;} .ph-bar.w30{width:30%;}
+  .ph-card{background:rgba(255,255,255,.05);border:1px solid var(--line-on-dark);border-radius:6px;padding:10px;flex:1;}
+  .ph-stat{font-family:var(--font-mono);font-size:1.3rem;color:var(--paper);font-weight:600;}
+  .ph-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block;}
+  .app-chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:88px;}
+  .app-chip{font-family:var(--font-mono);font-size:.76rem;color:var(--text-on-dark-dim);border:1px solid var(--line-on-dark);padding:8px 14px;border-radius:20px;}
+
+  /* ============ WHY KAARVAN ============ */
+  .why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;}
+  .why-list{display:flex;flex-direction:column;}
+  .why-item{padding:28px 0;border-top:1px solid var(--line-on-light);display:grid;grid-template-columns:1fr 2fr;gap:24px;}
+  .why-item:last-child{border-bottom:1px solid var(--line-on-light);}
+  .why-item h4{font-size:1.15rem;}
+  .why-item p{color:var(--text-on-light-dim);font-size:.94rem;max-width:38ch;}
+
+  /* ============ BRAND VISION ============ */
+  .vision{background:var(--navy-950);}
+  .vision h2{font-size:var(--fs-h2);max-width:18ch;}
+  .vision .lede{margin-top:22px;color:var(--text-on-dark-dim);max-width:56ch;font-size:1.05rem;}
+  .ladder{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:64px;border:1px solid var(--line-on-dark);border-radius:6px;overflow:hidden;}
+  .ladder-item{flex:1 1 140px;padding:22px 18px;border-right:1px solid var(--line-on-dark);position:relative;}
+  .ladder-item:last-child{border-right:none;}
+  .ladder-item .name{font-weight:700;font-size:.98rem;color:var(--paper);}
+  .ladder-item .status{display:block;font-family:var(--font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;margin-top:8px;color:var(--text-on-dark-dim);}
+  .ladder-item.live .status{color:#5fd98a;}
+  .ladder-item.live{background:rgba(95,217,138,.05);}
+  .vision-note{margin-top:26px;font-size:.85rem;color:var(--text-on-dark-dim);max-width:60ch;font-style:italic;}
+
+  /* ============ SCALE VISUAL ============ */
+  .scale-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-on-light);border:1px solid var(--line-on-light);margin-top:60px;}
+  .scale-col{background:var(--paper);padding:36px 24px;text-align:left;}
+  .scale-grid-vis{display:flex;flex-wrap:wrap;gap:4px;height:70px;align-content:flex-start;margin-bottom:22px;}
+  .scale-dot{width:8px;height:8px;border-radius:1px;background:var(--steel);}
+  .scale-dot.amber{background:var(--amber);}
+  .scale-dense{height:70px;margin-bottom:22px;background:
+    repeating-linear-gradient(135deg, var(--amber) 0 2px, transparent 2px 6px);
+    border-radius:3px;opacity:.85;}
+  .scale-num{font-family:var(--font-mono);font-size:1.6rem;color:var(--ink);font-weight:600;}
+  .scale-lbl{font-size:.85rem;color:var(--text-on-light-dim);margin-top:4px;}
+
+  /* ============ FINAL CTA ============ */
+  .final-cta{position:relative;background:var(--navy-950);overflow:hidden;}
+  .final-cta-visual{position:absolute;inset:0;z-index:0;}
+  .final-cta-visual svg{width:100%;height:100%;}
+  .final-cta-scrim{position:absolute;inset:0;background:linear-gradient(180deg, var(--navy-950) 0%, rgba(10,20,32,.4) 40%, rgba(10,20,32,.75) 100%);z-index:1;}
+  .final-cta-content{position:relative;z-index:2;text-align:left;}
+  .final-cta h2{font-size:var(--fs-hero);max-width:16ch;}
+  .final-cta .lede{margin-top:20px;color:rgba(245,241,233,.85);}
+  .final-cta-ctas{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--navy-950);border-top:1px solid var(--line-on-dark);}
+  .footer-top{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:40px;padding-top:72px;padding-bottom:56px;}
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{color:var(--text-on-dark-dim);font-size:.92rem;max-width:26ch;}
+  .footer-col h5{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-on-dark-dim);margin-bottom:18px;}
+  .footer-col ul{display:flex;flex-direction:column;gap:12px;}
+  .footer-col a{font-size:.9rem;color:var(--paper);transition:color .15s ease;}
+  .footer-col a:hover{color:var(--amber-soft);}
+  .footer-bottom{border-top:1px solid var(--line-on-dark);padding-top:24px;padding-bottom:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-bottom p{font-size:.8rem;color:var(--text-on-dark-dim);}
+  .socials{display:flex;gap:14px;}
+  .socials a{width:34px;height:34px;border:1px solid var(--line-on-dark-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .15s ease, background .15s ease;}
+  .socials a:hover{border-color:var(--amber);background:rgba(255,122,46,.1);}
+  .socials svg{width:15px;height:15px;color:var(--paper);}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .eco-grid{grid-template-columns:repeat(2,1fr);}
+    .serve-grid{grid-template-columns:repeat(2,1fr);}
+    .serve-card{grid-column:span 1 !important;min-height:220px !important;}
+    .why-grid{grid-template-columns:1fr;gap:32px;}
+    .why-item{grid-template-columns:1fr;gap:8px;}
+    .dash-body{grid-template-columns:1fr;}
+    .dash-map{border-right:none;border-bottom:1px solid var(--line-on-dark);}
+    .dash-stats{grid-template-columns:repeat(2,1fr);}
+    .dash-stat:nth-child(2){border-right:none;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .scale-row{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:640px){
+    .split{grid-template-columns:1fr;}
+    .eco-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
+    .scale-row{grid-template-columns:1fr;}
+    .head-row{margin-bottom:36px;}
+    .dash-stats{grid-template-columns:repeat(2,1fr);}
+    .dash-footer-row{grid-template-columns:1fr;}
+    .dash-mini{border-right:none;border-bottom:1px solid var(--line-on-dark);}
+  }
+</style>
+
+
+<style>
+  /* ============ SPA ADDITIONS ============ */
+  .nav-links a.active{color:var(--paper);text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:6px;text-decoration-thickness:2px;}
+  .mobile-menu a.active{color:var(--amber-soft);}
+
+  .page-view{display:none;}
+  .page-view.is-visible{display:block;}
+  .page-view.view-enter{opacity:0;transform:translateY(10px);}
+  .page-view.view-enter-active{opacity:1;transform:none;transition:opacity .32s cubic-bezier(.2,.7,.3,1), transform .32s cubic-bezier(.2,.7,.3,1);}
+  @media (prefers-reduced-motion: reduce){
+    .page-view.view-enter, .page-view.view-enter-active{opacity:1;transform:none;transition:none;}
+  }
+
+  .page-head{background:var(--navy-950);color:var(--paper);padding-top:calc(56px + 64px);padding-bottom:72px;position:relative;overflow:hidden;}
+  .page-head::before{content:'';position:absolute;top:-20%;right:-10%;width:520px;height:520px;background:radial-gradient(circle, rgba(255,122,46,.16) 0%, transparent 70%);pointer-events:none;}
+  .breadcrumb{font-family:var(--font-mono);font-size:.78rem;color:var(--text-on-dark-dim);margin-bottom:24px;display:flex;gap:8px;align-items:center;position:relative;z-index:1;}
+  .breadcrumb a{color:var(--text-on-dark-dim);transition:color .15s ease;cursor:pointer;}
+  .breadcrumb a:hover{color:var(--paper);}
+  .page-head h1{font-size:clamp(2.3rem,5vw,3.9rem);max-width:20ch;position:relative;z-index:1;}
+  .page-head .lede{margin-top:18px;color:var(--text-on-dark-dim);max-width:54ch;font-size:var(--fs-lead);position:relative;z-index:1;}
+
+  /* contact page */
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:1px;background:var(--line-on-light);border:1px solid var(--line-on-light);margin-top:56px;}
+  .contact-form-panel{background:var(--paper);padding:clamp(28px,4vw,52px);}
+  .contact-channels-panel{background:var(--paper);padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:26px;}
+  .form-row{display:flex;flex-direction:column;gap:7px;margin-bottom:20px;}
+  .form-row.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:0;}
+  .form-row label{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-on-light-dim);}
+  .form-row input, .form-row select, .form-row textarea{border:1px solid var(--line-on-light-strong);background:transparent;padding:12px 14px;font-family:var(--font-body);font-size:.95rem;border-radius:2px;color:var(--ink);width:100%;}
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{outline:2px solid var(--amber);outline-offset:1px;}
+  .form-row textarea{resize:vertical;min-height:96px;}
+  .form-note{font-size:.8rem;color:var(--text-on-light-dim);margin-top:16px;}
+  .form-success{display:none;margin-top:18px;padding:14px 16px;background:rgba(95,217,138,.12);border:1px solid rgba(95,217,138,.4);color:#2d6b45;font-size:.9rem;border-radius:3px;}
+  .form-success.show{display:block;}
+  .channel-item{border-top:1px solid var(--line-on-light);padding-top:22px;}
+  .channel-item:first-child{border-top:none;padding-top:0;}
+  .channel-item h4{font-size:1.05rem;margin-bottom:6px;}
+  .channel-item p{color:var(--text-on-light-dim);font-size:.92rem;}
+  .channel-item .val{font-family:var(--font-mono);font-size:.9rem;color:var(--ink);margin-top:8px;display:block;}
+  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} .form-row.two-col{grid-template-columns:1fr;} }
+
+  /* connected-fleet motif: a small recurring marker reinforcing "vehicles connected on the road" */
+  .connected-strip{
+    display:inline-flex;align-items:center;gap:10px;margin-top:22px;position:relative;z-index:1;
+  }
+  .connected-strip span.txt{font-family:var(--font-body);font-weight:600;font-size:.92rem;color:var(--text-on-dark-dim);letter-spacing:.01em;}
+  .connected-strip-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);position:relative;flex:0 0 auto;}
+  .connected-strip-dot::after{
+    content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--amber);opacity:.6;
+    animation:kv-pulse 1.8s ease-out infinite;
+  }
+  @keyframes kv-pulse{0%{transform:scale(.6);opacity:.7;}100%{transform:scale(1.9);opacity:0;}}
+  @media (prefers-reduced-motion: reduce){ .connected-strip-dot::after{animation:none;} }
+
+  /* home-page teasers: compact links out to the full Products / Solutions / Platform pages */
+  .teaser-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-on-light);border:1px solid var(--line-on-light);margin-top:48px;}
+  .teaser-card{background:var(--paper);padding:28px 24px;display:block;transition:background .2s ease;}
+  .teaser-card:hover{background:#fbf9f5;}
+  .teaser-card svg{width:32px;height:32px;margin-bottom:16px;}
+  .teaser-card h4{font-size:1.05rem;margin-bottom:6px;}
+  .teaser-card p{font-size:.88rem;color:var(--text-on-light-dim);}
+
+  .persona-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:48px;}
+  .persona-chip{
+    display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border:1px solid var(--line-on-light-strong);
+    border-radius:30px;font-size:.9rem;font-weight:600;color:var(--ink);background:var(--paper);transition:border-color .15s ease, background .15s ease;
+  }
+  .persona-chip:hover{border-color:var(--amber);background:#fbf9f5;}
+  .persona-chip svg{width:18px;height:18px;color:var(--amber);}
+
+  .stat-strip{display:flex;flex-wrap:wrap;gap:1px;background:var(--line-on-dark);border:1px solid var(--line-on-dark);margin-top:48px;border-radius:8px;overflow:hidden;}
+  .stat-strip-item{flex:1 1 140px;background:var(--navy-950);padding:26px 24px;}
+  .stat-strip-item .v{display:block;font-family:var(--font-mono);font-size:clamp(1.5rem,3vw,2rem);font-weight:600;color:var(--paper);}
+  .stat-strip-item .v.moving{color:#5fd98a;}
+  .stat-strip-item .v.alerts{color:var(--amber);}
+  .stat-strip-item .l{font-size:.76rem;color:var(--text-on-dark-dim);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block;}
+
+  @media (max-width:900px){ .teaser-row{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .teaser-row{grid-template-columns:1fr;} }
+
+  /* ============ ORDER NOW WIZARD ============ */
+  .order-steps-nav{display:flex;gap:28px;margin:48px 0 40px;flex-wrap:wrap;}
+  .order-step-dot{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-on-light-dim);}
+  .order-step-dot em{font-style:normal;width:22px;height:22px;border-radius:50%;border:1px solid var(--line-on-light-strong);display:flex;align-items:center;justify-content:center;font-size:.72rem;flex:0 0 auto;}
+  .order-step-dot.active{color:var(--ink);}
+  .order-step-dot.active em{background:var(--amber);border-color:var(--amber);color:var(--navy-950);}
+  .order-step-dot.done em{background:var(--navy-950);border-color:var(--navy-950);color:var(--paper);}
+
+  .order-step{display:none;}
+  .order-step.active{display:block;}
+
+  .order-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start;}
+  @media (max-width:900px){ .order-grid{grid-template-columns:1fr;} }
+
+  .order-product-list{display:flex;flex-direction:column;gap:1px;background:var(--line-on-light);border:1px solid var(--line-on-light);margin-top:22px;}
+  .order-product-card{display:flex;align-items:center;gap:18px;background:var(--paper);padding:20px 22px;cursor:pointer;position:relative;transition:background .15s ease;}
+  .order-product-card input{position:absolute;opacity:0;pointer-events:none;}
+  .order-product-card.is-checked{background:#fbf4ec;box-shadow:inset 3px 0 0 var(--amber);}
+  .opc-icon svg{width:30px;height:30px;flex:0 0 auto;}
+  .opc-body{flex:1;}
+  .opc-name{display:block;font-weight:700;font-size:1rem;}
+  .opc-note{display:block;font-size:.82rem;color:var(--text-on-light-dim);margin-top:3px;}
+  .opc-price{font-family:var(--font-mono);font-size:.85rem;text-align:right;white-space:nowrap;}
+  .opc-price em{display:block;font-style:normal;font-size:.68rem;color:var(--text-on-light-dim);margin-top:2px;}
+
+  .order-promo-msg, .order-checkout-msg{font-size:.82rem;margin-top:8px;min-height:1.2em;}
+  .order-promo-msg.ok{color:#2d6b45;}
+  .order-promo-msg.err, .order-checkout-msg.err{color:#b3432b;}
+
+  .order-summary-panel{background:var(--navy-950);color:var(--paper);padding:30px 28px;border-radius:6px;}
+  .order-summary-panel .split-label{color:var(--amber-soft) !important;}
+  .order-summary-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;}
+  .order-summary-row:first-of-type{border-top:none;margin-top:18px;}
+  .order-summary-row span{color:var(--text-on-dark-dim);}
+  .order-summary-total{font-size:1.15rem;font-weight:700;border-top:1px solid rgba(255,255,255,.22) !important;margin-top:6px;padding-top:16px;}
+  .order-summary-total strong{font-family:var(--font-mono);color:var(--amber-soft);}
+  .order-summary-note{font-size:.75rem;color:var(--text-on-dark-dim);margin-top:18px;line-height:1.5;}
+
+  .order-step-actions{display:flex;gap:14px;margin-top:28px;}
+
+  .order-payment-methods{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap;}
+  .order-pay-option{border:1px solid var(--line-on-light-strong);padding:12px 22px;border-radius:30px;font-size:.9rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;}
+  .order-pay-option input{accent-color:var(--amber);}
+  .order-pg-notice{margin-top:28px;padding:18px 20px;background:rgba(255,122,46,.08);border:1px solid rgba(255,122,46,.3);border-radius:4px;}
+  .order-pg-notice strong{display:block;font-size:.9rem;margin-bottom:6px;}
+  .order-pg-notice p{font-size:.85rem;color:var(--text-on-light-dim);line-height:1.5;}
+
+  .order-confirm-panel{text-align:center;max-width:600px;margin:24px auto 0;padding:20px 0 40px;}
+  .order-confirm-check{width:56px;height:56px;margin-bottom:20px;}
+  .order-confirm-panel h3{font-size:1.7rem;}
+  .order-ref{font-family:var(--font-mono);font-size:.95rem;color:var(--steel);margin-top:10px;}
+  .order-confirm-lede{margin-top:16px;color:var(--text-on-light-dim);line-height:1.6;}
+  .order-confirm-note{margin-top:18px;font-size:.88rem;color:var(--text-on-light-dim);}
+  .order-confirm-note a{color:var(--amber);text-decoration:underline;}
+</style>
+
+<script>
+  window.KAARVAN_PRICING_DEFAULTS = {
+    products: [
+      { id:"fastag", name:"KAARVAN FASTag", price:150, unit:"per tag", note:"One-time issuance, linked to your bank or prepaid wallet for toll payments.", icon:"fastag" },
+      { id:"gps_ais140", name:"GPS Tracker — AIS-140", price:4499, unit:"per vehicle", note:"Government-certified AIS-140 tracker for mandated commercial/public vehicles, with panic button and command-centre integration.", icon:"gps" },
+      { id:"gps_tracking", name:"GPS Tracker — Tracking Device", price:2999, unit:"per vehicle", note:"Standard GPS tracker for private fleet visibility, live location and route history.", icon:"gps" },
+      { id:"dashcam", name:"AI Dashcam", price:7499, unit:"per vehicle", note:"Dual-channel dashcam with driver-behaviour alerts.", icon:"dashcam" },
+      { id:"platform", name:"Fleet Intelligence Platform", price:499, unit:"per vehicle / month", note:"Dashboard, alerts, reports and API access, billed per vehicle.", icon:"platform" }
+    ],
+    promoCodes: {
+      "KAARVAN10": { type:"percent", value:10, label:"10% off" },
+      "FLEET500": { type:"flat", value:500, label:"₹500 off on 5+ units", minQty:5 }
+    }
+  };
+</script>
+<script src="prices.js"></script>
+<!-- ============================================================ NAV ============================================================ -->
+<nav class="nav" id="siteNav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo" data-route-link="home">KAAR<span>VAN</span></a>
+    <div class="nav-links">
+      <a href="#about" data-route-link="about">About</a>
+      <a href="#products" data-route-link="products">Products</a>
+      <a href="#solutions" data-route-link="solutions">Solutions</a>
+      <a href="#platform" data-route-link="platform">Platform</a>
+      <a href="#contact" data-route-link="contact">Contact</a>
+      <a href="#order" data-route-link="order">Order Now</a>
+    </div>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" data-route-link="about">About</a>
+    <a href="#products" data-route-link="products">Products</a>
+    <a href="#solutions" data-route-link="solutions">Solutions</a>
+    <a href="#platform" data-route-link="platform">Platform</a>
+    <a href="#contact" data-route-link="contact">Contact</a>
+    <a href="#order" data-route-link="order">Order Now</a>
+    <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Get Started</a>
+  </div>
+</nav>
+
+
+<main id="app">
+  <div class="page-view" id="view-home" data-route="home"><!-- ============================================================ HERO ============================================================ -->
+<header class="hero">
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1420"/>
+          <stop offset="45%" stop-color="#14273d"/>
+          <stop offset="75%" stop-color="#5a3a2e"/>
+          <stop offset="100%" stop-color="#ff7a2e" stop-opacity=".55"/>
+        </linearGradient>
+        <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffcf9a" stop-opacity=".9"/>
+          <stop offset="45%" stop-color="#ff7a2e" stop-opacity=".45"/>
+          <stop offset="100%" stop-color="#ff7a2e" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1c3049"/>
+          <stop offset="100%" stop-color="#0a1420"/>
+        </linearGradient>
+        <linearGradient id="truckGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ff9d5c"/>
+          <stop offset="35%" stop-color="#3a2c28"/>
+          <stop offset="100%" stop-color="#0a1420"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="1600" height="900" fill="url(#skyGrad)"/>
+      <circle cx="1180" cy="560" r="230" fill="url(#sunGlow)"/>
+      <circle cx="1180" cy="560" r="70" fill="#ffdca8" opacity=".85"/>
+
+      <!-- distant hills -->
+      <polygon points="0,560 220,505 430,545 640,520 900,555 1600,510 1600,650 0,650" fill="#0d1e30" opacity=".55"/>
+      <polygon points="0,600 260,565 520,595 800,560 1100,600 1600,570 1600,700 0,700" fill="#0a1420" opacity=".8"/>
+
+      <!-- highway -->
+      <polygon points="560,650 1040,650 1330,900 270,900" fill="url(#roadGrad)"/>
+      <polygon points="560,650 1040,650 1150,760 450,760" fill="#22375073" />
+      <!-- lane dashes (perspective) -->
+      <g fill="#f5f1e9" opacity=".5">
+        <rect x="795" y="660" width="10" height="14" />
+        <rect x="785" y="695" width="14" height="18" />
+        <rect x="772" y="738" width="19" height="24" />
+        <rect x="755" y="792" width="26" height="30" />
+        <rect x="732" y="856" width="34" height="36" />
+      </g>
+
+      <!-- route dotted line (GPS path) -->
+      <path id="routePath" d="M 300 420 C 550 340, 820 500, 1060 380 S 1420 300, 1540 220" fill="none" stroke="#ff7a2e" stroke-width="2.5" stroke-dasharray="2 12" stroke-linecap="round" opacity=".85"/>
+      <circle r="6" fill="#ff7a2e">
+        <animateMotion dur="7s" repeatCount="indefinite" path="M 300 420 C 550 340, 820 500, 1060 380 S 1420 300, 1540 220"/>
+      </circle>
+      <circle r="12" fill="#ff7a2e" opacity=".25">
+        <animateMotion dur="7s" repeatCount="indefinite" path="M 300 420 C 550 340, 820 500, 1060 380 S 1420 300, 1540 220"/>
+      </circle>
+
+      <!-- location pin -->
+      <g transform="translate(1524,190)">
+        <path d="M0 0 C -14 0 -24 10 -24 24 C -24 42 0 66 0 66 C 0 66 24 42 24 24 C 24 10 14 0 0 0 Z" fill="#ff7a2e"/>
+        <circle cx="0" cy="23" r="8" fill="#0a1420"/>
+      </g>
+
+      <!-- network nodes -->
+      <g stroke="#ff9d5c" stroke-width="1" opacity=".35">
+        <line x1="1180" y1="140" x2="1290" y2="200"/>
+        <line x1="1290" y1="200" x2="1250" y2="290"/>
+        <line x1="1180" y1="140" x2="1120" y2="230"/>
+        <line x1="1120" y1="230" x2="1250" y2="290"/>
+      </g>
+      <g fill="#ffcf9a">
+        <circle cx="1180" cy="140" r="3"/>
+        <circle cx="1290" cy="200" r="3"/>
+        <circle cx="1250" cy="290" r="3"/>
+        <circle cx="1120" cy="230" r="3"/>
+      </g>
+
+      <!-- truck silhouette -->
+      <g transform="translate(870,470) scale(1.35)">
+        <!-- shadow -->
+        <ellipse cx="10" cy="150" rx="150" ry="14" fill="#000" opacity=".35"/>
+        <!-- exhaust puffs -->
+        <g fill="#cbd3da" opacity=".3">
+          <circle cx="-2" cy="-6" r="5"><animate attributeName="cy" values="-6;-30;-6" dur="3.2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;0;.35" dur="3.2s" repeatCount="indefinite"/></circle>
+          <circle cx="2" cy="-16" r="4"><animate attributeName="cy" values="-16;-38;-16" dur="3.2s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values=".3;0;.3" dur="3.2s" begin="1s" repeatCount="indefinite"/></circle>
+        </g>
+        <!-- exhaust pipe -->
+        <rect x="-6" y="-4" width="7" height="46" fill="#141c24"/>
+        <!-- container body -->
+        <rect x="-150" y="14" width="210" height="92" rx="3" fill="url(#truckGrad)"/>
+        <rect x="-150" y="14" width="210" height="10" fill="#ff7a2e" opacity=".65"/>
+        <!-- cab -->
+        <path d="M60 42 L104 42 L128 78 L128 106 L60 106 Z" fill="#0d1620"/>
+        <path d="M66 48 L100 48 L118 76 L66 76 Z" fill="#3a4f68" opacity=".8"/>
+        <!-- chassis / bumper -->
+        <rect x="-158" y="106" width="298" height="12" fill="#080f18"/>
+        <!-- wheels -->
+        <g fill="#080f18">
+          <circle cx="-118" cy="126" r="20"/>
+          <circle cx="-70" cy="126" r="20"/>
+          <circle cx="96" cy="126" r="20"/>
+        </g>
+        <g fill="#3a4f68">
+          <circle cx="-118" cy="126" r="8"/>
+          <circle cx="-70" cy="126" r="8"/>
+          <circle cx="96" cy="126" r="8"/>
+        </g>
+        <!-- mudflap -->
+        <rect x="112" y="106" width="10" height="18" fill="#0a1420"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="container hero-content">
+    <span class="eyebrow on-dark">India's Commercial Vehicle Ecosystem</span>
+    <h1>Connecting Every Mile of India</h1>
+    <p class="lede">Technology that keeps India's commercial vehicles moving — FASTag, GPS tracking, AI dashcams and fleet intelligence, brought together on one connected platform.</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn btn-primary">Explore KAARVAN</a>
+      <a href="#contact" class="btn btn-ghost-dark">Talk to an Expert</a>
+    </div>
+    <div class="connected-strip"><span class="connected-strip-dot"></span><span class="txt">Every truck. Every route. One connected fleet.</span></div>
+  </div>
+  <div class="trust-strip">
+    <div class="container trust-row">
+      <span>Payments</span>
+      <span>Tracking</span>
+      <span>Safety</span>
+      <span>Fleet Intelligence</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ STORY ============================================================ -->
+<section class="section section-light">
+  <div class="container">
+    <span class="eyebrow on-light">The Problem</span>
+    <h2 class="story-head" style="margin-top:18px;">India's roads are connected.<br>Its fleets should be too.</h2>
+    <p class="lede dim-on-light" style="margin-top:20px;">India's commercial vehicle ecosystem is enormous — but payments, tracking, safety and fleet operations are often managed through disconnected systems. KAARVAN brings them together on a single, connected technology platform built for transport management at scale.</p>
+
+    <div class="split reveal">
+      <div class="split-panel fragmented">
+        <span class="split-label">Before — Fragmented</span>
+        <div class="chip-field">
+          <span class="chip" style="top:6%; left:4%;">Toll Cash Queue</span>
+          <span class="chip" style="top:32%; left:44%;">Paper Logbook</span>
+          <span class="chip" style="top:2%; left:60%;">Separate GPS App</span>
+          <span class="chip" style="top:60%; left:8%;">Phone Calls to Drivers</span>
+          <span class="chip" style="top:74%; left:52%;">Manual Trip Sheets</span>
+          <span class="chip" style="top:46%; left:78%;">Third-Party Recharge</span>
+        </div>
+        <h4>The traditional fleet experience</h4>
+        <p class="desc">Every function — payments, tracking, safety, records — lives in its own tool, spreadsheet or phone call.</p>
+      </div>
+      <div class="split-panel connected">
+        <span class="split-label">After — Connected</span>
+        <div class="chip-field">
+          <span class="chip hub" style="top:38%; left:38%;">KAARVAN</span>
+          <span class="chip" style="top:6%; left:8%;">FASTag</span>
+          <span class="chip" style="top:8%; left:66%;">GPS Tracking</span>
+          <span class="chip" style="top:66%; left:6%;">AI Dashcam</span>
+          <span class="chip" style="top:70%; left:64%;">Fleet Dashboard</span>
+          <span class="chip" style="top:36%; left:82%;">Alerts</span>
+        </div>
+        <h4>The KAARVAN ecosystem</h4>
+        <p class="desc">One platform, one login, one connected view of every vehicle, payment and journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow on-light">Product Ecosystem</span>
+        <h2 style="margin-top:18px;">One Platform. Every Mile.</h2>
+      </div>
+      <p class="lede dim-on-light">FASTag, GPS tracking, AI dashcams and fleet intelligence, unified under one connected platform.</p>
+    </div>
+    <div class="teaser-row reveal">
+      <a class="teaser-card" href="#products">
+        <svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#ff7a2e" stroke-width="2"/><path d="M6 18h32" stroke="#ff7a2e" stroke-width="2"/><circle cx="14" cy="26" r="2" fill="#ff7a2e"/></svg>
+        <h4>FASTag</h4>
+        <p>Keep moving. Keep paying.</p>
+      </a>
+      <a class="teaser-card" href="#products">
+        <svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="18" r="10" stroke="#ff7a2e" stroke-width="2"/><circle cx="22" cy="18" r="3" fill="#ff7a2e"/><path d="M22 28v10" stroke="#ff7a2e" stroke-width="2"/></svg>
+        <h4>GPS</h4>
+        <p>Know where your fleet is.</p>
+      </a>
+      <a class="teaser-card" href="#products">
+        <svg viewBox="0 0 44 44" fill="none"><rect x="6" y="14" width="24" height="17" rx="3" stroke="#ff7a2e" stroke-width="2"/><path d="M30 19l8-5v16l-8-5" stroke="#ff7a2e" stroke-width="2" stroke-linejoin="round"/></svg>
+        <h4>AI Dashcam</h4>
+        <p>See what happens on the road.</p>
+      </a>
+      <a class="teaser-card" href="#products">
+        <svg viewBox="0 0 44 44" fill="none"><rect x="6" y="8" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="24" y="8" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="6" y="24" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="24" y="24" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/></svg>
+        <h4>Fleet Intelligence</h4>
+        <p>Your fleet. One view.</p>
+      </a>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:center;margin-top:32px;">
+      <a href="#products" class="btn-text" style="display:inline-flex;">See the full product ecosystem <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a href="#order" class="btn btn-primary">Order Now</a>
+    </div>
+  </div>
+</section>
+<!-- ============================================================ SIGNATURE MAP ============================================================ -->
+<section class="section signature">
+  <div class="container">
+    <span class="eyebrow on-dark">The Network</span>
+    <h2 class="on-dark" style="margin-top:18px;">The Road Is Moving.<br>So Are We.</h2>
+    <p class="lede signature-copy dim-on-dark">A conceptual view of India's connected road network — the kind of movement KAARVAN's technology is built to support.</p>
+
+    <div class="map-wrap reveal">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="indiaFill" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#142238"/>
+            <stop offset="100%" stop-color="#0d1826"/>
+          </linearGradient>
+        </defs>
+        <polygon points="190,10 230,15 255,45 290,90 270,120 300,150 280,190 255,230 245,270 230,320 215,370 200,430 190,470 175,430 165,370 150,320 130,270 110,220 100,170 95,120 120,80 150,40 170,20"
+          fill="url(#indiaFill)" stroke="#1c3049" stroke-width="1.5"/>
+
+        <!-- routes -->
+        <g fill="none" stroke="#ff7a2e" stroke-width="1.3" stroke-dasharray="1 7" stroke-linecap="round" opacity=".8">
+          <path d="M175,130 L120,260"/>
+          <path d="M120,260 L185,390"/>
+          <path d="M185,390 L220,400"/>
+          <path d="M220,400 L265,215"/>
+          <path d="M265,215 L210,160"/>
+          <path d="M210,160 L175,130"/>
+          <path d="M210,160 L230,180"/>
+          <path d="M175,130 L195,320"/>
+        </g>
+
+        <!-- travelling pulses -->
+        <circle r="3" fill="#ff7a2e"><animateMotion dur="5s" repeatCount="indefinite" path="M175,130 L120,260"/></circle>
+        <circle r="3" fill="#ff7a2e"><animateMotion dur="6s" repeatCount="indefinite" path="M220,400 L265,215"/></circle>
+        <circle r="3" fill="#ff7a2e"><animateMotion dur="4.5s" repeatCount="indefinite" path="M210,160 L175,130"/></circle>
+
+        <!-- city nodes -->
+        <g font-family="IBM Plex Mono, monospace" font-size="9" fill="#f5f1e9">
+          <circle cx="175" cy="130" r="4" fill="#ff7a2e"/><text x="181" y="127">Delhi</text>
+          <circle cx="210" cy="160" r="3.2" fill="#8fa9c2"/><text x="216" y="157">Lucknow</text>
+          <circle cx="230" cy="180" r="3.2" fill="#8fa9c2"/><text x="236" y="184">Varanasi</text>
+          <circle cx="120" cy="260" r="4" fill="#ff7a2e"/><text x="90" y="256">Mumbai</text>
+          <circle cx="265" cy="215" r="4" fill="#ff7a2e"/><text x="271" y="212">Kolkata</text>
+          <circle cx="195" cy="320" r="3.2" fill="#8fa9c2"/><text x="201" y="317">Hyderabad</text>
+          <circle cx="185" cy="390" r="4" fill="#ff7a2e"/><text x="150" y="386">Bengaluru</text>
+          <circle cx="220" cy="400" r="4" fill="#ff7a2e"/><text x="226" y="410">Chennai</text>
+        </g>
+      </svg>
+    </div>
+    <p class="map-note">A stylised, conceptual representation of India's road network — not a depiction of current KAARVAN operating locations.</p>
+
+    <div class="map-overlay-text reveal">
+      <div class="line1">One country. Millions of journeys.</div>
+      <div class="line2">One connected ecosystem.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <span class="eyebrow on-light">Who We Serve</span>
+    <h2 style="margin-top:18px;">Built for the People Who Move India</h2>
+    <div class="persona-row reveal">
+      <a class="persona-chip" href="#solutions"><svg viewBox="0 0 24 24" fill="none"><path d="M2 17V8a1 1 0 0 1 1-1h9v10H2z" stroke="currentColor" stroke-width="1.6"/><path d="M12 11h5l3 3v3h-8v-6z" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="19" r="1.8" stroke="currentColor" stroke-width="1.6"/><circle cx="16.5" cy="19" r="1.8" stroke="currentColor" stroke-width="1.6"/></svg>Truck Owners</a>
+      <a class="persona-chip" href="#solutions"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="4" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.6"/></svg>Fleet Owners</a>
+      <a class="persona-chip" href="#solutions"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.6"/></svg>Transporters</a>
+      <a class="persona-chip" href="#solutions"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21V9l9-6 9 6v12" stroke="currentColor" stroke-width="1.6"/><path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="1.6"/></svg>Logistics Companies</a>
+      <a class="persona-chip" href="#solutions"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M5 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5" stroke="currentColor" stroke-width="1.6"/></svg>Drivers</a>
+    </div>
+    <a href="#solutions" class="btn-text" style="margin-top:32px; display:inline-flex;">See how KAARVAN fits your operation <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+  </div>
+</section>
+<section class="section dash-showcase">
+  <div class="container">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow on-light">Platform</span>
+        <h2 style="margin-top:18px;">From Highway to Dashboard.</h2>
+      </div>
+      <p class="lede dim-on-light">A single connected view of every vehicle, payment and journey — on desktop and in your pocket.</p>
+    </div>
+    <div class="stat-strip reveal">
+      <div class="stat-strip-item"><span class="v" data-count="128">0</span><span class="l">Vehicles</span></div>
+      <div class="stat-strip-item"><span class="v moving" data-count="94">0</span><span class="l">Moving</span></div>
+      <div class="stat-strip-item"><span class="v alerts" data-count="12">0</span><span class="l">Alerts</span></div>
+      <div class="stat-strip-item"><span class="v">Live</span><span class="l">GPS Tracking</span></div>
+    </div>
+    <p class="dash-disclaimer">Illustrative preview — not live KAARVAN data.</p>
+    <a href="#platform" class="btn-text" style="margin-top:24px; display:inline-flex;">See the full platform <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+  </div>
+</section>
+<!-- ============================================================ FINAL CTA ============================================================ -->
+<section class="section final-cta">
+  <div class="final-cta-visual" aria-hidden="true">
+    <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ctaSkyHome" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1420"/>
+          <stop offset="60%" stop-color="#122238"/>
+          <stop offset="100%" stop-color="#3a2c28"/>
+        </linearGradient>
+        <radialGradient id="ctaSunHome" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7a2e" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#ff7a2e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1600" height="700" fill="url(#ctaSkyHome)"/>
+      <circle cx="800" cy="470" r="260" fill="url(#ctaSunHome)"/>
+      <polygon points="440,520 1160,520 1360,700 240,700" fill="#0d1e30"/>
+      <g fill="#f5f1e9" opacity=".4">
+        <rect x="770" y="530" width="10" height="12"/>
+        <rect x="755" y="560" width="14" height="16"/>
+        <rect x="735" y="600" width="20" height="22"/>
+        <rect x="708" y="650" width="28" height="28"/>
+      </g>
+      <g transform="translate(800,470) scale(.9)">
+        <ellipse cx="10" cy="140" rx="140" ry="12" fill="#000" opacity=".3"/>
+        <rect x="-140" y="10" width="196" height="86" rx="3" fill="#141c24"/>
+        <rect x="-140" y="10" width="196" height="9" fill="#ff7a2e" opacity=".6"/>
+        <path d="M56 38 L98 38 L120 72 L120 98 L56 98 Z" fill="#0d1620"/>
+        <rect x="-148" y="98" width="278" height="11" fill="#080f18"/>
+        <circle cx="-108" cy="116" r="19" fill="#080f18"/>
+        <circle cx="-64" cy="116" r="19" fill="#080f18"/>
+        <circle cx="90" cy="116" r="19" fill="#080f18"/>
+      </g>
+    </svg>
+  </div>
+  <div class="final-cta-scrim"></div>
+  <div class="container final-cta-content">
+    <span class="eyebrow on-dark">Get Started</span>
+    <h2 class="on-dark" style="margin-top:18px;">Ready to Connect Your Fleet?</h2>
+    <p class="lede" style="margin-top:18px;">Let's build a smarter, safer and more connected journey for your vehicles.</p>
+    <div class="final-cta-ctas">
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <a href="#contact" class="btn btn-ghost-dark">Request a Demo</a>
+      <a href="#contact" class="btn btn-ghost-dark">Talk to KAARVAN</a>
+    </div>
+  </div>
+</section>
+
+</div>
+  <div class="page-view" id="view-products" data-route="products"><section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="#home">Home</a><span>/</span><span>Products</span></div>
+    <span class="eyebrow on-dark">Products</span>
+    <h1 class="on-dark" style="margin-top:18px;">The KAARVAN Product Ecosystem</h1>
+    <p class="lede" style="margin-top:0;">FASTag, GPS tracking, AI dashcams and fleet intelligence — everything a modern commercial vehicle needs, on one connected platform.</p>
+    <div class="connected-strip"><span class="connected-strip-dot"></span><span class="txt">FASTag, GPS and dashcams — working as one system.</span></div><div style="margin-top:24px;position:relative;z-index:1;"><a href="#order" class="btn btn-primary">Order Now</a></div>
+  </div>
+</section>
+<!-- ============================================================ PRODUCT ECOSYSTEM ============================================================ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow on-light">Product Ecosystem</span>
+        <h2 style="margin-top:18px;">One Platform. Every Mile.</h2>
+      </div>
+      <p class="lede dim-on-light">Everything a modern commercial vehicle needs to move smarter — FASTag for trucks, GPS vehicle tracking, AI dashcams and fleet management, unified.</p>
+    </div>
+
+    <div class="eco-grid">
+      <article class="eco-card reveal">
+        <span class="eco-tag">FASTag</span>
+        <svg class="eco-icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#ff7a2e" stroke-width="2"/><path d="M6 18h32" stroke="#ff7a2e" stroke-width="2"/><circle cx="14" cy="26" r="2" fill="#ff7a2e"/></svg>
+        <h3>FASTag</h3>
+        <p class="eco-hook">Keep moving. Keep paying.</p>
+        <p class="eco-desc">Reliable digital toll payments designed for commercial vehicles and fleets — built for FASTag for trucks at scale.</p>
+        <ul class="eco-features">
+          <li>FASTag management</li>
+          <li>Toll transactions</li>
+          <li>Recharge</li>
+          <li>Multiple vehicle management</li>
+          <li>Fleet-level visibility</li>
+        </ul>
+        <a href="#contact" class="btn-text">Enquire About FASTag <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </article>
+
+      <article class="eco-card reveal">
+        <span class="eco-tag">GPS</span>
+        <svg class="eco-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="18" r="10" stroke="#ff7a2e" stroke-width="2"/><circle cx="22" cy="18" r="3" fill="#ff7a2e"/><path d="M22 28v10" stroke="#ff7a2e" stroke-width="2"/></svg>
+        <h3>KAARVAN GPS</h3>
+        <p class="eco-hook">Know where your fleet is.</p>
+        <p class="eco-desc">Real-time GPS vehicle tracking and fleet visibility — a truck GPS tracker built for India's roads.</p>
+        <ul class="eco-features">
+          <li>Live tracking</li>
+          <li>Trip history</li>
+          <li>Route playback</li>
+          <li>Geofencing</li>
+          <li>Alerts</li>
+          <li>Fleet dashboard</li>
+        </ul>
+        <a href="#contact" class="btn-text">Enquire About GPS <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </article>
+
+      <article class="eco-card reveal">
+        <span class="eco-tag">AI Dashcam</span>
+        <svg class="eco-icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="14" width="24" height="17" rx="3" stroke="#ff7a2e" stroke-width="2"/><path d="M30 19l8-5v16l-8-5" stroke="#ff7a2e" stroke-width="2" stroke-linejoin="round"/></svg>
+        <h3>KAARVAN AI Dashcam</h3>
+        <p class="eco-hook">See what happens on the road.</p>
+        <p class="eco-desc">AI-enabled video intelligence designed to improve safety, visibility and driver accountability for commercial vehicle tracking.</p>
+        <ul class="eco-features">
+          <li>Video recording</li>
+          <li>Event detection</li>
+          <li>Driver behaviour</li>
+          <li>Incident evidence</li>
+          <li>Remote monitoring</li>
+        </ul>
+        <a href="#contact" class="btn-text">Enquire About Dashcam <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </article>
+
+      <article class="eco-card reveal">
+        <span class="eco-tag">Fleet Intelligence</span>
+        <svg class="eco-icon" viewBox="0 0 44 44" fill="none"><rect x="6" y="8" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="24" y="8" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="6" y="24" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="24" y="24" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/></svg>
+        <h3>KAARVAN Fleet</h3>
+        <p class="eco-hook">Your fleet. One view.</p>
+        <p class="eco-desc">Bring vehicles, payments, tracking and operational information into one fleet management system for India.</p>
+        <ul class="eco-features">
+          <li>Fleet dashboard</li>
+          <li>Vehicle analytics</li>
+          <li>Alerts</li>
+          <li>Trip visibility</li>
+          <li>Operational insights</li>
+        </ul>
+        <a href="#contact" class="btn-text">Enquire About Fleet <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FINAL CTA ============================================================ -->
+<section class="section final-cta">
+  <div class="final-cta-visual" aria-hidden="true">
+    <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ctaSkyProducts" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1420"/>
+          <stop offset="60%" stop-color="#122238"/>
+          <stop offset="100%" stop-color="#3a2c28"/>
+        </linearGradient>
+        <radialGradient id="ctaSunProducts" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7a2e" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#ff7a2e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1600" height="700" fill="url(#ctaSkyProducts)"/>
+      <circle cx="800" cy="470" r="260" fill="url(#ctaSunProducts)"/>
+      <polygon points="440,520 1160,520 1360,700 240,700" fill="#0d1e30"/>
+      <g fill="#f5f1e9" opacity=".4">
+        <rect x="770" y="530" width="10" height="12"/>
+        <rect x="755" y="560" width="14" height="16"/>
+        <rect x="735" y="600" width="20" height="22"/>
+        <rect x="708" y="650" width="28" height="28"/>
+      </g>
+      <g transform="translate(800,470) scale(.9)">
+        <ellipse cx="10" cy="140" rx="140" ry="12" fill="#000" opacity=".3"/>
+        <rect x="-140" y="10" width="196" height="86" rx="3" fill="#141c24"/>
+        <rect x="-140" y="10" width="196" height="9" fill="#ff7a2e" opacity=".6"/>
+        <path d="M56 38 L98 38 L120 72 L120 98 L56 98 Z" fill="#0d1620"/>
+        <rect x="-148" y="98" width="278" height="11" fill="#080f18"/>
+        <circle cx="-108" cy="116" r="19" fill="#080f18"/>
+        <circle cx="-64" cy="116" r="19" fill="#080f18"/>
+        <circle cx="90" cy="116" r="19" fill="#080f18"/>
+      </g>
+    </svg>
+  </div>
+  <div class="final-cta-scrim"></div>
+  <div class="container final-cta-content">
+    <span class="eyebrow on-dark">Get Started</span>
+    <h2 class="on-dark" style="margin-top:18px;">Ready to Connect Your Fleet?</h2>
+    <p class="lede" style="margin-top:18px;">Let's build a smarter, safer and more connected journey for your vehicles.</p>
+    <div class="final-cta-ctas">
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <a href="#contact" class="btn btn-ghost-dark">Request a Demo</a>
+      <a href="#contact" class="btn btn-ghost-dark">Talk to KAARVAN</a>
+    </div>
+  </div>
+</section>
+
+</div>
+  <div class="page-view" id="view-solutions" data-route="solutions"><section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="#home">Home</a><span>/</span><span>Solutions</span></div>
+    <span class="eyebrow on-dark">Solutions</span>
+    <h1 class="on-dark" style="margin-top:18px;">Built for the People Who Move India</h1>
+    <p class="lede" style="margin-top:0;">Whether you run one truck or a thousand, KAARVAN adapts to how you operate.</p>
+    <div class="connected-strip"><span class="connected-strip-dot"></span><span class="txt">Built to grow with your fleet, one truck at a time.</span></div>
+  </div>
+</section>
+<!-- ============================================================ WHO WE SERVE ============================================================ -->
+<section class="section section-light">
+  <div class="container">
+    <span class="eyebrow on-light">Who We Serve</span>
+    <h2 style="margin-top:18px;">Built for the People Who Move India</h2>
+
+    <div class="serve-grid">
+      <div class="serve-card reveal">
+        <span class="num">01</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M2 17V8a1 1 0 0 1 1-1h9v10H2z" stroke="currentColor" stroke-width="1.6"/><path d="M12 11h5l3 3v3h-8v-6z" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="19" r="1.8" stroke="currentColor" stroke-width="1.6"/><circle cx="16.5" cy="19" r="1.8" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h4>Truck Owners</h4>
+        <p>Simple technology for individual commercial vehicle owners.</p>
+      </div>
+      <div class="serve-card reveal">
+        <span class="num">02</span>
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="4" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h4>Fleet Owners</h4>
+        <p>One place to monitor and manage multiple vehicles.</p>
+      </div>
+      <div class="serve-card reveal">
+        <span class="num">03</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h4>Transporters</h4>
+        <p>Improve visibility across trips, vehicles and drivers.</p>
+      </div>
+      <div class="serve-card reveal">
+        <span class="num">04</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 21V9l9-6 9 6v12" stroke="currentColor" stroke-width="1.6"/><path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h4>Logistics Companies</h4>
+        <p>Technology designed to scale with operational complexity.</p>
+      </div>
+      <div class="serve-card reveal">
+        <span class="num">05</span>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path d="M5 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h4>Drivers</h4>
+        <p>Tools that make every journey safer and easier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FINAL CTA ============================================================ -->
+<section class="section final-cta">
+  <div class="final-cta-visual" aria-hidden="true">
+    <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ctaSkySolutions" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1420"/>
+          <stop offset="60%" stop-color="#122238"/>
+          <stop offset="100%" stop-color="#3a2c28"/>
+        </linearGradient>
+        <radialGradient id="ctaSunSolutions" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7a2e" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#ff7a2e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1600" height="700" fill="url(#ctaSkySolutions)"/>
+      <circle cx="800" cy="470" r="260" fill="url(#ctaSunSolutions)"/>
+      <polygon points="440,520 1160,520 1360,700 240,700" fill="#0d1e30"/>
+      <g fill="#f5f1e9" opacity=".4">
+        <rect x="770" y="530" width="10" height="12"/>
+        <rect x="755" y="560" width="14" height="16"/>
+        <rect x="735" y="600" width="20" height="22"/>
+        <rect x="708" y="650" width="28" height="28"/>
+      </g>
+      <g transform="translate(800,470) scale(.9)">
+        <ellipse cx="10" cy="140" rx="140" ry="12" fill="#000" opacity=".3"/>
+        <rect x="-140" y="10" width="196" height="86" rx="3" fill="#141c24"/>
+        <rect x="-140" y="10" width="196" height="9" fill="#ff7a2e" opacity=".6"/>
+        <path d="M56 38 L98 38 L120 72 L120 98 L56 98 Z" fill="#0d1620"/>
+        <rect x="-148" y="98" width="278" height="11" fill="#080f18"/>
+        <circle cx="-108" cy="116" r="19" fill="#080f18"/>
+        <circle cx="-64" cy="116" r="19" fill="#080f18"/>
+        <circle cx="90" cy="116" r="19" fill="#080f18"/>
+      </g>
+    </svg>
+  </div>
+  <div class="final-cta-scrim"></div>
+  <div class="container final-cta-content">
+    <span class="eyebrow on-dark">Get Started</span>
+    <h2 class="on-dark" style="margin-top:18px;">Ready to Connect Your Fleet?</h2>
+    <p class="lede" style="margin-top:18px;">Let's build a smarter, safer and more connected journey for your vehicles.</p>
+    <div class="final-cta-ctas">
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <a href="#contact" class="btn btn-ghost-dark">Request a Demo</a>
+      <a href="#contact" class="btn btn-ghost-dark">Talk to KAARVAN</a>
+    </div>
+  </div>
+</section>
+
+</div>
+  <div class="page-view" id="view-platform" data-route="platform"><section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="#home">Home</a><span>/</span><span>Platform</span></div>
+    <span class="eyebrow on-dark">Platform</span>
+    <h1 class="on-dark" style="margin-top:18px;">From Highway to Dashboard</h1>
+    <p class="lede" style="margin-top:0;">A single connected view of every vehicle, payment and journey — on desktop and in your pocket.</p>
+    <div class="connected-strip"><span class="connected-strip-dot"></span><span class="txt">See your whole fleet, live, from a single screen.</span></div>
+  </div>
+</section>
+<!-- ============================================================ DASHBOARD SHOWCASE ============================================================ -->
+<section class="section dash-showcase">
+  <div class="container">
+    <div class="head-row">
+      <div>
+        <span class="eyebrow on-light">Platform</span>
+        <h2 style="margin-top:18px;">From Highway to Dashboard.</h2>
+      </div>
+      <p class="lede dim-on-light">Turn every vehicle into a connected asset with a single fleet management system for India.</p>
+    </div>
+
+    <div class="dash-frame reveal">
+      <div class="dash-bar">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <span class="label">KAARVAN FLEET CONSOLE — CONCEPTUAL PREVIEW</span>
+        <span class="label">LIVE</span>
+      </div>
+      <div class="dash-stats">
+        <div class="dash-stat"><div class="val" data-count="128">0</div><div class="lbl">Vehicles</div></div>
+        <div class="dash-stat"><div class="val moving" data-count="94">0</div><div class="lbl">Moving</div></div>
+        <div class="dash-stat"><div class="val stopped" data-count="22">0</div><div class="lbl">Stopped</div></div>
+        <div class="dash-stat"><div class="val alerts" data-count="12">0</div><div class="lbl">Alerts</div></div>
+      </div>
+      <div class="dash-body">
+        <div class="dash-map">
+          <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#3a5674" stroke-width="1">
+              <path d="M10,40 C120,20 180,90 260,70 S420,110 490,60"/>
+              <path d="M30,220 C140,260 220,190 300,230 S440,200 480,240"/>
+              <path d="M60,10 L90,290"/>
+              <path d="M420,10 L390,290"/>
+            </g>
+            <g fill="#ff7a2e">
+              <circle cx="130" cy="55"><animate attributeName="cx" values="130;260;130" dur="9s" repeatCount="indefinite"/><animate attributeName="cy" values="55;75;55" dur="9s" repeatCount="indefinite"/></circle>
+            </g>
+            <g fill="#8fa9c2" opacity=".8">
+              <circle cx="300" cy="230" r="3"/>
+              <circle cx="90" cy="200" r="3"/>
+              <circle cx="420" cy="120" r="3"/>
+              <circle cx="200" cy="60" r="3"/>
+            </g>
+            <g fill="#5fd98a">
+              <circle cx="130" cy="55" r="4"/>
+              <circle cx="260" cy="75" r="4"/>
+              <circle cx="380" cy="150" r="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="dash-list">
+          <h5>Active Vehicles</h5>
+          <div class="veh-row"><span class="veh-id">KA-FLT-0142</span><span class="veh-loc">NH48, near Hosur</span><span class="pill moving">Moving</span></div>
+          <div class="veh-row"><span class="veh-id">KA-FLT-0117</span><span class="veh-loc">Panvel Yard</span><span class="pill stopped">Stopped</span></div>
+          <div class="veh-row"><span class="veh-id">KA-FLT-0098</span><span class="veh-loc">NH44, Nagpur bypass</span><span class="pill moving">Moving</span></div>
+          <div class="veh-row"><span class="veh-id">KA-FLT-0203</span><span class="veh-loc">Toll Plaza, Kherki Daula</span><span class="pill alert">Alert</span></div>
+          <div class="veh-row"><span class="veh-id">KA-FLT-0076</span><span class="veh-loc">NH19, near Etawah</span><span class="pill moving">Moving</span></div>
+        </div>
+      </div>
+      <div class="dash-footer-row">
+        <div class="dash-mini">
+          <div class="t">FASTag Transactions (Today)</div>
+          <div class="v">312 tolls processed · ₹1,84,600 settled</div>
+        </div>
+        <div class="dash-mini">
+          <div class="t">Driver Snapshot</div>
+          <div class="v">86 on duty · 4 rest-break alerts</div>
+        </div>
+      </div>
+    </div>
+    <p class="dash-disclaimer">Conceptual product preview. Vehicle counts, transactions and driver figures shown are illustrative and do not represent live KAARVAN data.</p>
+    <a href="#contact" class="btn-text" style="margin-top:28px; display:inline-flex;">Talk to an Expert <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+  </div>
+</section>
+
+<!-- ============================================================ MOBILE APP ============================================================ -->
+<section class="section app-section">
+  <div class="container">
+    <span class="eyebrow on-dark">Mobile</span>
+    <h2 class="on-dark" style="margin-top:18px;">Your Fleet. In Your Pocket.</h2>
+
+    <div class="phones reveal">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-bar w40" style="background:rgba(255,122,46,.5);"></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;">
+            <div style="width:54px;height:54px;border-radius:50%;border:2px solid #ff7a2e;"></div>
+            <div class="ph-bar w60"></div>
+            <div class="ph-bar w40"></div>
+            <div style="width:80%;height:34px;background:#ff7a2e;border-radius:4px;"></div>
+          </div>
+        </div>
+        <div class="phone-tag">Login</div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-bar w60"></div>
+          <div class="ph-card" style="flex:0 0 70px;display:flex;gap:8px;align-items:center;">
+            <div class="ph-stat">128</div><div class="ph-bar w30"></div>
+          </div>
+          <div class="ph-card"></div>
+        </div>
+        <div class="phone-tag">Fleet Dashboard</div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-bar w40"></div>
+          <div class="ph-card" style="flex:1;position:relative;">
+            <span class="ph-dot" style="position:absolute;top:40%;left:50%;"></span>
+            <span class="ph-dot" style="position:absolute;top:60%;left:30%;background:#8fa9c2;"></span>
+          </div>
+        </div>
+        <div class="phone-tag">Live Tracking</div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-bar w60"></div>
+          <div class="ph-card"><div class="ph-bar w80" style="margin-bottom:10px;"></div><div class="ph-bar w40" style="margin-bottom:10px;"></div><div class="ph-bar w60"></div></div>
+          <div class="ph-card" style="flex:0 0 50px;"></div>
+        </div>
+        <div class="phone-tag">Vehicle Details</div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-bar w40"></div>
+          <div class="ph-card"><div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span class="ph-bar w40" style="width:60px;"></span><span style="color:#5fd98a;font-family:'IBM Plex Mono',monospace;font-size:.7rem;">₹65</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="ph-bar w40" style="width:60px;"></span><span style="color:#5fd98a;font-family:'IBM Plex Mono',monospace;font-size:.7rem;">₹120</span></div></div>
+        </div>
+        <div class="phone-tag">FASTag Transactions</div>
+      </div>
+    </div>
+
+    <div class="app-chip-row">
+      <span class="app-chip">Alerts</span>
+      <span class="app-chip">Dashcam / Video Access</span>
+      <span class="app-chip">Trip History</span>
+      <span class="app-chip">Geofencing</span>
+    </div>
+
+    <a href="#contact" class="btn btn-ghost-dark" style="margin-top:48px;">Talk to an Expert</a>
+  </div>
+</section>
+
+<!-- ============================================================ FINAL CTA ============================================================ -->
+<section class="section final-cta">
+  <div class="final-cta-visual" aria-hidden="true">
+    <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ctaSkyPlatform" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1420"/>
+          <stop offset="60%" stop-color="#122238"/>
+          <stop offset="100%" stop-color="#3a2c28"/>
+        </linearGradient>
+        <radialGradient id="ctaSunPlatform" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7a2e" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#ff7a2e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1600" height="700" fill="url(#ctaSkyPlatform)"/>
+      <circle cx="800" cy="470" r="260" fill="url(#ctaSunPlatform)"/>
+      <polygon points="440,520 1160,520 1360,700 240,700" fill="#0d1e30"/>
+      <g fill="#f5f1e9" opacity=".4">
+        <rect x="770" y="530" width="10" height="12"/>
+        <rect x="755" y="560" width="14" height="16"/>
+        <rect x="735" y="600" width="20" height="22"/>
+        <rect x="708" y="650" width="28" height="28"/>
+      </g>
+      <g transform="translate(800,470) scale(.9)">
+        <ellipse cx="10" cy="140" rx="140" ry="12" fill="#000" opacity=".3"/>
+        <rect x="-140" y="10" width="196" height="86" rx="3" fill="#141c24"/>
+        <rect x="-140" y="10" width="196" height="9" fill="#ff7a2e" opacity=".6"/>
+        <path d="M56 38 L98 38 L120 72 L120 98 L56 98 Z" fill="#0d1620"/>
+        <rect x="-148" y="98" width="278" height="11" fill="#080f18"/>
+        <circle cx="-108" cy="116" r="19" fill="#080f18"/>
+        <circle cx="-64" cy="116" r="19" fill="#080f18"/>
+        <circle cx="90" cy="116" r="19" fill="#080f18"/>
+      </g>
+    </svg>
+  </div>
+  <div class="final-cta-scrim"></div>
+  <div class="container final-cta-content">
+    <span class="eyebrow on-dark">Get Started</span>
+    <h2 class="on-dark" style="margin-top:18px;">Ready to Connect Your Fleet?</h2>
+    <p class="lede" style="margin-top:18px;">Let's build a smarter, safer and more connected journey for your vehicles.</p>
+    <div class="final-cta-ctas">
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <a href="#contact" class="btn btn-ghost-dark">Request a Demo</a>
+      <a href="#contact" class="btn btn-ghost-dark">Talk to KAARVAN</a>
+    </div>
+  </div>
+</section>
+
+</div>
+  <div class="page-view" id="view-about" data-route="about"><section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="#home">Home</a><span>/</span><span>About</span></div>
+    <span class="eyebrow on-dark">About KAARVAN</span>
+    <h1 class="on-dark" style="margin-top:18px;">Building the Digital Backbone of India's Commercial Vehicles</h1>
+    <p class="lede" style="margin-top:0;">Why we exist, how we think, and where the platform is headed.</p>
+    <div class="connected-strip"><span class="connected-strip-dot"></span><span class="txt">Connected roads start with connected technology.</span></div>
+  </div>
+</section>
+<!-- ============================================================ STORY ============================================================ -->
+<section class="section section-light">
+  <div class="container">
+    <span class="eyebrow on-light">The Problem</span>
+    <h2 class="story-head" style="margin-top:18px;">India's roads are connected.<br>Its fleets should be too.</h2>
+    <p class="lede dim-on-light" style="margin-top:20px;">India's commercial vehicle ecosystem is enormous — but payments, tracking, safety and fleet operations are often managed through disconnected systems. KAARVAN brings them together on a single, connected technology platform built for transport management at scale.</p>
+
+    <div class="split reveal">
+      <div class="split-panel fragmented">
+        <span class="split-label">Before — Fragmented</span>
+        <div class="chip-field">
+          <span class="chip" style="top:6%; left:4%;">Toll Cash Queue</span>
+          <span class="chip" style="top:32%; left:44%;">Paper Logbook</span>
+          <span class="chip" style="top:2%; left:60%;">Separate GPS App</span>
+          <span class="chip" style="top:60%; left:8%;">Phone Calls to Drivers</span>
+          <span class="chip" style="top:74%; left:52%;">Manual Trip Sheets</span>
+          <span class="chip" style="top:46%; left:78%;">Third-Party Recharge</span>
+        </div>
+        <h4>The traditional fleet experience</h4>
+        <p class="desc">Every function — payments, tracking, safety, records — lives in its own tool, spreadsheet or phone call.</p>
+      </div>
+      <div class="split-panel connected">
+        <span class="split-label">After — Connected</span>
+        <div class="chip-field">
+          <span class="chip hub" style="top:38%; left:38%;">KAARVAN</span>
+          <span class="chip" style="top:6%; left:8%;">FASTag</span>
+          <span class="chip" style="top:8%; left:66%;">GPS Tracking</span>
+          <span class="chip" style="top:66%; left:6%;">AI Dashcam</span>
+          <span class="chip" style="top:70%; left:64%;">Fleet Dashboard</span>
+          <span class="chip" style="top:36%; left:82%;">Alerts</span>
+        </div>
+        <h4>The KAARVAN ecosystem</h4>
+        <p class="desc">One platform, one login, one connected view of every vehicle, payment and journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ WHY KAARVAN ============================================================ -->
+<section class="section section-light">
+  <div class="container why-grid">
+    <div>
+      <span class="eyebrow on-light">Why KAARVAN</span>
+      <h2 style="margin-top:18px;">Built Around the Way India Moves.</h2>
+    </div>
+    <div class="why-list reveal">
+      <div class="why-item">
+        <h4>India First</h4>
+        <p>Designed around Indian roads, fleets and commercial vehicle operators.</p>
+      </div>
+      <div class="why-item">
+        <h4>Connected</h4>
+        <p>Payments, tracking, safety and fleet operations working together.</p>
+      </div>
+      <div class="why-item">
+        <h4>Simple</h4>
+        <p>Technology that does not require a technology expert to operate.</p>
+      </div>
+      <div class="why-item">
+        <h4>Scalable</h4>
+        <p>Built for one vehicle or thousands.</p>
+      </div>
+      <div class="why-item">
+        <h4>Always Moving</h4>
+        <p>Because fleets cannot afford downtime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ BRAND VISION ============================================================ -->
+<section class="section vision">
+  <div class="container">
+    <span class="eyebrow on-dark">Brand Vision</span>
+    <h2 class="on-dark" style="margin-top:18px;">We're Building the Digital Backbone of India's Commercial Vehicles.</h2>
+    <p class="lede">From toll payments to real-time tracking, from road safety to fleet intelligence — KAARVAN is building the technology layer that connects the commercial vehicle ecosystem. Our platform is designed to expand across the commercial vehicle lifecycle.</p>
+
+    <div class="ladder reveal">
+      <div class="ladder-item live"><span class="name">FASTag</span><span class="status">Available</span></div>
+      <div class="ladder-item"><span class="name">Fuel</span><span class="status">Roadmap</span></div>
+      <div class="ladder-item live"><span class="name">GPS</span><span class="status">Available</span></div>
+      <div class="ladder-item live"><span class="name">AI Dashcam</span><span class="status">Available</span></div>
+      <div class="ladder-item live"><span class="name">Fleet Management</span><span class="status">Available</span></div>
+      <div class="ladder-item"><span class="name">Driver Services</span><span class="status">Roadmap</span></div>
+      <div class="ladder-item"><span class="name">Maintenance</span><span class="status">Roadmap</span></div>
+      <div class="ladder-item"><span class="name">Insurance</span><span class="status">Roadmap</span></div>
+      <div class="ladder-item"><span class="name">Parking</span><span class="status">Roadmap</span></div>
+      <div class="ladder-item"><span class="name">Compliance</span><span class="status">Roadmap</span></div>
+    </div>
+    <p class="vision-note">"Available" reflects KAARVAN's current product lines. "Roadmap" items are future directions our platform is designed to expand toward and are not currently available services.</p>
+  </div>
+</section>
+
+<!-- ============================================================ SCALE VISUAL ============================================================ -->
+<section class="section section-light">
+  <div class="container">
+    <span class="eyebrow on-light">Built to Scale</span>
+    <h2 style="margin-top:18px;">From One Vehicle to an Entire Fleet.</h2>
+    <p class="lede dim-on-light" style="margin-top:16px;">KAARVAN grows with your fleet — whether you run a single truck or manage thousands across the country.</p>
+
+    <div class="scale-row reveal">
+      <div class="scale-col">
+        <div class="scale-grid-vis"><div class="scale-dot amber"></div></div>
+        <div class="scale-num">1</div>
+        <div class="scale-lbl">Vehicle</div>
+      </div>
+      <div class="scale-col">
+        <div class="scale-grid-vis" data-fill-count="10" data-fill-amber="5"></div>
+        <div class="scale-num">10</div>
+        <div class="scale-lbl">Vehicles</div>
+      </div>
+      <div class="scale-col">
+        <div class="scale-grid-vis" data-fill-count="60" data-fill-amber="12"></div>
+        <div class="scale-num">100</div>
+        <div class="scale-lbl">Vehicles</div>
+      </div>
+      <div class="scale-col">
+        <div class="scale-dense"></div>
+        <div class="scale-num">1,000+</div>
+        <div class="scale-lbl">Vehicles</div>
+      </div>
+    </div>
+    <p class="dash-disclaimer" style="margin-top:20px;">Illustrative scale progression — not a representation of actual customer or vehicle counts.</p>
+  </div>
+</section>
+
+<!-- ============================================================ FINAL CTA ============================================================ -->
+<section class="section final-cta">
+  <div class="final-cta-visual" aria-hidden="true">
+    <svg viewBox="0 0 1600 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ctaSkyAbout" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a1420"/>
+          <stop offset="60%" stop-color="#122238"/>
+          <stop offset="100%" stop-color="#3a2c28"/>
+        </linearGradient>
+        <radialGradient id="ctaSunAbout" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7a2e" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#ff7a2e" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1600" height="700" fill="url(#ctaSkyAbout)"/>
+      <circle cx="800" cy="470" r="260" fill="url(#ctaSunAbout)"/>
+      <polygon points="440,520 1160,520 1360,700 240,700" fill="#0d1e30"/>
+      <g fill="#f5f1e9" opacity=".4">
+        <rect x="770" y="530" width="10" height="12"/>
+        <rect x="755" y="560" width="14" height="16"/>
+        <rect x="735" y="600" width="20" height="22"/>
+        <rect x="708" y="650" width="28" height="28"/>
+      </g>
+      <g transform="translate(800,470) scale(.9)">
+        <ellipse cx="10" cy="140" rx="140" ry="12" fill="#000" opacity=".3"/>
+        <rect x="-140" y="10" width="196" height="86" rx="3" fill="#141c24"/>
+        <rect x="-140" y="10" width="196" height="9" fill="#ff7a2e" opacity=".6"/>
+        <path d="M56 38 L98 38 L120 72 L120 98 L56 98 Z" fill="#0d1620"/>
+        <rect x="-148" y="98" width="278" height="11" fill="#080f18"/>
+        <circle cx="-108" cy="116" r="19" fill="#080f18"/>
+        <circle cx="-64" cy="116" r="19" fill="#080f18"/>
+        <circle cx="90" cy="116" r="19" fill="#080f18"/>
+      </g>
+    </svg>
+  </div>
+  <div class="final-cta-scrim"></div>
+  <div class="container final-cta-content">
+    <span class="eyebrow on-dark">Get Started</span>
+    <h2 class="on-dark" style="margin-top:18px;">Ready to Connect Your Fleet?</h2>
+    <p class="lede" style="margin-top:18px;">Let's build a smarter, safer and more connected journey for your vehicles.</p>
+    <div class="final-cta-ctas">
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+      <a href="#contact" class="btn btn-ghost-dark">Request a Demo</a>
+      <a href="#contact" class="btn btn-ghost-dark">Talk to KAARVAN</a>
+    </div>
+  </div>
+</section>
+
+</div>
+  <div class="page-view" id="view-order" data-route="order"><section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="#home">Home</a><span>/</span><span>Order Now</span></div>
+    <span class="eyebrow on-dark">Order Now</span>
+    <h1 class="on-dark" style="margin-top:18px;">Order KAARVAN for Your Fleet</h1>
+    <p class="lede" style="margin-top:0;">Pick a product, get an instant price, and check out in minutes. Our team confirms payment and dispatch directly with you.</p>
+    <div class="connected-strip"><span class="connected-strip-dot"></span><span class="txt">From order to dispatch — one connected process.</span></div>
+  </div>
+</section>
+<section class="section section-light order-wizard-section">
+  <div class="container">
+    <div class="order-steps-nav" id="orderStepsNav">
+      <span class="order-step-dot active" data-step-dot="1"><em>1</em>Select</span>
+      <span class="order-step-dot" data-step-dot="2"><em>2</em>Checkout</span>
+      <span class="order-step-dot" data-step-dot="3"><em>3</em>Payment</span>
+      <span class="order-step-dot" data-step-dot="4"><em>4</em>Confirmation</span>
+    </div>
+
+    <div class="order-step active" data-step="1">
+      <div class="order-grid">
+        <div class="order-products-col">
+          <span class="split-label" style="color:var(--steel);">Choose a Product</span>
+          <div class="order-product-list" id="orderProductList">
+        <p class="order-loading-msg">Loading products…</p>
+      </div>
+          <div class="form-row" style="max-width:220px;margin-top:28px;">
+            <label for="orderQty">Quantity</label>
+            <input type="number" id="orderQty" min="1" value="1" step="1">
+          </div>
+          <div class="form-row" style="max-width:360px;">
+            <label for="orderPromo">Promo Code (optional)</label>
+            <div style="display:flex;gap:10px;">
+              <input type="text" id="orderPromo" placeholder="e.g. KAARVAN10">
+              <button type="button" class="btn btn-ghost-light" id="orderPromoApply" style="white-space:nowrap;padding:0 20px;">Apply</button>
+            </div>
+            <p class="order-promo-msg" id="orderPromoMsg"></p>
+          </div>
+        </div>
+        <div class="order-summary-col">
+          <div class="order-summary-panel">
+            <span class="split-label" style="color:var(--steel);">Order Summary</span>
+            <div class="order-summary-row"><span>Product</span><strong id="sumProduct">—</strong></div>
+            <div class="order-summary-row"><span>Unit Price</span><strong id="sumUnitPrice">—</strong></div>
+            <div class="order-summary-row"><span>Quantity</span><strong id="sumQty">1</strong></div>
+            <div class="order-summary-row"><span>Subtotal</span><strong id="sumSubtotal">—</strong></div>
+            <div class="order-summary-row" id="sumDiscountRow" style="display:none;"><span>Discount</span><strong id="sumDiscount">—</strong></div>
+            <div class="order-summary-row order-summary-total"><span>Total</span><strong id="sumTotal">—</strong></div>
+            <p class="order-summary-note">Prices shown are illustrative and exclude applicable taxes — final pricing is confirmed by our sales team before dispatch.</p>
+            <button type="button" class="btn btn-primary" id="orderToCheckout" style="width:100%;margin-top:18px;">Proceed to Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-step" data-step="2">
+      <span class="split-label" style="color:var(--steel);">Delivery &amp; Contact Details</span>
+      <form id="orderCheckoutForm" style="margin-top:22px;max-width:640px;" onsubmit="return false;">
+        <div class="form-row two-col">
+          <div class="form-row" style="margin-bottom:0;"><label for="ckName">Full Name</label><input type="text" id="ckName" required placeholder="Your name"></div>
+          <div class="form-row" style="margin-bottom:0;"><label for="ckMobile">Mobile Number</label><input type="tel" id="ckMobile" required maxlength="10" placeholder="10-digit mobile number"></div>
+        </div>
+        <div class="form-row two-col">
+          <div class="form-row" style="margin-bottom:0;"><label for="ckEmail">Email (optional)</label><input type="email" id="ckEmail" placeholder="you@company.com"></div>
+          <div class="form-row" style="margin-bottom:0;"><label for="ckCompany">Company (optional)</label><input type="text" id="ckCompany" placeholder="Transport / logistics company"></div>
+        </div>
+        <div class="form-row"><label for="ckAddress">Complete Address</label><textarea id="ckAddress" required placeholder="House / street / area"></textarea></div>
+        <div class="form-row two-col">
+          <div class="form-row" style="margin-bottom:0;"><label for="ckCity">City</label><input type="text" id="ckCity" required placeholder="City"></div>
+          <div class="form-row" style="margin-bottom:0;"><label for="ckState">State</label><input type="text" id="ckState" required placeholder="State"></div>
+        </div>
+        <div class="form-row" style="max-width:220px;"><label for="ckPin">PIN Code</label><input type="text" id="ckPin" required maxlength="6" placeholder="6-digit PIN"></div>
+        <p class="order-checkout-msg" id="ckMsg"></p>
+        <div class="order-step-actions">
+          <button type="button" class="btn btn-ghost-light" data-order-back="1">Back</button>
+          <button type="button" class="btn btn-primary" id="orderToPayment">Continue to Payment</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="order-step" data-step="3">
+      <div class="order-grid">
+        <div class="order-products-col">
+          <span class="split-label" style="color:var(--steel);">Payment Method</span>
+          <div class="order-payment-methods">
+            <label class="order-pay-option"><input type="radio" name="kvPayMethod" value="upi" checked>UPI</label>
+            <label class="order-pay-option"><input type="radio" name="kvPayMethod" value="card">Card</label>
+            <label class="order-pay-option"><input type="radio" name="kvPayMethod" value="netbanking">Net Banking</label>
+          </div>
+          <div class="order-pg-notice">
+            <strong>Online payments are being finalized.</strong>
+            <p>KAARVAN's payment gateway integration is in progress. Click <em>Place Order</em> to confirm your request — our sales team will call you to securely complete payment before dispatch.</p>
+          </div>
+        </div>
+        <div class="order-summary-col">
+          <div class="order-summary-panel">
+            <span class="split-label" style="color:var(--steel);">Review &amp; Confirm</span>
+            <div class="order-summary-row"><span>Product</span><strong id="revProduct">—</strong></div>
+            <div class="order-summary-row"><span>Quantity</span><strong id="revQty">—</strong></div>
+            <div class="order-summary-row"><span>Deliver To</span><strong id="revAddress">—</strong></div>
+            <div class="order-summary-row"><span>Mobile</span><strong id="revMobile">—</strong></div>
+            <div class="order-summary-row order-summary-total"><span>Total</span><strong id="revTotal">—</strong></div>
+            <div class="order-step-actions" style="margin-top:18px;">
+              <button type="button" class="btn btn-ghost-light" data-order-back="2">Back</button>
+              <button type="button" class="btn btn-primary" id="orderPlace" style="flex:1;">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-step" data-step="4">
+      <div class="order-confirm-panel">
+        <svg viewBox="0 0 48 48" fill="none" class="order-confirm-check"><circle cx="24" cy="24" r="22" stroke="#5fd98a" stroke-width="2"/><path d="M15 24l6 6 12-13" stroke="#5fd98a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Order Request Received</h3>
+        <p class="order-ref">Reference: <strong id="confRef">—</strong></p>
+        <p class="order-confirm-lede">Thank you — our team will call <strong id="confMobile">—</strong> within 24 hours to confirm payment and schedule dispatch. Once your order ships, courier and tracking details will be sent to you by SMS and email.</p>
+        <div class="order-summary-panel" style="margin-top:28px;max-width:480px;margin-left:auto;margin-right:auto;">
+          <div class="order-summary-row"><span>Product</span><strong id="confProduct">—</strong></div>
+          <div class="order-summary-row"><span>Quantity</span><strong id="confQty">—</strong></div>
+          <div class="order-summary-row"><span>Deliver To</span><strong id="confAddress">—</strong></div>
+          <div class="order-summary-row order-summary-total"><span>Total</span><strong id="confTotal">—</strong></div>
+        </div>
+        <p class="order-confirm-note">Questions in the meantime? Write to <a href="mailto:sales@kaarvan.in">sales@kaarvan.in</a></p>
+        <button type="button" class="btn btn-ghost-light" id="orderRestart" style="margin-top:22px;">Place Another Order</button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+  <div class="page-view" id="view-contact" data-route="contact"><section class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="#home">Home</a><span>/</span><span>Contact</span></div>
+    <span class="eyebrow on-dark">Contact</span>
+    <h1 class="on-dark" style="margin-top:18px;">Let's Connect Your Fleet</h1>
+    <p class="lede" style="margin-top:0;">Tell us about your operation and we'll get back to you — no matter if you run one truck or a thousand.</p>
+    <p class="lede" style="margin-top:14px;">Prefer email? Write to us directly at <a href="mailto:sales@kaarvan.in" style="color:var(--amber-soft);text-decoration:underline;text-decoration-color:var(--amber);">sales@kaarvan.in</a></p><div class="connected-strip"><span class="connected-strip-dot"></span><span class="txt">Let's get your fleet connected.</span></div>
+  </div>
+</section>
+<section class="section section-light">
+  <div class="container">
+    <div class="contact-grid reveal">
+      <div class="contact-form-panel">
+        <span class="split-label" style="color:var(--steel);">Send an Inquiry</span>
+        <form id="kvContactForm" style="margin-top:22px;" onsubmit="return false;">
+          <div class="form-row two-col" style="margin-bottom:20px;">
+            <div class="form-row" style="margin-bottom:0;"><label for="kvName">Full Name</label><input id="kvName" type="text" required placeholder="Your name"></div>
+            <div class="form-row" style="margin-bottom:0;"><label for="kvCompany">Company</label><input id="kvCompany" type="text" placeholder="Transport / logistics company"></div>
+          </div>
+          <div class="form-row two-col" style="margin-bottom:20px;">
+            <div class="form-row" style="margin-bottom:0;"><label for="kvPhone">Phone</label><input id="kvPhone" type="tel" required placeholder="+91"></div>
+            <div class="form-row" style="margin-bottom:0;"><label for="kvFleet">Fleet Size</label>
+              <select id="kvFleet">
+                <option>1 vehicle</option>
+                <option>2–10 vehicles</option>
+                <option>11–100 vehicles</option>
+                <option>100+ vehicles</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row"><label for="kvMsg">What are you looking for?</label><textarea id="kvMsg" placeholder="FASTag, GPS tracking, AI dashcams, fleet management…"></textarea></div>
+          <button type="submit" class="btn btn-primary" id="kvSubmitBtn">Send Inquiry</button>
+          <div class="form-success" id="kvSuccess">Thanks — our team will reach out shortly.</div>
+          <p class="form-note">This is a concept form for demonstration. In the live product, this connects directly to KAARVAN's sales team.</p>
+        </form>
+      </div>
+      <div class="contact-channels-panel">
+        <div class="channel-item">
+          <h4>Sales &amp; Demos</h4>
+          <p>Talk to our team about FASTag, GPS, AI dashcams or fleet management for your vehicles.</p>
+          <a class="val" href="mailto:sales@kaarvan.in">sales@kaarvan.in</a>
+        </div>
+        <div class="channel-item">
+          <h4>Support</h4>
+          <p>Existing KAARVAN customers can reach our operations support desk here.</p>
+          <a class="val" href="mailto:support@kaarvan.in">support@kaarvan.in</a>
+        </div>
+        <div class="channel-item">
+          <h4>Careers</h4>
+          <p>Building the technology layer for India's commercial vehicles. Come build it with us.</p>
+          <a class="val" href="mailto:careers@kaarvan.in">careers@kaarvan.in</a>
+        </div>
+        <div class="channel-item">
+          <h4>Head Office</h4>
+          <p>KAARVAN Technologies<br>India</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer>
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <div class="logo">KAAR<span>VAN</span></div>
+      <p>Connecting Every Mile of India.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <ul>
+        <li><a href="#order">Order Now</a></li>
+        <li><a href="#products">FASTag</a></li>
+        <li><a href="#products">GPS</a></li>
+        <li><a href="#products">AI Dashcam</a></li>
+        <li><a href="#products">Fleet Management</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About KAARVAN</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 KAARVAN Technologies. All rights reserved.</p>
+    <div class="socials">
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 10v7M8 7.5v.01M12 17v-4.5c0-1.5 1-2.5 2.5-2.5S17 11 17 12.5V17" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  var ROUTE_TITLES = {
+    home: "KAARVAN — Connecting Every Mile of India",
+    products: "KAARVAN Products — FASTag, GPS, AI Dashcam & Fleet Management",
+    solutions: "KAARVAN Solutions — Built for the People Who Move India",
+    platform: "KAARVAN Platform — Fleet Management Dashboard & App",
+    about: "About KAARVAN — Connected Technology for India's Commercial Vehicles",
+    contact: "Contact KAARVAN — Talk to an Expert or Request a Demo",
+    order: "Order KAARVAN — FASTag, GPS Tracker, AI Dashcam & Fleet Platform"
+  };
+</script>
+<script>
+(function(){
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 12){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+  }, {passive:true});
+
+  var hbtn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  hbtn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    hbtn.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+
+  document.querySelectorAll('a[href="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); });
+  });
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateCounter(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if(reduceMotion){ el.textContent = target; return; }
+    var startTime = null, dur = 1200;
+    function step(ts){
+      if(!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime)/dur, 1);
+      el.textContent = Math.floor(progress * target);
+      if(progress < 1){ requestAnimationFrame(step); } else { el.textContent = target; }
+    }
+    requestAnimationFrame(step);
+  }
+
+  window.kvActivateReveals = function(scope){
+    var reveals = scope.querySelectorAll('.reveal:not(.in)');
+    if('IntersectionObserver' in window && !reduceMotion){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:.12});
+      reveals.forEach(function(el){ io.observe(el); });
+    } else {
+      reveals.forEach(function(el){ el.classList.add('in'); });
+    }
+  };
+
+  window.kvActivateCounters = function(scope){
+    var counters = scope.querySelectorAll('[data-count]:not([data-counted])');
+    if('IntersectionObserver' in window){
+      var cio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.setAttribute('data-counted','1'); animateCounter(e.target); cio.unobserve(e.target); }
+        });
+      }, {threshold:.35});
+      counters.forEach(function(el){ cio.observe(el); });
+    } else {
+      counters.forEach(function(el){ el.setAttribute('data-counted','1'); el.textContent = el.getAttribute('data-count'); });
+    }
+  };
+
+  function fillGrid(el, count, amberEvery){
+    if(!el || el.childElementCount) return;
+    for(var i=0;i<count;i++){
+      var d = document.createElement('div');
+      d.className = 'scale-dot' + (amberEvery && i % amberEvery === 0 ? ' amber' : '');
+      el.appendChild(d);
+    }
+  }
+  document.querySelectorAll('[data-fill-count]').forEach(function(el){
+    fillGrid(el, parseInt(el.getAttribute('data-fill-count'),10), parseInt(el.getAttribute('data-fill-amber'),10));
+  });
+
+  var form = document.getElementById('kvContactForm');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('kvSuccess').classList.add('show');
+      document.getElementById('kvSubmitBtn').textContent = 'Sent';
+    });
+  }
+})();
+</script>
+
+<script>
+(function(){
+  var stepEls = document.querySelectorAll('.order-step');
+  if(!stepEls.length) return;
+  var dotEls = document.querySelectorAll('[data-step-dot]');
+  var qtyInput = document.getElementById('orderQty');
+  var promoInput = document.getElementById('orderPromo');
+  var promoApplyBtn = document.getElementById('orderPromoApply');
+  var promoMsg = document.getElementById('orderPromoMsg');
+  var productListEl = document.getElementById('orderProductList');
+
+  // Pricing comes from prices.js (window.KAARVAN_PRICING) when that file is present
+  // alongside this page (real hosting); otherwise falls back to the built-in defaults
+  // below so the page still works standalone (e.g. this Claude preview link).
+  var PRICING = window.KAARVAN_PRICING || window.KAARVAN_PRICING_DEFAULTS || {products:[], promoCodes:{}};
+  var PROMO_CODES = PRICING.promoCodes || {};
+  var appliedPromo = null;
+
+  var ICONS = {
+    fastag: '<svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#ff7a2e" stroke-width="2"/><path d="M6 18h32" stroke="#ff7a2e" stroke-width="2"/><circle cx="14" cy="26" r="2" fill="#ff7a2e"/></svg>',
+    gps: '<svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="18" r="10" stroke="#ff7a2e" stroke-width="2"/><circle cx="22" cy="18" r="3" fill="#ff7a2e"/><path d="M22 28v10" stroke="#ff7a2e" stroke-width="2"/></svg>',
+    dashcam: '<svg viewBox="0 0 44 44" fill="none"><rect x="6" y="14" width="24" height="17" rx="3" stroke="#ff7a2e" stroke-width="2"/><path d="M30 19l8-5v16l-8-5" stroke="#ff7a2e" stroke-width="2" stroke-linejoin="round"/></svg>',
+    platform: '<svg viewBox="0 0 44 44" fill="none"><rect x="6" y="8" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="24" y="8" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="6" y="24" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/><rect x="24" y="24" width="14" height="12" rx="2" stroke="#ff7a2e" stroke-width="2"/></svg>'
+  };
+
+  function fmtINR(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); }
+
+  function setText(id, val){ var el = document.getElementById(id); if(el) el.textContent = val; }
+
+  function escHtml(s){ var d = document.createElement('div'); d.textContent = (s === undefined || s === null) ? '' : String(s); return d.innerHTML; }
+
+  function renderProductCards(){
+    if(!productListEl) return;
+    var products = PRICING.products || [];
+    if(!products.length){ productListEl.innerHTML = '<p class="order-loading-msg">No products configured yet.</p>'; return; }
+    var html = '';
+    products.forEach(function(p, i){
+      html += '<label class="order-product-card" data-price="' + Number(p.price || 0) + '" data-unit="' + escHtml(p.unit) + '">'
+        + '<input type="radio" name="kvProduct" value="' + escHtml(p.name) + '"' + (i === 0 ? ' checked' : '') + '>'
+        + '<span class="opc-icon">' + (ICONS[p.icon] || '') + '</span>'
+        + '<span class="opc-body"><span class="opc-name">' + escHtml(p.name) + '</span><span class="opc-note">' + escHtml(p.note) + '</span></span>'
+        + '<span class="opc-price">' + fmtINR(p.price || 0) + '<em>' + escHtml(p.unit) + '</em></span>'
+        + '</label>';
+    });
+    productListEl.innerHTML = html;
+  }
+  renderProductCards();
+  var productCards = document.querySelectorAll('.order-product-card');
+
+  function selectedCard(){
+    var checked = document.querySelector('input[name="kvProduct"]:checked');
+    return checked ? checked.closest('.order-product-card') : null;
+  }
+  function currentPrice(){ var c = selectedCard(); return c ? parseFloat(c.getAttribute('data-price')) : 0; }
+  function currentUnit(){ var c = selectedCard(); return c ? c.getAttribute('data-unit') : ''; }
+  function currentName(){ var checked = document.querySelector('input[name="kvProduct"]:checked'); return checked ? checked.value : ''; }
+  function currentQty(){ var q = parseInt(qtyInput.value, 10); if(!q || q < 1) q = 1; return q; }
+
+  function computeDiscount(subtotal, qty){
+    if(!appliedPromo) return 0;
+    if(appliedPromo.minQty && qty < appliedPromo.minQty) return 0;
+    if(appliedPromo.type === 'percent') return subtotal * (appliedPromo.value/100);
+    return Math.min(appliedPromo.value, subtotal);
+  }
+
+  function renderSummary(){
+    var qty = currentQty(), price = currentPrice(), name = currentName(), unit = currentUnit();
+    var subtotal = price * qty;
+    var discount = computeDiscount(subtotal, qty);
+    var total = subtotal - discount;
+
+    setText('sumProduct', name);
+    setText('sumUnitPrice', fmtINR(price) + ' ' + unit);
+    setText('sumQty', qty);
+    setText('sumSubtotal', fmtINR(subtotal));
+    var discRow = document.getElementById('sumDiscountRow');
+    if(discRow){
+      if(discount > 0){ discRow.style.display = 'flex'; setText('sumDiscount', '-' + fmtINR(discount)); }
+      else { discRow.style.display = 'none'; }
+    }
+    setText('sumTotal', fmtINR(total));
+    setText('revProduct', name);
+    setText('revQty', qty + ' (' + unit + ')');
+    setText('revTotal', fmtINR(total));
+
+    return {name:name, unit:unit, qty:qty, price:price, subtotal:subtotal, discount:discount, total:total};
+  }
+
+  productCards.forEach(function(card){
+    card.addEventListener('click', function(){
+      productCards.forEach(function(c){ c.classList.remove('is-checked'); });
+      card.classList.add('is-checked');
+      renderSummary();
+    });
+    var input = card.querySelector('input[name="kvProduct"]');
+    if(input && input.checked) card.classList.add('is-checked');
+  });
+
+  if(qtyInput) qtyInput.addEventListener('input', renderSummary);
+
+  if(promoApplyBtn){
+    promoApplyBtn.addEventListener('click', function(){
+      var code = (promoInput.value || '').trim().toUpperCase();
+      if(!code){ appliedPromo = null; promoMsg.textContent = ''; renderSummary(); return; }
+      var found = PROMO_CODES[code];
+      if(found){
+        if(found.minQty && currentQty() < found.minQty){
+          appliedPromo = null;
+          promoMsg.textContent = 'This code needs a minimum quantity of ' + found.minQty + '.';
+          promoMsg.className = 'order-promo-msg err';
+        } else {
+          appliedPromo = found;
+          promoMsg.textContent = 'Code applied — ' + found.label + '.';
+          promoMsg.className = 'order-promo-msg ok';
+        }
+      } else {
+        appliedPromo = null;
+        promoMsg.textContent = 'Invalid promo code.';
+        promoMsg.className = 'order-promo-msg err';
+      }
+      renderSummary();
+    });
+  }
+
+  function goToStep(n){
+    stepEls.forEach(function(s){ s.classList.toggle('active', s.getAttribute('data-step') === String(n)); });
+    dotEls.forEach(function(d){
+      var step = parseInt(d.getAttribute('data-step-dot'), 10);
+      d.classList.toggle('active', step === n);
+      d.classList.toggle('done', step < n);
+    });
+    var section = document.querySelector('.order-wizard-section');
+    if(section) section.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  document.querySelectorAll('[data-order-back]').forEach(function(btn){
+    btn.addEventListener('click', function(){ goToStep(parseInt(btn.getAttribute('data-order-back'), 10)); });
+  });
+
+  var toCheckoutBtn = document.getElementById('orderToCheckout');
+  if(toCheckoutBtn){
+    toCheckoutBtn.addEventListener('click', function(){ renderSummary(); goToStep(2); });
+  }
+
+  var toPaymentBtn = document.getElementById('orderToPayment');
+  if(toPaymentBtn){
+    toPaymentBtn.addEventListener('click', function(){
+      var name = document.getElementById('ckName').value.trim();
+      var mobile = document.getElementById('ckMobile').value.trim();
+      var address = document.getElementById('ckAddress').value.trim();
+      var city = document.getElementById('ckCity').value.trim();
+      var state = document.getElementById('ckState').value.trim();
+      var pin = document.getElementById('ckPin').value.trim();
+      var msg = document.getElementById('ckMsg');
+      msg.className = 'order-checkout-msg err';
+      if(!name || !address || !city || !state){ msg.textContent = 'Please fill in all required fields.'; return; }
+      if(!/^[6-9][0-9]{9}$/.test(mobile)){ msg.textContent = 'Please enter a valid 10-digit mobile number.'; return; }
+      if(!/^[0-9]{6}$/.test(pin)){ msg.textContent = 'Please enter a valid 6-digit PIN code.'; return; }
+      msg.textContent = '';
+      renderSummary();
+      setText('revAddress', address + ', ' + city + ', ' + state + ' - ' + pin);
+      setText('revMobile', mobile);
+      goToStep(3);
+    });
+  }
+
+  var placeOrderBtn = document.getElementById('orderPlace');
+  if(placeOrderBtn){
+    placeOrderBtn.addEventListener('click', function(){
+      var summary = renderSummary();
+      var mobile = document.getElementById('ckMobile').value.trim();
+      var address = document.getElementById('ckAddress').value.trim();
+      var city = document.getElementById('ckCity').value.trim();
+      var state = document.getElementById('ckState').value.trim();
+      var pin = document.getElementById('ckPin').value.trim();
+      var ref = 'KAV' + Math.floor(100000 + Math.random()*900000);
+      setText('confRef', ref);
+      setText('confMobile', mobile);
+      setText('confProduct', summary.name);
+      setText('confQty', summary.qty + ' (' + summary.unit + ')');
+      setText('confAddress', address + ', ' + city + ', ' + state + ' - ' + pin);
+      setText('confTotal', fmtINR(summary.total));
+      goToStep(4);
+    });
+  }
+
+  var restartBtn = document.getElementById('orderRestart');
+  if(restartBtn){
+    restartBtn.addEventListener('click', function(){
+      document.getElementById('orderCheckoutForm').reset();
+      qtyInput.value = 1;
+      promoInput.value = '';
+      appliedPromo = null;
+      promoMsg.textContent = '';
+      renderSummary();
+      goToStep(1);
+    });
+  }
+
+  renderSummary();
+})();
+</script>
+
+<script>
+(function(){
+  var views = document.querySelectorAll('.page-view');
+  var navLinks = document.querySelectorAll('[data-route-link]');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var current = null;
+
+  function setActive(route){
+    navLinks.forEach(function(a){
+      if(a.getAttribute('data-route-link') === route){ a.classList.add('active'); }
+      else { a.classList.remove('active'); }
+    });
+  }
+
+  function showRoute(route, opts){
+    opts = opts || {};
+    var valid = ['home','products','solutions','platform','about','contact','order'];
+    if(valid.indexOf(route) === -1){ route = 'home'; }
+    if(route === current && !opts.force){ return; }
+    var next = document.getElementById('view-' + route);
+    if(!next) return;
+    var prev = current ? document.getElementById('view-' + current) : null;
+
+    if(document.title !== undefined && ROUTE_TITLES[route]){ document.title = ROUTE_TITLES[route]; }
+    setActive(route === 'home' ? '' : route);
+    if(route === 'home'){
+      navLinks.forEach(function(a){ if(a.getAttribute('data-route-link')==='home'){ /* logo has no visual active state */ } });
+    }
+
+    function activateNext(){
+      next.classList.add('is-visible');
+      if(!reduceMotion){
+        next.classList.add('view-enter');
+        // force reflow so the transition triggers
+        void next.offsetWidth;
+        next.classList.add('view-enter-active');
+        next.classList.remove('view-enter');
+        window.setTimeout(function(){ next.classList.remove('view-enter-active'); }, 360);
+      }
+      window.scrollTo({top:0, left:0, behavior:'auto'});
+      current = route;
+      // re-run reveal + counter observers for the newly shown view
+      if(window.kvActivateReveals){ window.kvActivateReveals(next); }
+      if(window.kvActivateCounters){ window.kvActivateCounters(next); }
+    }
+
+    if(prev && prev !== next){
+      prev.classList.remove('is-visible');
+    }
+    activateNext();
+  }
+  window.kvShowRoute = showRoute;
+
+  function routeFromHash(){
+    var h = (window.location.hash || '#home').replace('#','');
+    return h || 'home';
+  }
+
+  window.addEventListener('hashchange', function(){ showRoute(routeFromHash()); });
+
+  navLinks.forEach(function(a){
+    a.addEventListener('click', function(e){
+      var route = a.getAttribute('data-route-link');
+      if(!route) return;
+      e.preventDefault();
+      if(window.location.hash === '#' + route){ showRoute(route, {force:true}); }
+      else { window.location.hash = '#' + route; }
+      var mm = document.getElementById('mobileMenu');
+      if(mm) mm.classList.remove('open');
+    });
+  });
+
+  // any in-page link using a data-route-link-less "#products" style href still works via hashchange,
+  // but links inside page content also need interception to avoid native jump + to trigger transition
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    if(a.hasAttribute('data-route-link')) return;
+    var href = a.getAttribute('href');
+    var target = href.slice(1);
+    if(['home','products','solutions','platform','about','contact','order'].indexOf(target) === -1) return;
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      if(window.location.hash === '#' + target){ showRoute(target, {force:true}); }
+      else { window.location.hash = '#' + target; }
+    });
+  });
+
+  showRoute(routeFromHash(), {force:true});
+})();
+</script>
