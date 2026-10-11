@@ -27,9 +27,8 @@
     var okName = name.value.trim().length >= 2;
     fieldError(name, okName ? '' : 'Please enter your name.');
     if(!okName) first = name;
-    var digits = phone.value.replace(/[\s()-]/g,'');
-    var okPhone = /^(\+?91)?0?[6-9]\d{9}$/.test(digits) || /^0?\d{10,11}$/.test(digits);
-    fieldError(phone, okPhone ? '' : 'Please enter a valid phone number, for example +91 98765 43210.');
+    var okPhone = /^[6-9]\d{9}$/.test(phone.value);
+    fieldError(phone, okPhone ? '' : 'Please enter a valid 10-digit mobile number, for example 98765 43210.');
     if(!okPhone && !first) first = phone;
     if(first){ first.focus(); return false; }
     return true;
@@ -38,7 +37,7 @@
     return {
       name: form.elements.name.value.trim(),
       company: form.elements.company.value.trim(),
-      phone: form.elements.phone.value.trim(),
+      phone: '+91 ' + form.elements.phone.value,
       fleet_size: form.elements.fleet_size.value,
       message: form.elements.message.value.trim()
     };
@@ -47,6 +46,13 @@
     var body = 'Name: ' + d.name + '\nCompany: ' + d.company + '\nPhone: ' + d.phone + '\nFleet size: ' + d.fleet_size + '\n\n' + d.message;
     return 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('KAARVAN inquiry from ' + d.name) + '&body=' + encodeURIComponent(body);
   }
+  // Mobile number: digits only, max 10. A pasted +91 / 91 / 0 prefix is dropped.
+  form.elements.phone.addEventListener('input', function(){
+    var v = this.value.replace(/\D/g,'');
+    if(v.length > 10){ v = v.replace(/^(?:0|91|091)/,''); }
+    if(v.length > 10){ v = v.slice(0,10); }
+    if(v !== this.value) this.value = v;
+  });
   ['name','phone'].forEach(function(n){
     form.elements[n].addEventListener('input', function(){ fieldError(form.elements[n], ''); });
   });
