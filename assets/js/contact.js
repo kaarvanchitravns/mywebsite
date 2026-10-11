@@ -30,6 +30,16 @@
     var okPhone = /^[6-9]\d{9}$/.test(phone.value);
     fieldError(phone, okPhone ? '' : 'Please enter a valid 10-digit mobile number, for example 98765 43210.');
     if(!okPhone && !first) first = phone;
+    var email = form.elements.email, city = form.elements.city, state = form.elements.state;
+    var okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim());
+    fieldError(email, okEmail ? '' : 'Please enter a valid email address, for example name@company.com.');
+    if(!okEmail && !first) first = email;
+    var okCity = city.value.trim().length >= 2;
+    fieldError(city, okCity ? '' : 'Please enter your city.');
+    if(!okCity && !first) first = city;
+    var okState = !!state.value;
+    fieldError(state, okState ? '' : 'Please select your state.');
+    if(!okState && !first) first = state;
     if(first){ first.focus(); return false; }
     return true;
   }
@@ -38,12 +48,15 @@
       name: form.elements.name.value.trim(),
       company: form.elements.company.value.trim(),
       phone: '+91 ' + form.elements.phone.value,
+      email: form.elements.email.value.trim(),
+      city: form.elements.city.value.trim(),
+      state: form.elements.state.value,
       fleet_size: form.elements.fleet_size.value,
       message: form.elements.message.value.trim()
     };
   }
   function mailtoHref(d){
-    var body = 'Name: ' + d.name + '\nCompany: ' + d.company + '\nPhone: ' + d.phone + '\nFleet size: ' + d.fleet_size + '\n\n' + d.message;
+    var body = 'Name: ' + d.name + '\nCompany: ' + d.company + '\nPhone: ' + d.phone + '\nEmail: ' + d.email + '\nCity: ' + d.city + '\nState: ' + d.state + '\nFleet size: ' + d.fleet_size + '\n\n' + d.message;
     return 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('KAARVAN inquiry from ' + d.name) + '&body=' + encodeURIComponent(body);
   }
   // Mobile number: digits only, max 10. A pasted +91 / 91 / 0 prefix is dropped.
@@ -53,8 +66,9 @@
     if(v.length > 10){ v = v.slice(0,10); }
     if(v !== this.value) this.value = v;
   });
-  ['name','phone'].forEach(function(n){
-    form.elements[n].addEventListener('input', function(){ fieldError(form.elements[n], ''); });
+  ['name','phone','email','city','state'].forEach(function(n){
+    var ev = n === 'state' ? 'change' : 'input';
+    form.elements[n].addEventListener(ev, function(){ fieldError(form.elements[n], ''); });
   });
   form.addEventListener('submit', function(e){
     e.preventDefault();
