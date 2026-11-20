@@ -10,4 +10,8 @@
   <url><loc>https://kaarvan.in/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://kaarvan.in/partners/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kaarvan.in/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://kaarvan.in/milepost/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://kaarvan.in/milepost/ais-140/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://kaarvan.in/milepost/fastag-blacklisted/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://kaarvan.in/milepost/trip-hisab/</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
 </urlset>
