@@ -82,3 +82,13 @@ form.toll-form{display:flex;flex-direction:column;gap:1.5rem;padding:clamp(1.25r
 .toll-disclaimer p:first-child{color:var(--ink);opacity:.82}
 .toll-combo__none{line-height:1.45}
 .toll-combo__none b{display:block;color:var(--ink);font-weight:500;margin-bottom:.2rem}
+/* any-city mode */
+.toll-combo__list li[data-n]{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem}
+.toll-combo__list li[data-n] small{font-size:var(--t-micro);color:var(--muted-light);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toll-missing{margin:0;padding:.7rem .9rem;border-radius:var(--r-sm);background:rgba(255,182,95,.10);color:#FFB65F;font-size:var(--t-small);line-height:1.45}
+.toll-list li.nofare::before{background:var(--navy-800);border:2px solid rgba(252,132,24,.6);box-sizing:border-box}
+.toll-list li.nofare .nm b{font-weight:400;color:var(--muted-dark)}
+.toll-list li.none::before{display:none}
+.toll-app[aria-busy="true"] .toll-total{opacity:.4}
+.toll-disclaimer .toll-credit{margin:.6rem 0 0;font-size:var(--t-micro);color:var(--muted-light)}
+.toll-disclaimer .toll-credit a{color:inherit}
