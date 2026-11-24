@@ -208,9 +208,10 @@
       var res = [];
       for (var i = 0; i < cities.length; i++) {
         var c = cities[i];
-        var rank = c.key.indexOf(q) === 0 ? 0 : (' ' + c.key).indexOf(' ' + q) >= 0 ? 1 :
-                   (' ' + c.alt).indexOf(' ' + q) >= 0 ? 2 : (q.length >= 3 && c.key.indexOf(q) >= 0) ? 3 : -1;
-        if (rank >= 0) res.push({ c: c, rank: rank });
+        // exact name first, then an exact old/other name (Kashi -> Varanasi before Kashipur), then prefix matches
+        var rank = c.key === q ? -2 : (' ' + c.alt + ' ').indexOf(' ' + q + ' ') >= 0 ? -1 : c.key.indexOf(q) === 0 ? 0 : (' ' + c.key).indexOf(' ' + q) >= 0 ? 1 :
+                   (' ' + c.alt).indexOf(' ' + q) >= 0 ? 2 : (q.length >= 3 && c.key.indexOf(q) >= 0) ? 3 : null;
+        if (rank !== null) res.push({ c: c, rank: rank });
       }
       res.sort(function (a, b) { return a.rank - b.rank || b.c.pop - a.c.pop; });
       return res.slice(0, 8).map(function (r) { return r.c; });
