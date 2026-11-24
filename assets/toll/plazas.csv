@@ -1,0 +1,37 @@
+plaza_id,plaza_name,highway,state,km_marker,car_single,car_return,lcv_single,lcv_return,bus_2axle_single,bus_2axle_return,axle3_single,axle3_return,axle4to6_single,axle4to6_return,axle7plus_single,axle7plus_return,effective_from,source
+N227,Kherki Daula,NH-48,Delhi,"",100,150,160,240,335,505,370,550,530,795,645,965,2026-04-01,nhai/complete id 227 code 7001
+N176,Shahjahanpur,NH-48,Rajasthan,"",195,295,320,475,665,1000,730,1090,1045,1570,1275,1910,2026-04-01,nhai/complete id 176 code 9001
+N177,Manoharpur,NH-48,Rajasthan,"",90,135,145,220,305,460,335,500,480,720,585,880,2025-04-01,nhai/complete id 177 code 9002
+N1203,Daulatpura (Jaipur),NH-48,Rajasthan,"",80,115,125,190,265,395,285,430,410,620,500,755,2025-04-01,nhai/complete id 1203 code 9003
+N149,Thikariya (Jaipur),NH-48,Rajasthan,"",95,145,155,235,325,490,355,535,515,770,625,935,2026-04-01,nhai/complete id 149 code 8001
+N95,Kishangarh (Badgaon),NH-48,Rajasthan,"",55,85,90,135,190,285,205,310,300,445,360,545,2026-04-01,nhai/complete id 95 code 8002
+N309,Gegal,NH-48,Rajasthan,"",75,110,120,175,245,370,385,580,385,580,470,705,2026-04-01,nhai/complete id 309 code 6001
+N310,Pipalaz,NH-48,Rajasthan,"",70,105,115,170,240,360,375,565,375,565,460,685,2026-04-01,nhai/complete id 310 code 6002
+N350,Radhvanaj (Kheda),NH-48,Gujarat,"",115,170,180,265,370,555,405,605,570,855,715,1070,2026-04-01,nhai/complete id 350 code 2011
+N349,Vasad,NH-48,Gujarat,"",160,245,255,380,520,775,565,850,790,1190,1010,1515,2026-04-01,nhai/complete id 349 code 2012
+N252,Bharthana (Karjan),NH-48,Gujarat,"",155,235,255,380,530,800,580,870,835,1250,1015,1525,2026-04-01,nhai/complete id 252 code 001002
+N419,Mandva,NH-48,Gujarat,"",30,45,50,75,105,155,115,170,160,245,195,295,2026-04-01,nhai/complete id 419 code 336006
+N39,Choryasi,NH-48,Gujarat,"",125,185,200,300,420,630,460,690,660,990,805,1205,2026-04-01,nhai/complete id 39 code 2004
+N240,Bhagwada,NH-48,Gujarat,"",125,190,205,310,430,645,470,705,675,1015,825,1235,2026-04-01,nhai/complete id 240 code 2003
+N241,Charoti,NH-48,Maharashtra,"",95,140,150,225,315,470,345,515,495,740,600,900,2026-04-01,nhai/complete id 241 code 2002
+N242,Khaniwade,NH-48,Maharashtra,"",130,195,210,315,440,655,480,715,685,1030,835,1255,2026-04-01,nhai/complete id 242 code 40001
+N112,Khed Shivapur,NH-48,Maharashtra,"",125,190,205,305,425,640,665,1000,665,1000,810,1220,2026-04-01,nhai/complete id 112 code 61002
+N40,Anewadi,NH-48,Maharashtra,"",85,130,140,210,295,445,465,695,465,695,565,845,2026-04-01,nhai/complete id 40 code 61001
+N745,Tasawade,NH-48,Maharashtra,"",70,105,115,170,240,360,265,395,375,565,460,690,2025-10-02,nhai/complete id 745 code 44001
+N744,Kini,NH-48,Maharashtra,"",65,100,105,160,220,335,245,365,350,525,425,635,2025-10-01,nhai/complete id 744 code 44002
+N2,Hirebagewadi,NH-48,Karnataka,"",125,185,200,300,420,625,655,985,655,985,800,1200,2026-04-01,nhai/complete id 2 code 111001
+N701,Bankapur,NH-48,Karnataka,"",105,160,170,255,355,535,390,585,560,840,680,1020,2026-04-01,nhai/complete id 701 code 356016
+N25,Chalageri,NH-48,Karnataka,"",150,225,245,365,510,765,555,830,800,1195,970,1455,2026-04-01,nhai/complete id 25 code 356019
+N246,Hebbalu,NH-48,Karnataka,"",140,210,225,335,470,705,510,765,735,1105,895,1340,2026-04-01,nhai/complete id 246 code 356020
+N223,Guilalu,NH-48,Karnataka,"",90,135,145,215,300,450,470,705,470,705,575,860,2026-04-01,nhai/complete id 223 code 17002
+N224,Karjeevanahalli,NH-48,Karnataka,"",90,135,145,215,300,450,470,705,470,705,575,860,2026-04-01,nhai/complete id 224 code 17001
+N226,Chokkenahalli,NH-48,Karnataka,"",40,60,65,95,135,200,145,220,210,315,255,385,2026-04-01,nhai/complete id 226 code 115002
+N1120,Kulumapalya,NH-48,Karnataka,"",25,35,40,60,85,125,90,135,130,200,160,240,2025-10-01,nhai/complete id 1120 code 115001
+N214,Amakathadu,NH-44,Andhra Pradesh,"",140,210,225,335,470,705,515,770,735,1105,895,1345,2026-04-01,nhai/complete id 214 code 352026
+N213,Kasepalli,NH-44,Andhra Pradesh,"",130,195,210,315,440,660,480,720,690,1035,840,1260,2026-04-01,nhai/complete id 213 code 352025
+N192,Marur,NH-44,Andhra Pradesh,"",145,215,230,345,485,730,530,795,760,1140,925,1390,2026-04-01,nhai/complete id 192 code 352024
+N154,Bagepalli,NH-44,Karnataka,"",120,180,195,290,410,615,445,670,640,960,780,1170,2026-04-01,nhai/complete id 154 code 356017
+N6,Tundla,NH-19,Uttar Pradesh,"",115,170,185,275,385,580,420,630,605,905,735,1105,2026-04-01,nhai/complete id 6 code 180001
+N66,Gurau (Semra Atikabad),NH-19,Uttar Pradesh,"",125,185,200,300,415,625,455,680,655,980,795,1190,2026-04-01,nhai/complete id 66 code 180002
+N34,Anantram,NH-19,Uttar Pradesh,"",115,170,185,275,385,580,420,630,605,910,740,1105,2026-04-01,nhai/complete id 34 code 28002
+N36,Barajore,NH-19,Uttar Pradesh,"",190,285,295,445,605,910,660,995,930,1395,1180,1770,2026-04-01,nhai/complete id 36 code 28001

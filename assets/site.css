@@ -1002,3 +1002,39 @@ body{background:#FFFFFF}
 .foot__legal{display:flex; gap:1.25rem; flex-wrap:wrap}
 .foot__legal a{color:inherit; text-decoration:none; opacity:.85}
 .foot__legal a:hover{opacity:1; text-decoration:underline}
+
+/* ---- Toll Meter: highlighted tool button, outlined so "Talk to KAARVAN" stays the only filled tab.
+   Stays visible on phones, where the other section links are hidden. ---- */
+.nav__tool-item{margin-left:auto; padding-left:clamp(.75rem,2vw,1.5rem)}
+.nav__tool-item + .nav__cta-item{margin-left:0; padding-left:clamp(.35rem,.8vw,.6rem)}
+.nav__links a.nav__tool{
+  display:inline-flex; align-items:center; gap:.45rem;
+  color:#FFB65F; padding:.5rem .95rem; border-radius:var(--r-sm);
+  background:rgba(252,132,24,.10);
+  box-shadow:inset 0 0 0 1.5px rgba(255,182,95,.75), 0 6px 16px -8px rgba(252,132,24,.55);
+}
+.nav__links a.nav__tool:hover{
+  color:#FFC579; background:rgba(252,132,24,.18);
+  box-shadow:inset 0 0 0 1.5px #FFB65F, 0 10px 20px -8px rgba(252,132,24,.6);
+}
+.nav__links a.nav__tool[aria-current="page"]{
+  color:#FFC579; background:rgba(252,132,24,.22);
+  box-shadow:inset 0 0 0 1.5px #FFB65F, inset 0 -1px 0 rgba(0,0,0,.3);
+}
+.nav__links a.nav__tool:focus-visible{outline:2px solid #FFB65F; outline-offset:2px}
+.nav__tool-ico{flex:none}
+@media (max-width:980px){ .nav__links li.nav__tool-item{display:block; padding-left:0} }
+@media (max-width:560px){
+  .nav__in{gap:.6rem}
+  .nav__links{gap:.4rem}
+  .nav__links a.nav__tool, .nav__cta{font-size:.9rem; padding:.5rem .7rem!important}
+  .nav__tool-ico{width:16px; height:16px}
+  .nav__tool-item + .nav__cta-item{padding-left:0}
+}
+@media (max-width:380px){ .nav__cta{padding:.5rem .6rem!important} .nav__links a.nav__tool{gap:.3rem; padding:.5rem .6rem} }
+.nav__links a.nav__tool, .nav__cta{white-space:nowrap}
+@media (max-width:420px){ .nav__tool-ico{display:none} }
+@media (max-width:360px){
+  .nav__links a.nav__tool, .nav__cta{font-size:.84rem; padding:.45rem .55rem!important}
+  .brand img{height:34px}
+}

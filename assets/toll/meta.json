@@ -1,0 +1,5 @@
+{
+  "status": "live",
+  "fares_updated": "NHAI rates for FY 2026-27, checked against October 2026 FASTag collections",
+  "note": "Set status to \"live\" only after the fares are checked and signed off. Any other value shows the test-version banner."
+}
