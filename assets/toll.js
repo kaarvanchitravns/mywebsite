@@ -136,7 +136,7 @@
 
   // Type-to-search box laid over a <select>. The select stays (hidden) as the source of truth,
   // so the fare code reads it exactly as before. Follows the WAI-ARIA combobox pattern.
-  function combo(sel, onPick) {
+  function combo(sel, onPick, lead) {
     var lid = sel.id + 'List';
     var inp = document.createElement('input');
     inp.type = 'text';
@@ -197,8 +197,10 @@
       }
       shown.sort(function (a, b) { return a.rank - b.rank || a.i - b.i; });
       if (!shown.length) {
-        list.innerHTML = '<li class="toll-combo__none">No Toll Meter route for &ldquo;' + esc(inp.value.trim()) +
-          '&rdquo; yet. Clear the box to see every city.</li>';
+        var names = [];
+        for (var c = 0; c < sel.options.length; c++) names.push(sel.options[c].text);
+        list.innerHTML = '<li class="toll-combo__none"><b>No Toll Meter route for &ldquo;' + esc(inp.value.trim()) +
+          '&rdquo; yet.</b> ' + esc(lead ? lead() : 'Toll Meter covers these cities for now') + ': ' + esc(names.join(', ')) + '.</li>';
       } else {
         list.innerHTML = shown.map(function (s, n) {
           return '<li role="option" id="' + lid + n + '" data-n="' + n + '" aria-selected="' + (s.i === sel.selectedIndex) + '">' +
@@ -277,7 +279,7 @@
       }).join('');
     }
 
-    var toBox = combo(to);
+    var toBox = combo(to, null, function () { return 'From ' + from.value + ', Toll Meter goes to'; });
     var fromBox = combo(from, function () { toBox.focus(); });
 
     function val(name) { var el = app.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
