@@ -1,0 +1,15 @@
+route_id,from_city,from_point,to_city,to_point,highways_via,distance_km,typical_hours,notes
+R01,Delhi,Gurugram,Jaipur,Jaipur bypass,NH-48,230,"",first release; distance approximate
+R02,Jaipur,Jaipur bypass,Delhi,Gurugram,NH-48,230,"",first release; distance approximate
+R03,Jaipur,Jaipur bypass,Beawar,Beawar,NH-48,185,"",first release; distance approximate
+R04,Beawar,Beawar,Jaipur,Jaipur bypass,NH-48,185,"",first release; distance approximate
+R05,Ahmedabad,Narol,Mumbai,Bhiwandi,NH-48,500,"",first release; distance approximate
+R06,Mumbai,Bhiwandi,Ahmedabad,Narol,NH-48,500,"",first release; distance approximate
+R07,Pune,Katraj,Kolhapur,Kolhapur,NH-48,230,"",first release; distance approximate
+R08,Kolhapur,Kolhapur,Pune,Katraj,NH-48,230,"",first release; distance approximate
+R09,Belagavi,Belagavi,Bengaluru,Nelamangala,NH-48,480,"",first release; distance approximate
+R10,Bengaluru,Nelamangala,Belagavi,Belagavi,NH-48,480,"",first release; distance approximate
+R11,Kurnool,Kurnool,Bengaluru,Devanahalli,NH-44,330,"",first release; distance approximate
+R12,Bengaluru,Devanahalli,Kurnool,Kurnool,NH-44,330,"",first release; distance approximate
+R13,Agra,Agra,Kanpur,Kanpur,NH-19,285,"",first release; distance approximate
+R14,Kanpur,Kanpur,Agra,Agra,NH-19,285,"",first release; distance approximate
