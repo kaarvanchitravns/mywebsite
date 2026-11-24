@@ -55,7 +55,7 @@
     <div class="wrap">
       <p class="eyebrow eyebrow--dark">KAARVAN Toll Meter</p>
       <h1 class="display">Know the toll before the truck leaves the yard.</h1>
-      <p class="lede">Toll Meter shows every toll plaza on your route, what each one charges for your vehicle, and what the route costs you in a month.</p>
+      <p class="lede">Toll Meter shows every toll plaza between any two places in India, what each one charges for your vehicle, and what the route costs you in a month.</p>
     </div>
   </header>
   <hr class="road road--marker">
@@ -64,7 +64,7 @@
     <div class="wrap">
       <div class="section-head toll-head"><h2 class="display">How to start</h2></div>
       <ol class="toll-steps">
-        <li><b>Pick the route.</b> Type the city where the trip starts in <em>From</em> and choose it from the suggestions, then do the same for where it ends in <em>To</em>.</li>
+        <li><b>Pick the route.</b> Type the city or town where the trip starts in <em>From</em> and choose it from the suggestions, then do the same for where it ends in <em>To</em>. Any two places in India work.</li>
         <li><b>Pick the vehicle class.</b> Toll is charged by axles, not wheels. A 6-wheeler is a 2-axle truck, a 10-wheeler is 3-axle, a 12-, 14- or 16-wheeler is 4&ndash;6 axle, and long trailers with seven or more axles are 7+ axle.</li>
         <li><b>Pick the trip.</b> <em>Single</em> for one way. <em>Return in 24 h</em> if the truck comes back through the same plazas within 24 hours, which is cheaper than two single trips.</li>
         <li><b>Read the toll.</b> The total, every plaza on the way, the cost per km and the monthly cost for the trips you enter.</li>
@@ -73,8 +73,8 @@
       <div class="toll-app" id="tollApp">
         <form class="toll-form" id="tollForm" onsubmit="return false">
           <div class="toll-pair">
-            <div class="field"><label for="tollFrom">From</label><select id="tollFrom"></select></div>
-            <div class="field"><label for="tollTo">To</label><select id="tollTo"></select></div>
+            <div class="field"><label for="tollFromBox">From</label><input id="tollFromBox" class="toll-combo__in" type="text" placeholder="Type a city or town" autocomplete="off" spellcheck="false"></div>
+            <div class="field"><label for="tollToBox">To</label><input id="tollToBox" class="toll-combo__in" type="text" placeholder="Type a city or town" autocomplete="off" spellcheck="false"></div>
           </div>
           <fieldset class="toll-fieldset">
             <legend>Vehicle class</legend>
@@ -110,6 +110,7 @@
               <div class="toll-stat"><p class="toll-k">Per km</p><b id="tollPerKm">&ndash;</b></div>
               <div class="toll-stat"><p class="toll-k" id="tollMonthlyLbl">Monthly</p><b id="tollMonthly">&ndash;</b></div>
             </div>
+            <p class="toll-missing" id="tollMissing" hidden></p>
             <ol class="toll-list" id="tollList" aria-label="Toll plazas on this route"></ol>
             <div class="toll-cta">
               <b>Running this route every week?</b>
@@ -121,6 +122,7 @@
       </div>
       <div class="toll-disclaimer" role="note">
         <p><b>Disclaimer:</b> Toll Meter provides indicative toll fare estimates based on independently sourced information for general reference only. Actual toll charges may vary depending on prevailing rates, vehicle category, passes, exemptions and other applicable conditions. Users are advised to verify the charges with the respective toll plaza or road authority. These estimates shall not be used for commercial transactions, billing, invoicing or any legal or financial purpose. KAARVAN does not guarantee the accuracy or completeness of the information.</p>
+        <p class="toll-credit">Place names from <a href="https://www.geonames.org/" rel="noopener">GeoNames</a> (CC BY 4.0). Road routes &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors.</p>
       </div>
     </div>
   </section>
