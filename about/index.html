@@ -28,8 +28,9 @@
 <link rel="manifest" href="../site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@500&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/v2.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://kaarvan.in/#local",
 "name":"KAARVAN","parentOrganization":{"@id":"https://kaarvan.in/#organization"},
@@ -40,55 +41,56 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav class="nav">
-  <div class="wrap nav__in">
-    <a class="brand" href="../index.html"><img src="../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></a>
-    <ul class="nav__links">
-      <li><a href="../about/index.html" aria-current="page">About</a></li>
-      <li><a href="../products/index.html">Products</a></li>
-      <li><a href="../solutions/index.html">Solutions</a></li>
-      <li><a href="../partners/index.html">Partners</a></li>
-      <li><a href="../milepost/index.html">The Milepost</a></li>
-      <li class="nav__tool-item"><a class="nav__tool" href="../toll-calculator/index.html"><svg class="nav__tool-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8.5 7.5h7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9" cy="12.5" r="1.25" fill="currentColor"/><circle cx="15" cy="12.5" r="1.25" fill="currentColor"/><circle cx="9" cy="16.5" r="1.25" fill="currentColor"/><circle cx="15" cy="16.5" r="1.25" fill="currentColor"/></svg><span>Toll Calculator</span></a></li>
-      <li class="nav__cta-item"><a class="nav__cta" href="../contact/index.html">Talk to KAARVAN</a></li>
-    </ul>
+<nav class="v-nav" aria-label="Main">
+  <div class="v-wrap v-nav__in">
+    <a class="v-nav__brand" href="../index.html"><img src="../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></a>
+    <ul class="v-nav__links"><li><a href="../about/index.html" aria-current="page">About</a></li><li><a href="../products/index.html">Products</a></li><li><a href="../solutions/index.html">Solutions</a></li><li><a href="../partners/index.html">Partners</a></li><li><a href="../milepost/index.html">The Milepost</a></li></ul>
+    <div class="v-nav__acts">
+      <a class="v-nav__tool" href="../toll-calculator/index.html"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7.5h7"/><path d="M9 12.5h.01M15 12.5h.01M9 16.5h.01M15 16.5h.01"/></svg><span>Toll Calculator</span></a>
+      <a class="v-nav__cta v-nav__cta--bar" href="../contact/index.html">Talk to KAARVAN</a>
+      <details class="v-menu"><summary aria-label="Open menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+        <div class="v-menu__panel"><a href="../about/index.html" aria-current="page">About</a><a href="../products/index.html">Products</a><a href="../solutions/index.html">Solutions</a><a href="../partners/index.html">Partners</a><a href="../milepost/index.html">The Milepost</a><a href="../contact/index.html">Contact</a><a class="v-nav__cta" href="../contact/index.html">Talk to KAARVAN</a></div>
+      </details>
+    </div>
   </div>
 </nav>
 <main id="main">
 
-  <header class="phero">
-    <div class="wrap">
-      <h1 class="display">Moving India's commercial vehicles.</h1>
-      <p class="lede">KAARVAN is building one connected platform for the trucks, fleets and transporters that move the country.</p>
+  <header class="v-phero">
+    <div class="v-wrap v-stack">
+      <p class="v-eyebrow">About KAARVAN</p>
+      <h1 class="v-h1" style="max-width:960px">Moving India&rsquo;s commercial vehicles.</h1>
+      <p class="v-lede">KAARVAN is building one connected platform for the trucks, fleets and transporters that move the country.</p>
     </div>
   </header>
-  <hr class="road road--marker">
 
-  <section>
-    <div class="wrap prose">
-      <p class="lede">India's roads are connected. Its fleets mostly are not.</p>
-      <p>A truck owner pays tolls through one company, tracks his vehicle through another, buys a dashcam from a third, and keeps the account of what each trip earned in a notebook. Four relationships, four support numbers, and no single place where a payment, a location and an expense describe the same vehicle.</p>
-      <p>KAARVAN exists to close that gap. We build the hardware that goes on the vehicle and the software that makes sense of what it sends back &mdash; tolling, tracking, safety and the trip account, on one platform, from one team.</p>
-      <h2 class="prose-h">How we build</h2>
-      <p>The hardware is ready to fit and the platform is built and under test. We bring fleets on carefully, one at a time, so that nothing they depend on breaks while they move to us.</p>
-      <p>Everything we publish about the product is something you can see for yourself in these pages. Where we quote a figure, it carries a source.</p>
+  <section class="v-sec">
+    <div class="v-wrap v-row" style="align-items:flex-start">
+      <h2 class="v-h2" style="flex:1 1 380px">India&rsquo;s roads are connected. Its fleets mostly are not.</h2>
+      <div class="v-stack" style="flex:1 1 520px;font-size:1.08rem;line-height:1.7;color:rgba(11,16,38,.75)">
+        <p style="margin:0">A truck owner pays tolls through one company, tracks his vehicle through another, buys a dashcam from a third, and keeps the account of what each trip earned in a notebook. Four relationships, four support numbers, and no single place where a payment, a location and an expense describe the same vehicle.</p>
+        <p style="margin:0">KAARVAN exists to close that gap. We build the hardware that goes on the vehicle and the software that makes sense of what it sends back: tolling, tracking, safety and the trip account, on one platform, from one team.</p>
+        <div class="v-grid v-grid--2" style="margin-top:.5rem">
+          <div class="v-card"><p style="font-weight:600;color:var(--ink2)">How we build</p><p class="v-card__body">The hardware is ready to fit and the platform is built and under test. We bring fleets on one at a time, so nothing they depend on breaks while they move to us.</p></div>
+          <div class="v-card"><p style="font-weight:600;color:var(--ink2)">What we publish</p><p class="v-card__body">Everything we say about the product is something you can see in these pages. Where we quote a figure, it carries a source.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="mid on-dark" id="problem">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">The problem we are building for</h2>
-      </div>
+  <section class="v-sec v-mid" id="problem">
+    <div class="v-wrap">
       <div class="problem">
-      <div class="prose">
-        <p class="lede">India moves on roughly 12.5 million trucks, and about three and a half million people own them. Three out of four own fewer than five. Only one in ten owns more than ten.</p>
-        <p>These are not companies with software. The trip is agreed on a phone call, the expense is a receipt in the glovebox, the driver&rsquo;s balance is a page in a notebook, and the customer&rsquo;s bill is written by hand. Fewer than two operators in a hundred use any digital freight platform at all.</p>
-        <p>It is not that they do not want the tools. It is that the tools were built for fleets of two hundred, in English, for someone sitting at a desk. Fuel alone is about half the freight rate, so a trip whose real cost nobody worked out is a trip that may have lost money.</p>
-        <p>That is what Safar Khata is for: the account behind the trip, on the phone the owner already has, in the language he already speaks.</p>
-      </div>
-      <div class="glovebox-wrap">
-      <div class="glovebox" role="img" aria-label="Illustration: a notebook page of trip expenses ending in a question mark where the profit should be, a toll receipt, a card showing three missed calls from a transporter, and a note that three in four truck owners run fewer than five trucks on paper and phone calls.">
+        <div class="v-stack" style="max-width:640px">
+          <p class="v-eyebrow">The problem</p>
+          <h2 class="v-h2">The problem we are building for</h2>
+          <p style="margin:0;font-size:1.3rem;line-height:1.5;color:#fff">India moves on roughly 12.5 million trucks, and about three and a half million people own them. Three out of four own fewer than five. Only one in ten owns more than ten.</p>
+          <p class="v-muted" style="margin:0;font-size:1.05rem;line-height:1.7">These are not companies with software. The trip is agreed on a phone call, the expense is a receipt in the glovebox, the driver&rsquo;s balance is a page in a notebook, and the customer&rsquo;s bill is written by hand. Fewer than two operators in a hundred use any digital freight platform at all.</p>
+          <p class="v-muted" style="margin:0;font-size:1.05rem;line-height:1.7">It is not that they do not want the tools. It is that the tools were built for fleets of two hundred, in English, for someone sitting at a desk. Fuel alone is about half the freight rate, so a trip whose real cost nobody worked out is a trip that may have lost money.</p>
+          <p class="v-muted" style="margin:0;font-size:1.05rem;line-height:1.7">That is what Safar Khata is for: the account behind the trip, on the phone the owner already has, in the language he already speaks.</p>
+        </div>
+        <div class="glovebox-wrap">
+        <div class="glovebox" role="img" aria-label="Illustration: a notebook page of trip expenses ending in a question mark where the profit should be, toll deduction alerts on the phone, a card showing three missed calls from a transporter, and a note that three in four truck owners run fewer than five trucks on paper and phone calls.">
         <div class="gb-note" aria-hidden="true">
           <p class="gb-note__h">Trip &mdash; Surat &rarr; Indore</p>
           <p class="gb-note__sub">14 Nov &middot; MH-04 &middot; Ramesh</p>
@@ -100,13 +102,10 @@
           <p class="gb-row"><span>Bhada (baaki)</span><span>42,000</span></p>
           <p class="gb-row gb-row--total"><span>Kamai?</span><span class="gb-circle">???</span></p>
         </div>
-        <div class="gb-receipt" aria-hidden="true">
-          <p class="gb-receipt__h">TOLL PLAZA RECEIPT</p>
-          <p>Lane 06 &middot; 05:42</p>
-          <p>Class: MAV 3-axle</p>
-          <p>Mode: Cash</p>
-          <p class="gb-receipt__amt"><span>AMOUNT</span><span>&#8377; 585</span></p>
-          <p class="gb-receipt__foot">keep for records</p>
+        <div class="gb-alerts" aria-hidden="true">
+          <div class="gb-alert"><p class="gb-alert__h"><b>TAG ALERT</b><span>05:42</span></p><p class="gb-alert__t">&#8377;585 debited from tag on MH-04 at a toll plaza. Bal &#8377;1,240</p></div>
+          <div class="gb-alert"><p class="gb-alert__h"><b>TAG ALERT</b><span>07:18</span></p><p class="gb-alert__t">&#8377;310 debited from tag on MH-04. Bal &#8377;930</p></div>
+          <div class="gb-alert gb-alert--warn"><p class="gb-alert__h"><b>TAG ALERT</b><span>09:05</span></p><p class="gb-alert__t"><b>Low balance</b> on MH-04. Recharge or pay double toll.</p></div>
         </div>
         <div class="gb-call" aria-hidden="true">
           <span class="gb-call__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
@@ -117,57 +116,31 @@
           <span>truck owners run fewer than five trucks, on paper and phone calls</span>
         </div>
       </div>
+        </div>
       </div>
-      </div>
-      <ul class="caps stat-list">
-        <li><b>~12.5 million trucks, ~3.5 million operators</b><span>Redseer</span></li>
-        <li><b>~75% of operators own fewer than five trucks; only ~10% own more than ten</b><span>NITI Aayog / NTDPC</span></li>
-        <li><b>Under 2% of operators use any digital freight platform</b><span>Redseer</span></li>
-        <li><b>Fuel is about 50% of the freight rate</b><span>CRISIL</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="dark on-dark">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">Built around the way India moves</h2>
-        <p>Five principles behind every product, device and screen we build.</p>
-      </div>
-      <div class="grid-items">
-        <div class="grid-item">
-          <h3>Connected</h3>
-          <p>Payments, tracking, safety and fleet operations working together.</p>
-        </div>
-        <div class="grid-item">
-          <h3>Informed</h3>
-          <p>Vehicle data turned into alerts, reports and operational insight.</p>
-        </div>
-        <div class="grid-item">
-          <h3>Secure</h3>
-          <p>Payments and vehicle data handled with security as a design priority.</p>
-        </div>
-        <div class="grid-item">
-          <h3>Scalable</h3>
-          <p>Built for one vehicle or thousands.</p>
-        </div>
-        <div class="grid-item">
-          <h3>India-first</h3>
-          <p>Designed around Indian roads, fleets and commercial vehicle operators.</p>
-        </div>
+      <div class="v-hair v-grid--4" style="margin-top:clamp(3rem,6vw,4rem)">
+        <div><p class="v-stat__n" style="font-size:2rem;color:#fff">~12.5M</p><span>trucks, ~3.5 million operators &middot; Redseer</span></div>
+        <div><p class="v-stat__n" style="font-size:2rem;color:#fff">~75%</p><span>of operators own fewer than five trucks; ~10% own more than ten &middot; NITI Aayog / NTDPC</span></div>
+        <div><p class="v-stat__n" style="font-size:2rem;color:#fff">&lt;2%</p><span>use any digital freight platform &middot; Redseer</span></div>
+        <div><p class="v-stat__n" style="font-size:2rem;color:#fff">~50%</p><span>of the freight rate is fuel &middot; CRISIL</span></div>
       </div>
     </div>
   </section>
 
-  <section class="band on-dark">
-    <div class="wrap band__in">
-      <div>
-        <h2 class="display">Come and see it working.</h2>
-        <p>We will show you the platform on your own vehicles, in Alwar or wherever you operate.</p>
-      </div>
-      <a class="btn" href="../contact/index.html">Talk to KAARVAN</a>
+  <section class="v-sec">
+    <div class="v-wrap">
+      <div class="v-head"><div><h2 class="v-h2">Built around the way India moves</h2></div><p class="v-muted">Five principles behind every product, device and screen we build.</p></div>
+      <div class="v-grid v-grid--5"><div class="v-card"><p class="v-stat__src" style="margin:0!important;color:var(--orange-text);font-family:var(--font-serif);font-size:1rem">01</p><p class="v-card__title" style="margin-top:1rem;font-family:var(--font-sans);font-weight:600;font-size:1.15rem">Connected</p><p class="v-card__body">Payments, tracking, safety and fleet operations working together.</p></div><div class="v-card"><p class="v-stat__src" style="margin:0!important;color:var(--orange-text);font-family:var(--font-serif);font-size:1rem">02</p><p class="v-card__title" style="margin-top:1rem;font-family:var(--font-sans);font-weight:600;font-size:1.15rem">Informed</p><p class="v-card__body">Vehicle data turned into alerts, reports and operational insight.</p></div><div class="v-card"><p class="v-stat__src" style="margin:0!important;color:var(--orange-text);font-family:var(--font-serif);font-size:1rem">03</p><p class="v-card__title" style="margin-top:1rem;font-family:var(--font-sans);font-weight:600;font-size:1.15rem">Secure</p><p class="v-card__body">Payments and vehicle data handled with security as a design priority.</p></div><div class="v-card"><p class="v-stat__src" style="margin:0!important;color:var(--orange-text);font-family:var(--font-serif);font-size:1rem">04</p><p class="v-card__title" style="margin-top:1rem;font-family:var(--font-sans);font-weight:600;font-size:1.15rem">Scalable</p><p class="v-card__body">Built for one vehicle or thousands.</p></div><div class="v-card"><p class="v-stat__src" style="margin:0!important;color:var(--orange-text);font-family:var(--font-serif);font-size:1rem">05</p><p class="v-card__title" style="margin-top:1rem;font-family:var(--font-sans);font-weight:600;font-size:1.15rem">India-first</p><p class="v-card__body">Designed around Indian roads, fleets and commercial vehicle operators.</p></div></div>
     </div>
   </section>
+
+  <section class="v-sec">
+    <div class="v-wrap"><div class="v-cta">
+      <div><h2>Come and see it working.</h2><p>We will show you the platform on your own vehicles, in Alwar or wherever you operate.</p></div>
+      <a class="v-btn v-btn--dark" href="../contact/index.html">Talk to KAARVAN</a>
+    </div></div>
+  </section>
+
 </main>
 
   <div class="luma">
@@ -221,52 +194,39 @@
       <span class="luma__label">Chat with LUMA</span>
     </label>
   </div>
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <p class="foot__brand"><img src="../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></p>
-        <p class="foot__tag">Connecting every mile of India.</p>
+<footer class="v-foot">
+  <div class="v-wrap">
+    <div class="v-foot__top">
+      <div class="v-foot__brand">
+        <img src="../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160">
+        <p class="v-foot__tag">Connecting every mile of India.</p>
+        <a class="v-foot__mail" href="mailto:sales@kaarvan.in">sales@kaarvan.in</a>
+        <address class="v-foot__addr">Kaarvan Mobility, Dhabai Complex<br>Alwar, Rajasthan 301001</address>
       </div>
-      <div>
-        <h2>Products</h2>
-        <ul>
-          <li><a href="../products/index.html#fastag">FASTag</a></li>
-          <li><a href="../products/index.html#gps">GPS</a></li>
-          <li><a href="../products/index.html#dashcam">AI Dashcam</a></li>
-          <li><a href="../products/index.html#safar-khata">Safar Khata</a></li>
-        </ul>
+      <div class="v-foot__col"><h2>Products</h2>
+        <a href="../products/safar-khata/index.html">Safar Khata</a>
+        <a href="../products/gps/index.html">GPS</a>
+        <a href="../products/dashcam/index.html">AI Dashcam</a>
+        <a href="../products/fastag/index.html">Toll Manager</a>
+        <a href="../toll-calculator/index.html">Toll Calculator</a>
       </div>
-      <div>
-        <h2>Company</h2>
-        <ul>
-          <li><a href="../about/index.html">About KAARVAN</a></li>
-          <li><a href="../solutions/index.html">Who it is for</a></li>
-          <li><a href="../products/index.html#how-built">Platform</a></li>
-          <li><a href="../partners/index.html">Partners</a></li>
-          <li><a href="../contact/index.html#share-idea">Share your idea</a></li>
-        </ul>
+      <div class="v-foot__col"><h2>Company</h2>
+        <a href="../about/index.html">About KAARVAN</a>
+        <a href="../solutions/index.html">Who it is for</a>
+        <a href="../products/index.html#how-built">Platform</a>
+        <a href="../partners/index.html">Partners</a>
+        <a href="../milepost/index.html">The Milepost</a>
       </div>
-      <div>
-        <h2>Customers</h2>
-        <ul>
-          <li>KAARVAN One</li>
-          <li class="foot__muted">Sign-in opening shortly</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <ul>
-          <li><a href="../contact/index.html">Send an enquiry</a></li>
-          <li><a href="mailto:sales@kaarvan.in">sales@kaarvan.in</a></li>
-          <li>Alwar, Rajasthan</li>
-        </ul>
+      <div class="v-foot__col"><h2>Customers</h2>
+        <span>KAARVAN One</span>
+        <span class="v-foot__muted">Sign-in opening shortly</span>
+        <a href="../contact/index.html">Send an enquiry</a>
+        <a href="../contact/index.html#share-idea">Share your idea</a>
       </div>
     </div>
-    <div class="foot__base">
+    <div class="v-foot__base">
       <span>&copy; 2026 Kaarvan Mobility. All rights reserved.</span>
-      <span class="foot__legal"><a href="../privacy/index.html">Privacy notice</a> <a href="../terms/index.html">Terms of use</a></span>
-      <span>Dhabai Complex, Alwar, Rajasthan 301001</span>
+      <span><a href="../privacy/index.html">Privacy notice</a><a href="../terms/index.html">Terms of use</a></span>
     </div>
   </div>
 </footer>

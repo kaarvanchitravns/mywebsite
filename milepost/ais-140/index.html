@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/v2.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AIS-140 explained: which vehicles need a VLTD, and what it must do","description":"What AIS-140 is, which commercial vehicles must carry a VLTD, what the device has to do, and why a 2026 Supreme Court direction has made it a permit and fitness issue.","datePublished":"2026-11-20","dateModified":"2026-11-20","image":"https://kaarvan.in/assets/og-kaarvan.jpg","author":{"@type":"Organization","name":"KAARVAN","url":"https://kaarvan.in/"},"publisher":{"@id":"https://kaarvan.in/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kaarvan.in/milepost/ais-140/"},"isAccessibleForFree":true}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is AIS-140 mandatory?","acceptedAnswer":{"@type":"Answer","text":"Yes, for every category the central rules cover: public service vehicles registered from 1 January 2019, national permit goods carriers, and N2 and N3 vehicles carrying hazardous goods. States notify their own dates for older vehicles and enforce the rule themselves, so check with the RTO where the vehicle is registered."}},{"@type":"Question","name":"What is the difference between a VLTD and an ordinary GPS tracker?","acceptedAnswer":{"@type":"Answer","text":"A VLTD is type-approved against AIS-140, supports NavIC as well as GPS, carries emergency buttons and reports to a state-approved backend. An ordinary tracker reports only to a private app and cannot be made compliant by relabelling."}},{"@type":"Question","name":"What happens if my vehicle does not have one?","acceptedAnswer":{"@type":"Answer","text":"Since a May 2026 Supreme Court direction, a public service vehicle cannot be granted a fitness certificate or permit unless its VLTD and emergency buttons are verified on VAHAN."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kaarvan.in/"},{"@type":"ListItem","position":2,"name":"The Milepost","item":"https://kaarvan.in/milepost/"},{"@type":"ListItem","position":3,"name":"AIS-140 and VLTDs","item":"https://kaarvan.in/milepost/ais-140/"}]}</script>
@@ -37,18 +38,17 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <body>
-<nav class="nav">
-  <div class="wrap nav__in">
-    <a class="brand" href="../../index.html"><img src="../../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></a>
-    <ul class="nav__links">
-      <li><a href="../../about/index.html">About</a></li>
-      <li><a href="../../products/index.html">Products</a></li>
-      <li><a href="../../solutions/index.html">Solutions</a></li>
-      <li><a href="../../partners/index.html">Partners</a></li>
-      <li><a href="../../milepost/index.html" aria-current="page">The Milepost</a></li>
-      <li class="nav__tool-item"><a class="nav__tool" href="../../toll-calculator/index.html"><svg class="nav__tool-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8.5 7.5h7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9" cy="12.5" r="1.25" fill="currentColor"/><circle cx="15" cy="12.5" r="1.25" fill="currentColor"/><circle cx="9" cy="16.5" r="1.25" fill="currentColor"/><circle cx="15" cy="16.5" r="1.25" fill="currentColor"/></svg><span>Toll Calculator</span></a></li>
-      <li class="nav__cta-item"><a class="nav__cta" href="../../contact/index.html">Talk to KAARVAN</a></li>
-    </ul>
+<nav class="v-nav" aria-label="Main">
+  <div class="v-wrap v-nav__in">
+    <a class="v-nav__brand" href="../../index.html"><img src="../../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></a>
+    <ul class="v-nav__links"><li><a href="../../about/index.html">About</a></li><li><a href="../../products/index.html">Products</a></li><li><a href="../../solutions/index.html">Solutions</a></li><li><a href="../../partners/index.html">Partners</a></li><li><a href="../../milepost/index.html" aria-current="page">The Milepost</a></li></ul>
+    <div class="v-nav__acts">
+      <a class="v-nav__tool" href="../../toll-calculator/index.html"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7.5h7"/><path d="M9 12.5h.01M15 12.5h.01M9 16.5h.01M15 16.5h.01"/></svg><span>Toll Calculator</span></a>
+      <a class="v-nav__cta v-nav__cta--bar" href="../../contact/index.html">Talk to KAARVAN</a>
+      <details class="v-menu"><summary aria-label="Open menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+        <div class="v-menu__panel"><a href="../../about/index.html">About</a><a href="../../products/index.html">Products</a><a href="../../solutions/index.html">Solutions</a><a href="../../partners/index.html">Partners</a><a href="../../milepost/index.html" aria-current="page">The Milepost</a><a href="../../contact/index.html">Contact</a><a class="v-nav__cta" href="../../contact/index.html">Talk to KAARVAN</a></div>
+      </details>
+    </div>
   </div>
 </nav>
 
@@ -201,52 +201,39 @@
       <span class="luma__label">Chat with LUMA</span>
     </label>
   </div>
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <p class="foot__brand"><img src="../../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></p>
-        <p class="foot__tag">Connecting every mile of India.</p>
+<footer class="v-foot">
+  <div class="v-wrap">
+    <div class="v-foot__top">
+      <div class="v-foot__brand">
+        <img src="../../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160">
+        <p class="v-foot__tag">Connecting every mile of India.</p>
+        <a class="v-foot__mail" href="mailto:sales@kaarvan.in">sales@kaarvan.in</a>
+        <address class="v-foot__addr">Kaarvan Mobility, Dhabai Complex<br>Alwar, Rajasthan 301001</address>
       </div>
-      <div>
-        <h2>Products</h2>
-        <ul>
-          <li><a href="../../products/index.html#fastag">FASTag</a></li>
-          <li><a href="../../products/index.html#gps">GPS</a></li>
-          <li><a href="../../products/index.html#dashcam">AI Dashcam</a></li>
-          <li><a href="../../products/index.html#safar-khata">Safar Khata</a></li>
-        </ul>
+      <div class="v-foot__col"><h2>Products</h2>
+        <a href="../../products/safar-khata/index.html">Safar Khata</a>
+        <a href="../../products/gps/index.html">GPS</a>
+        <a href="../../products/dashcam/index.html">AI Dashcam</a>
+        <a href="../../products/fastag/index.html">Toll Manager</a>
+        <a href="../../toll-calculator/index.html">Toll Calculator</a>
       </div>
-      <div>
-        <h2>Company</h2>
-        <ul>
-          <li><a href="../../about/index.html">About KAARVAN</a></li>
-          <li><a href="../../solutions/index.html">Who it is for</a></li>
-          <li><a href="../../products/index.html#how-built">Platform</a></li>
-          <li><a href="../../partners/index.html">Partners</a></li>
-          <li><a href="../../contact/index.html#share-idea">Share your idea</a></li>
-        </ul>
+      <div class="v-foot__col"><h2>Company</h2>
+        <a href="../../about/index.html">About KAARVAN</a>
+        <a href="../../solutions/index.html">Who it is for</a>
+        <a href="../../products/index.html#how-built">Platform</a>
+        <a href="../../partners/index.html">Partners</a>
+        <a href="../../milepost/index.html">The Milepost</a>
       </div>
-      <div>
-        <h2>Customers</h2>
-        <ul>
-          <li>KAARVAN One</li>
-          <li class="foot__muted">Sign-in opening shortly</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <ul>
-          <li><a href="../../contact/index.html">Send an enquiry</a></li>
-          <li><a href="mailto:sales@kaarvan.in">sales@kaarvan.in</a></li>
-          <li>Alwar, Rajasthan</li>
-        </ul>
+      <div class="v-foot__col"><h2>Customers</h2>
+        <span>KAARVAN One</span>
+        <span class="v-foot__muted">Sign-in opening shortly</span>
+        <a href="../../contact/index.html">Send an enquiry</a>
+        <a href="../../contact/index.html#share-idea">Share your idea</a>
       </div>
     </div>
-    <div class="foot__base">
+    <div class="v-foot__base">
       <span>&copy; 2026 Kaarvan Mobility. All rights reserved.</span>
-      <span class="foot__legal"><a href="../../privacy/index.html">Privacy notice</a> <a href="../../terms/index.html">Terms of use</a></span>
-      <span>Dhabai Complex, Alwar, Rajasthan 301001</span>
+      <span><a href="../../privacy/index.html">Privacy notice</a><a href="../../terms/index.html">Terms of use</a></span>
     </div>
   </div>
 </footer>
