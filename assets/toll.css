@@ -1,4 +1,4 @@
-/* Toll Meter (toll-meter/). Uses the tokens and card patterns in site.css. */
+/* Toll Calculator (toll-calculator/). Uses the tokens and card patterns in site.css. */
 .toll-banner{background:#FFF8F1;border:1px solid #F6D7B4;color:var(--ink);border-radius:var(--r-md);
   padding:.8rem 1rem;font-size:var(--t-small);margin:0 0 1.25rem;max-width:none}
 .toll-banner[hidden],.toll-error[hidden]{display:none}
