@@ -28,7 +28,7 @@
 <link rel="manifest" href="../../site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/site.css">
 <link rel="stylesheet" href="../../assets/v2.css">
 <script type="application/ld+json">
@@ -52,55 +52,69 @@
 </nav>
 <main id="main">
 
-  <header class="phero">
-    <div class="wrap">
-      <p class="crumb"><a class="inline-link" href="../../products/index.html">Products</a> &rsaquo; AI Dashcam</p>
-      <h1 class="display">KAARVAN AI Dashcam</h1>
-      <p class="prodpage__cap">Road Intelligence</p>
-      <p class="lede">See what happens on the road.</p>
+  <header class="v-prodhero">
+    <div class="v-wrap v-row">
+      <div class="v-prodhero__copy">
+        <p class="v-crumb"><a href="../index.html">Products</a> &rsaquo; AI Dashcam</p>
+        <div class="v-btns" style="gap:.5rem"><span class="v-tag v-tag--glass">Road Intelligence</span></div>
+        <h1 class="v-h1">KAARVAN AI Dashcam</h1>
+        <p class="v-prodhero__tagline">See what happens on the road.</p>
+        <p class="v-lede">Road-facing video with event detection, so you have evidence after an incident and a record of how your vehicles are actually being driven.</p>
+        <div class="v-btns" style="padding-top:.25rem"><a class="v-btn v-btn--primary" href="../../contact/index.html">Enquire about AI Dashcam</a><a class="v-btn v-btn--ghost" href="#does">What it does</a></div>
+      </div>
+      <div class="v-prodhero__shot v-prodhero__shot--wide"><div class="v-dashcam__view v-dashcam__view--hero" role="img" aria-label="Dashcam view of a highway with a harsh braking alert">
+          <span class="v-dashcam__rec"><i></i>REC &middot; MH-04 &middot; 62 km/h</span><span class="v-dashcam__time">05:42:18</span>
+          <span class="v-dashcam__alert"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#000B2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></i><span><b>Harsh braking detected</b><small>Clip saved to the trip &middot; driver notified</small></span></span>
+        </div></div>
     </div>
   </header>
-  <hr class="road road--marker">
 
-  <section>
-    <div class="wrap prodpage">
-      <div class="prodpage__body">
-        <p>Road-facing video with event detection, so you have evidence after an incident and a record of how your vehicles are actually being driven.</p>
-        <p>Fitted alongside the GPS device, so the video and the location describe the same vehicle on the same platform.</p>
-        <p class="prodpage__cta"><a class="btn" href="../../contact/index.html">Enquire about AI Dashcam</a></p>
-      </div>
-      <figure class="prodpage__shot">
-        <img src="../../assets/devices/dashcam.webp" alt="KAARVAN AI dashcam" width="571" height="620">
+  <section class="v-sec" style="padding-bottom:0">
+    <div class="v-wrap"><div class="v-feature v-row">
+      <div class="v-feature__media"><figure class="v-device"><img src="../../assets/devices/ai-dashcam.webp" alt="KAARVAN AI dashcam with windshield mount" width="1600" height="900" loading="lazy"><figcaption>Product render. Final hardware may differ in finish.</figcaption></figure></div>
+      <div class="v-feature__copy">
+        <div class="v-stack" style="gap:.9rem"><p class="v-eyebrow">The device</p><h2 class="v-h2">Fitted alongside the GPS device</h2>
+        <p class="v-muted" style="margin:0;font-size:1.05rem;line-height:1.65">So the video and the location describe the same vehicle on the same platform. When something happens, the clip is already attached to the trip.</p></div>
+        <div class="v-pairs"><div><b>Road-facing video</b><span>recording every trip</span></div><div><b>Event detection</b><span>events flagged automatically, with the clip saved</span></div><div><b>Incident evidence</b><span>retrievable after the fact, from the dashboard</span></div><div><b>Driver behaviour</b><span>signals over time, per driver</span></div></div>
         
-      </figure>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="v-sec" style="padding-bottom:0;padding-top:1.25rem">
+    <div class="v-wrap"><div class="v-monitor">
+      <figure><img src="../../assets/art/driver-monitoring.webp" alt="Cabin camera view of a truck driver at the wheel: face tracked, eyes on road, seatbelt fastened, no phone use, captured by the KAARVAN AI Dashcam" width="1607" height="979" loading="lazy"></figure>
+      <div class="v-stack">
+        <p class="v-eyebrow">Driver monitoring</p>
+        <h2 class="v-h2" style="font-size:clamp(1.9rem,1.4rem + 1.6vw,2.6rem)">Watching the road, and the driver</h2>
+        <p class="v-muted" style="margin:0;font-size:1.05rem;line-height:1.65">A cabin-facing view shows how the vehicle is actually being driven, day or night: eyes on the road, seatbelt fastened, phone down.</p>
+        <div class="v-hair">
+          <div><b>Distraction and fatigue</b><span>flagged as events, with the clip saved</span></div>
+          <div><b>Infrared for night driving</b><span>the view works in a dark cabin</span></div>
+          <div><b>Behaviour over time</b><span>signals per driver, for fair conversations</span></div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="v-sec v-dark" id="does" style="margin-top:clamp(4.5rem,9vw,7.5rem)">
+    <div class="v-wrap">
+      <div class="v-head"><div><h2 class="v-h2">What it does</h2></div></div>
+      <div class="v-hair v-grid--3"><div><b>Video recording</b><span>road-facing</span></div><div><b>Event detection</b><span>flagged automatically</span></div><div><b>Driver behaviour</b><span>signals over time</span></div><div><b>Incident evidence</b><span>retrievable after the fact</span></div><div><b>Remote monitoring</b><span>from the dashboard</span></div><div><b>Same platform</b><span>video, location and trip on one vehicle</span></div></div>
     </div>
   </section>
 
-
-  <section class="light">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">What it does</h2>
-      </div>
-      <ul class="caps">
-          <li><b>Video recording</b><span>road-facing</span></li>
-          <li><b>Event detection</b><span>flagged automatically</span></li>
-          <li><b>Driver behaviour</b><span>signals over time</span></li>
-          <li><b>Incident evidence</b><span>retrievable after the fact</span></li>
-          <li><b>Remote monitoring</b><span>from the dashboard</span></li>
-      </ul>
-      <p class="note"><a class="inline-link" href="../../products/index.html#stack">How this fits the rest of the platform</a></p>
+  <section class="v-sec">
+    <div class="v-wrap">
+      <div class="v-head"><div><h2 class="v-h2">How this fits the rest of the platform</h2></div><p class="v-muted">The payment, the location and the safety event all describe the same vehicle, on one platform.</p></div>
+      <div class="v-grid v-grid--3"><a class="v-card" href="../safar-khata/index.html"><p class="v-card__title" style="font-size:1.4rem">KAARVAN Safar Khata</p><p class="v-card__body">The trip account: tolls, kilometres and bills land on the trip.</p><p class="v-card__foot" style="font-weight:600;font-size:.92rem">Explore &rarr;</p></a><a class="v-card" href="../gps/index.html"><p class="v-card__title" style="font-size:1.4rem">KAARVAN GPS</p><p class="v-card__body">Location and trip history for every vehicle.</p><p class="v-card__foot" style="font-weight:600;font-size:.92rem">Explore &rarr;</p></a><a class="v-card" href="../fastag/index.html"><p class="v-card__title" style="font-size:1.4rem">KAARVAN Toll Manager</p><p class="v-card__body">One fleet wallet for every tag.</p><p class="v-card__foot" style="font-weight:600;font-size:.92rem">Explore &rarr;</p></a></div>
     </div>
   </section>
-
-  <section class="band on-dark">
-    <div class="wrap band__in">
-      <div>
-        <h2 class="display">Ready to put AI Dashcam on your vehicles?</h2>
-        <p>Tell us what you run and we will tell you what applies.</p>
-      </div>
-      <a class="btn" href="../../contact/index.html">Talk to KAARVAN</a>
-    </div>
+  <section class="v-sec">
+    <div class="v-wrap"><div class="v-cta">
+      <div><h2>Ready to put AI Dashcam on your vehicles?</h2><p>Tell us what you run and we will tell you what applies.</p></div>
+      <a class="v-btn v-btn--dark" href="../../contact/index.html">Talk to KAARVAN</a>
+    </div></div>
   </section>
 </main>
 
