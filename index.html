@@ -30,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/v2.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://kaarvan.in/#organization",
 "name":"KAARVAN","legalName":"Kaarvan Mobility","url":"https://kaarvan.in/",
@@ -47,449 +48,164 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav class="nav">
-  <div class="wrap nav__in">
-    <a class="brand" href="index.html"><img src="assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></a>
-    <ul class="nav__links">
-      <li><a href="about/index.html">About</a></li>
-      <li><a href="products/index.html">Products</a></li>
-      <li><a href="solutions/index.html">Solutions</a></li>
-      <li><a href="partners/index.html">Partners</a></li>
-      <li><a href="milepost/index.html">The Milepost</a></li>
-      <li class="nav__tool-item"><a class="nav__tool" href="toll-calculator/index.html"><svg class="nav__tool-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8.5 7.5h7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9" cy="12.5" r="1.25" fill="currentColor"/><circle cx="15" cy="12.5" r="1.25" fill="currentColor"/><circle cx="9" cy="16.5" r="1.25" fill="currentColor"/><circle cx="15" cy="16.5" r="1.25" fill="currentColor"/></svg><span>Toll Calculator</span></a></li>
-      <li class="nav__cta-item"><a class="nav__cta" href="contact/index.html">Talk to KAARVAN</a></li>
-    </ul>
+<nav class="v-nav" aria-label="Main">
+  <div class="v-wrap v-nav__in">
+    <a class="v-nav__brand" href="index.html"><img src="assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></a>
+    <ul class="v-nav__links"><li><a href="about/index.html">About</a></li><li><a href="products/index.html">Products</a></li><li><a href="solutions/index.html">Solutions</a></li><li><a href="partners/index.html">Partners</a></li><li><a href="milepost/index.html">The Milepost</a></li></ul>
+    <div class="v-nav__acts">
+      <a class="v-nav__tool" href="toll-calculator/index.html"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7.5h7"/><path d="M9 12.5h.01M15 12.5h.01M9 16.5h.01M15 16.5h.01"/></svg><span>Toll Calculator</span></a>
+      <a class="v-nav__cta v-nav__cta--bar" href="contact/index.html">Talk to KAARVAN</a>
+      <details class="v-menu"><summary aria-label="Open menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+        <div class="v-menu__panel"><a href="about/index.html">About</a><a href="products/index.html">Products</a><a href="solutions/index.html">Solutions</a><a href="partners/index.html">Partners</a><a href="milepost/index.html">The Milepost</a><a href="contact/index.html">Contact</a><a class="v-nav__cta" href="contact/index.html">Talk to KAARVAN</a></div>
+      </details>
+    </div>
   </div>
 </nav>
 <main id="main">
 
-  <header class="hero">
-    <div class="hero__fallback" aria-hidden="true"><div class="hero__road"></div></div>
-    <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
-    <div class="hero__scrim" aria-hidden="true"></div>
-    <div class="wrap hero__in">
-      <h1 class="display">
-        <span class="ln"><span>Connecting every mile of India.</span></span>
-      </h1>
-      <p class="hero__sub lede">FASTag, GPS tracking, AI dashcams and trip accounting for India&rsquo;s commercial vehicles, on one platform.</p>
+  <header class="v-hero">
+    <div class="v-hero__media" aria-hidden="true">
+      <video class="v-hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg"><source src="assets/hero.mp4" type="video/mp4"></video>
+    </div>
+    <div class="v-hero__scrim" aria-hidden="true"></div>
+    <div class="v-wrap v-hero__in">
+      <div class="v-hero__copy">
+        <p class="v-hero__pill"><b>New</b>Safar Khata, the trip account, launching first</p>
+        <h1 class="v-h1">Connecting every mile of India.</h1>
+        <p class="v-lede">Toll management, GPS tracking, AI dashcams and trip accounting for India&rsquo;s commercial vehicles, on one platform.</p>
+        <div class="v-btns">
+          <a class="v-btn v-btn--primary" href="contact/index.html">Talk to KAARVAN <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="v-btn v-btn--ghost" href="toll-calculator/index.html">Calculate a route&rsquo;s toll</a>
+        </div>
+        <div class="v-hero__trust"><span>AIS-140 trackers</span><span>FASTag issued by our partner bank</span><span>English and हिंदी</span><span>Built in Alwar, Rajasthan</span></div>
+      </div>
+      <div class="v-hero__phone"><img src="assets/screens3d/home.webp" alt="KAARVAN app home screen: new booking, trip bookings and Safar Khata" width="320" height="666"></div>
     </div>
   </header>
-  <hr class="road road--marker">
 
-  <section class="light" id="products">
-    <div class="wrap">
-      <div class="section-head section-head--wide">
-        <h2 class="display">One platform. Every mile.</h2>
+  <section class="v-sec" id="products">
+    <div class="v-wrap">
+      <div class="v-head">
+        <div><p class="v-eyebrow">Products</p><h2 class="v-h2">One platform. Every mile.</h2></div>
+        <p class="v-muted">Four products that describe the same vehicle: what it paid, where it is, what happened on the road, and what the trip earned.</p>
       </div>
-      <div class="pillar-grid">
-
-        <article class="pillar">
-          <div class="pillar__band" aria-hidden="true"></div>
-          <p class="pillar__status" aria-hidden="true">&nbsp;</p>
+      <div class="v-pgrid">
+      <a class="v-pcard v-pcard--navy" href="products/safar-khata/index.html">
+        <div class="v-pcard__txt">
+          <div class="v-pcard__top"><span class="v-tag v-tag--orange">Launching first</span><span class="v-pcard__more">Explore &rarr;</span></div>
           <h3>KAARVAN Safar Khata</h3>
-          <p class="pillar__tag">Every trip, every rupee.</p>
-          <p>Trips, expenses, driver khata and party accounts in one place &mdash; and a printed-quality receipt for your customer at the end of every trip.</p>
-          <a class="pillar__more" href="products/safar-khata/index.html">More on Safar Khata</a>
-        </article>
-
-        <article class="pillar">
-          <div class="pillar__band" aria-hidden="true"></div>
-          <p class="pillar__status">AIS-140</p>
+          <p class="v-pcard__tag">Every trip, every rupee.</p>
+          <p class="v-pcard__body">Trips, expenses, driver khata and party accounts in one place, and a printed-quality receipt for your customer at the end of every trip.</p>
+          <div class="v-pcard__chips"><span>Trip ledger</span><span>Driver khata</span><span>WhatsApp bills</span></div>
+        </div>
+        <div class="v-pcard__shot"><img src="assets/screens3d/safar-khata.webp" alt="Safar Khata: freight, spend and profit this month" width="320" height="666" loading="lazy"></div>
+      </a>
+      <a class="v-pcard v-pcard--white" href="products/gps/index.html">
+        <div class="v-pcard__txt">
+          <div class="v-pcard__top"><span class="v-tag v-tag--navy">AIS-140</span><span class="v-pcard__more">Explore &rarr;</span></div>
           <h3>KAARVAN GPS</h3>
-          <p class="pillar__tag">Know where your fleet is.</p>
-          <p>Vehicle tracking built for India's roads &mdash; an AIS-140 tracker where the regulation applies, a standard tracker for private fleets.</p>
-          <a class="pillar__more" href="products/gps/index.html">More on GPS</a>
-        </article>
-
-        <article class="pillar">
-          <div class="pillar__band" aria-hidden="true"></div>
-          <p class="pillar__status" aria-hidden="true">&nbsp;</p>
+          <p class="v-pcard__tag">Know where your fleet is.</p>
+          <p class="v-pcard__body">An AIS-140 tracker where the regulation applies, a standard tracker for private fleets, and every vehicle on one live map.</p>
+          <div class="v-pcard__chips"><span>Live map</span><span>Trip history</span><span>Route playback</span></div>
+        </div>
+        <div class="v-pcard__shot"><img src="assets/screens3d/live-map.webp" alt="Live map: vehicles moving, idle and stopped" width="320" height="666" loading="lazy"></div>
+      </a>
+      <a class="v-pcard v-pcard--dark" href="products/dashcam/index.html">
+        <div class="v-pcard__txt">
+          <div class="v-pcard__top"><span class="v-tag v-tag--glass">AI Dashcam</span><span class="v-pcard__more">Explore &rarr;</span></div>
           <h3>KAARVAN AI Dashcam</h3>
-          <p class="pillar__tag">See what happens on the road.</p>
-          <p>Dashcam video with event detection, supporting road safety, visibility and driver accountability.</p>
-          <a class="pillar__more" href="products/dashcam/index.html">More on AI Dashcam</a>
-        </article>
-
-        <article class="pillar pillar--soon">
-          <div class="pillar__band" aria-hidden="true"></div>
-          <p class="pillar__status">Launching soon</p>
+          <p class="v-pcard__tag">See what happens on the road.</p>
+          <p class="v-pcard__body">Dashcam video with event detection, supporting road safety, visibility and driver accountability.</p>
+          <div class="v-pcard__chips"><span>Event detection</span><span>Video evidence</span><span>Driver safety</span></div>
+        </div>
+        <div class="v-dashcam"><div class="v-dashcam__view" role="img" aria-label="Dashcam view of a highway with a harsh braking alert">
+          <span class="v-dashcam__rec"><i></i>REC &middot; MH-04 &middot; 62 km/h</span><span class="v-dashcam__time">05:42:18</span>
+          <span class="v-dashcam__alert"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#000B2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></i><span><b>Harsh braking detected</b><small>Clip saved to the trip &middot; driver notified</small></span></span>
+        </div></div>
+      </a>
+      <a class="v-pcard v-pcard--white" href="products/fastag/index.html">
+        <div class="v-pcard__txt">
+          <div class="v-pcard__top"><span class="v-tag v-tag--line">Launching soon</span><span class="v-pcard__more">Explore &rarr;</span></div>
           <h3>KAARVAN Toll Manager</h3>
-          <p class="pillar__tag">FASTag Management Platform</p>
-          <p>A technology platform for FASTag services, toll account management and commercial vehicle toll solutions. FASTag is issued by our partner bank under the NPCI FASTag programme; KAARVAN is the tech and service partner.</p>
-          <a class="pillar__more" href="products/fastag/index.html">More on Toll Manager</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="dark on-dark" id="ecosystem">
-    <div class="wrap eco-grid">
-      <div>
-        <h2 class="display">Four products, one connected ecosystem.</h2>
-        <p>Most operators buy tolling from one company, tracking from another and a dashcam from a third, then keep the account of what each trip earned in a notebook. Four relationships, and no single place where a payment, a location and an expense describe the same vehicle.</p>
-        <p>KAARVAN is built the other way round. Each layer feeds the next, so the toll that was charged, the kilometres that were driven and the bill that was sent all belong to one trip, on one platform.</p>
-        <p class="note"><a class="inline-link" href="products/index.html#stack">See how the layers connect</a></p>
-      </div>
-      <figure class="art art--eco">
-        <img src="assets/art/ecosystem.svg" alt="Six connected layers rising from the road: FASTag and NETC, payments, telematics, GPS and AIS-140, dashcam, and Safar Khata" loading="lazy">
-      </figure>
-    </div>
-  </section>
-  <hr class="road road--dark">
-
-  <section class="mid on-dark">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">Your fleet. In your pocket.</h2>
-        <p>The same fleet the office sees on the dashboard, on the phone in the driver's hand &mdash; in English and Hindi.</p>
-      </div>
-      <div class="screens">
-        <div class="shot"><figure>
-          <img src="assets/screens3d/home.webp" alt="KAARVAN app home screen" width="320" height="666" loading="lazy">
-          <figcaption><b>Home</b><span>Bookings, Safar Khata, FASTag and GPS on one screen</span></figcaption>
-        </figure></div>
-        <div class="shot"><figure>
-          <img src="assets/screens3d/safar-khata.webp" alt="Safar Khata screen showing freight, profit and driver khata" width="320" height="666" loading="lazy">
-          <figcaption><b>Safar Khata</b><span>Freight, spend and profit for the month, and every driver&rsquo;s balance</span></figcaption>
-        </figure></div>
-        <div class="shot"><figure>
-          <img src="assets/screens3d/fastag.webp" alt="FASTag screen showing wallet balance and toll transactions" width="320" height="666" loading="lazy">
-          <figcaption><b>FASTag</b><span>Wallet, recharge and toll transactions per vehicle</span></figcaption>
-        </figure></div>
-        <div class="shot"><figure>
-          <img src="assets/screens3d/live-map.webp" alt="Live map screen showing vehicles on a map" width="320" height="666" loading="lazy">
-          <figcaption><b>Live map</b><span>Where every vehicle is, right now</span></figcaption>
-        </figure></div>
-      </div>
-    </div>
-  </section>
-  <hr class="road road--dark">
-
-  <section class="light">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">Why this needs building</h2>
-      </div>
-      <ul class="rows stat-rows">
-        <li class="row">
-          <h3>12.5 million trucks</h3>
-          <p>Run by about three and a half million owners, most of whom are one man with one or two vehicles.</p>
-          <span class="row__meta">Redseer</span>
-        </li>
-        <li class="row">
-          <h3>75% own fewer than five</h3>
-          <p>Only one operator in ten owns more than ten trucks. The industry is not fleets; it is individuals.</p>
-          <span class="row__meta">NITI Aayog / NTDPC</span>
-        </li>
-        <li class="row">
-          <h3>Under 2% use any software</h3>
-          <p>The trip is a phone call, the expense is a receipt in the glovebox, and the bill is written by hand.</p>
-          <span class="row__meta">Redseer</span>
-        </li>
-      </ul>
-      <p class="note"><a class="inline-link" href="about/index.html#problem">The problem we are building for</a></p>
-    </div>
-  </section>
-  <hr class="road">
-
-  <section class="mid on-dark">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">How getting started works</h2>
-        <p>Three steps, and a person on the phone at each one.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step__num" aria-hidden="true">1</span>
-          <h3>Tell us what you run</h3>
-          <p>Fleet size, routes, and what's giving you trouble. We'll say what applies to your vehicles and what doesn't &mdash; including the parts you don't need to buy.</p>
+          <p class="v-pcard__tag">FASTag management platform.</p>
+          <p class="v-pcard__body">One fleet wallet, every toll recorded against the vehicle that made it, and auto-pay per tag. FASTag is issued by our partner bank under the NPCI FASTag programme; KAARVAN is the tech and service partner.</p>
+          <div class="v-pcard__chips"><span>Fleet wallet</span><span>Auto-pay per tag</span><span>Toll history</span></div>
         </div>
-        <div class="step">
-          <span class="step__num" aria-hidden="true">2</span>
-          <h3>We fit and activate</h3>
-          <p>Tags issued, devices installed, and the AIS-140 paperwork handled where the regulation requires it.</p>
-        </div>
-        <div class="step">
-          <span class="step__num" aria-hidden="true">3</span>
-          <h3>Run it from one place</h3>
-          <p>Tolls, location, video and trip accounts in one view &mdash; on the web or on the phone.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <hr class="road road--dark">
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">From the road to the cloud</h2>
-        <p>From the toll plaza to the fleet dashboard, every layer is connected &mdash; so a payment, a location and a safety event all describe the same vehicle on the same platform.</p>
-      </div>
-      <ol class="layers">
-        <li class="layer">
-          <span class="layer__id">L1</span>
-          <div class="layer__body">
-            <h3>FASTag / NETC</h3>
-            <p>Commercial vehicle FASTag on India's NETC toll collection system.</p>
-          </div>
-          <span class="layer__job">Toll</span>
-        </li>
-        <li class="layer">
-          <span class="layer__id">L2</span>
-          <div class="layer__body">
-            <h3>Payments</h3>
-            <p>Toll transactions, recharge, wallets and fleet-level payment visibility.</p>
-          </div>
-          <span class="layer__job">Pay</span>
-        </li>
-        <li class="layer">
-          <span class="layer__id">L3</span>
-          <div class="layer__body">
-            <h3>Telematics</h3>
-            <p>Vehicle data streamed from the device to the platform.</p>
-          </div>
-          <span class="layer__job">Data</span>
-        </li>
-        <li class="layer">
-          <span class="layer__id">L4</span>
-          <div class="layer__body">
-            <h3>GPS / AIS-140</h3>
-            <p>Live location, trip history, route playback, geofencing and alerts.</p>
-          </div>
-          <span class="layer__job">Track</span>
-        </li>
-        <li class="layer">
-          <span class="layer__id">L5</span>
-          <div class="layer__body">
-            <h3>Dashcam</h3>
-            <p>Dashcam video, event detection and driver-behaviour signals.</p>
-          </div>
-          <span class="layer__job">Protect</span>
-        </li>
-        <li class="layer layer--soon">
-          <span class="layer__id">L6</span>
-          <div class="layer__body">
-            <h3>Safar Khata <span class="layer__soon">launching first</span></h3>
-            <p>Trips, expenses, khata, receivables, reports and API access in one view.</p>
-          </div>
-          <span class="layer__job">Account</span>
-        </li>
-      </ol>
-      <p class="note"><a class="inline-link" href="products/index.html#how-built">How the platform is built</a></p>
-    </div>
-  </section>
-
-  <section class="light segs-sec">
-    <div class="wrap wrap--wide">
-      <div class="segs-head">
-        <p class="eyebrow">Built for every player in commercial mobility</p>
-        <h2 class="display">One platform. Many use cases.</h2>
-        <p class="lede">Starting with smarter trip management and cab booking, and building towards a connected commercial mobility ecosystem.</p>
-      </div>
-      <ul class="segs">
-        <li class="seg">
-          <article class="seg__in">
-            <span class="seg__photo">
-              <img src="assets/segments/truck-owners.webp" alt="" width="407" height="134" loading="lazy">
-              <span class="seg__badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 7h11v9H2zM13 10h5l4 4v2h-9z"/><circle cx="7" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></svg></span>
-            </span>
-            <div class="seg__body">
-              <h3>Truck owners</h3>
-              <p>Simple technology for one or two commercial vehicles, run by the person who owns them.</p>
-              <ul class="seg__chips"><li>FASTag</li><li>GPS</li><li>Phone app</li></ul>
-              <a class="seg__cta seg__cta--lead" href="solutions/index.html#truck-owners">Explore truck owners<svg viewBox="0 0 20 12" aria-hidden="true" focusable="false"><path d="M13.4 1 19 6l-5.6 5M19 6H1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </article>
-        </li>
-        <li class="seg">
-          <article class="seg__in">
-            <span class="seg__photo">
-              <img src="assets/segments/fleet-owners.webp" alt="" width="407" height="134" loading="lazy">
-              <span class="seg__badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1 5h9v6H1zM10 7h3.5L16 9.5V11h-6z"/><circle cx="4.5" cy="12.6" r="1.5"/><circle cx="13" cy="12.6" r="1.5"/><path d="M8 14h9v6H8zM17 16h3.5L23 18.5V20h-6z"/><circle cx="11.5" cy="21.4" r="1.6"/><circle cx="20" cy="21.4" r="1.6"/></svg></span>
-            </span>
-            <div class="seg__body">
-              <h3>Fleet owners</h3>
-              <p>One place to monitor and manage multiple vehicles, drivers and tags.</p>
-              <ul class="seg__chips"><li>Fleet dashboard</li><li>Multi-vehicle FASTag</li><li>Alerts &amp; operational insights</li></ul>
-              <a class="seg__cta" href="solutions/index.html#fleet-owners">Explore fleet owners<svg viewBox="0 0 20 12" aria-hidden="true" focusable="false"><path d="M13.4 1 19 6l-5.6 5M19 6H1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </article>
-        </li>
-        <li class="seg">
-          <article class="seg__in">
-            <span class="seg__photo">
-              <img src="assets/segments/transporters.webp" alt="" width="407" height="134" loading="lazy">
-              <span class="seg__badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="19" r="3"/><path d="M5 9v3a4 4 0 0 0 4 4h6" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-dasharray="3 3"/></svg></span>
-            </span>
-            <div class="seg__body">
-              <h3>Transporters</h3>
-              <p>Visibility across trips, vehicles and drivers &mdash; and the account behind each one.</p>
-              <ul class="seg__chips"><li class='is-key'>Safar Khata (trip ledger)</li><li>Route playback</li><li>Trip history</li></ul>
-              <a class="seg__cta" href="solutions/index.html#transporters">Explore transporters<svg viewBox="0 0 20 12" aria-hidden="true" focusable="false"><path d="M13.4 1 19 6l-5.6 5M19 6H1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </article>
-        </li>
-        <li class="seg">
-          <article class="seg__in">
-            <span class="seg__photo">
-              <img src="assets/segments/drivers.webp" alt="" width="407" height="134" loading="lazy">
-              <span class="seg__badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 2h6v2.2H9z"/><path d="M4 12l1.8-4.4A2 2 0 0 1 7.7 6.4h8.6a2 2 0 0 1 1.9 1.2L20 12v6h-3v-2H7v2H4z"/><circle cx="7.4" cy="14.4" r="1.3" fill="#FC8418"/><circle cx="16.6" cy="14.4" r="1.3" fill="#FC8418"/></svg></span>
-            </span>
-            <div class="seg__body">
-              <h3>Drivers &amp; cab partners</h3>
-              <p>Tools that make every journey safer, more productive and better rewarded.</p>
-              <ul class="seg__chips"><li class='is-key'>Trip booking for cabs</li><li>Expenses</li><li>Driver khata &amp; settlements</li></ul>
-              <a class="seg__cta" href="solutions/index.html#drivers">Explore drivers<svg viewBox="0 0 20 12" aria-hidden="true" focusable="false"><path d="M13.4 1 19 6l-5.6 5M19 6H1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </article>
-        </li>
-        <li class="seg">
-          <article class="seg__in">
-            <span class="seg__photo">
-              <img src="assets/segments/enterprises.webp" alt="" width="407" height="134" loading="lazy">
-              <span class="seg__badge"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21V7l7-4 7 4v14z"/><path d="M17 21V11h4v10z"/><rect x="6" y="9" width="3" height="3" fill="#FC8418"/><rect x="11" y="9" width="3" height="3" fill="#FC8418"/><rect x="6" y="14.5" width="3" height="3" fill="#FC8418"/><rect x="11" y="14.5" width="3" height="3" fill="#FC8418"/></svg></span>
-            </span>
-            <div class="seg__body">
-              <h3>Enterprises &amp; logistics companies</h3>
-              <p>Technology that scales with operational complexity, branches and reporting.</p>
-              <ul class="seg__chips"><li>Safar Khata</li><li class='is-key'>Trip booking for cabs</li><li>Reports</li><li>API access</li></ul>
-              <a class="seg__cta" href="solutions/index.html#enterprises">Explore enterprises<svg viewBox="0 0 20 12" aria-hidden="true" focusable="false"><path d="M13.4 1 19 6l-5.6 5M19 6H1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            </div>
-          </article>
-        </li>
-      </ul>
-      <div class="focus">
-        <p class="focus__tag">Our initial focus</p>
-        <div class="focus__items">
-          <a class="focus__item" href="products/safar-khata/index.html">
-            <span class="focus__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H3zM21 4h-7a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>
-            <span><b>Safar Khata</b>Digital trip book, income and expense tracking, settlements</span>
-          </a>
-          <a class="focus__item" href="solutions/index.html#drivers">
-            <span class="focus__ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12l1.8-4.4A2 2 0 0 1 7.7 6.4h8.6a2 2 0 0 1 1.9 1.2L20 12v6h-3v-2H7v2H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="7.6" cy="13.8" r="1.2"/><circle cx="16.4" cy="13.8" r="1.2"/></svg></span>
-            <span><b>Trip booking for cabs</b>Cab booking, trip allocation and driver operations</span>
-          </a>
-        </div>
+        <div class="v-pcard__shot"><img src="assets/screens3d/fastag.webp" alt="Toll Manager: wallet balance, recharge and tags" width="320" height="666" loading="lazy"></div>
+      </a>
       </div>
     </div>
   </section>
 
-
-  <section class="dark on-dark">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="display">Built around the way India moves</h2>
-        <p>Five principles behind every product, device and screen we build.</p>
+  <section class="v-sec v-dark" id="ecosystem">
+    <div class="v-wrap v-row">
+      <div class="v-stack">
+        <p class="v-eyebrow">The platform</p>
+        <h2 class="v-h2">Your fleet. In your pocket.</h2>
+        <p class="v-muted" style="margin:0;font-size:1.1rem;line-height:1.65">Most operators buy tolling from one company, tracking from another and a dashcam from a third, then keep the trip account in a notebook. KAARVAN puts the payment, the location and the safety event on the same vehicle, on the phone in the owner&rsquo;s hand, in English and Hindi.</p>
+        <div class="v-hair v-grid--2" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div><b>Safar Khata</b><span>Freight, spend and profit for the month, and every driver&rsquo;s balance</span></div>
+          <div><b>Toll Manager</b><span>Wallet, recharge and toll transactions per vehicle</span></div>
+          <div><b>Live map</b><span>Where every vehicle is, right now</span></div>
+          <div><b>Bookings</b><span>Trips requested, accepted and billed</span></div>
+        </div>
+        <a class="v-link" href="products/index.html#how-built">How the platform is built &rarr;</a>
       </div>
-      <div class="grid-items">
-        <div class="grid-item">
-          <h3>Connected</h3>
-          <p>Payments, tracking, safety and fleet operations working together.</p>
-        </div>
-        <div class="grid-item">
-          <h3>Informed</h3>
-          <p>Vehicle data turned into alerts, reports and operational insight.</p>
-        </div>
-        <div class="grid-item">
-          <h3>Secure</h3>
-          <p>Payments and vehicle data handled with security as a design priority.</p>
-        </div>
-        <div class="grid-item">
-          <h3>Scalable</h3>
-          <p>Built for one vehicle or thousands.</p>
-        </div>
-        <div class="grid-item">
-          <h3>India-first</h3>
-          <p>Designed around Indian roads, fleets and commercial vehicle operators.</p>
-        </div>
+      <div class="v-phones">
+        <img src="assets/screens3d/fastag.webp" alt="Toll Manager: wallet balance and tags" width="320" height="666" loading="lazy">
+        <img src="assets/screens3d/live-map.webp" alt="Live map: vehicles moving, idle and stopped" width="320" height="666" loading="lazy">
+        <img src="assets/screens3d/client-bill.webp" alt="A client bill ready to share" width="320" height="666" loading="lazy">
       </div>
     </div>
   </section>
 
-  <section class="mid on-dark kone" id="kaarvan-one">
-    <div class="wrap kone__grid">
-      <div>
-        <p class="eyebrow eyebrow--dark">For customers</p>
-        <h2 class="display">KAARVAN One</h2>
-        <p class="lede">One sign-in for everything you run with us &mdash; your vehicles on the map, your tags and their balances, your trips and the account behind each one.</p>
-        <ul class="kone__list">
-          <li>Every vehicle, tag and driver in one workspace</li>
-          <li>The same account on the phone and on the desk</li>
-          <li>Your data stays yours, exportable whenever you ask</li>
-        </ul>
-        <p class="kone__actions">
-          <span class="btn btn--wait" role="button" aria-disabled="true">Sign in to KAARVAN One</span>
-          <span class="kone__note">Sign-in opening shortly</span>
-        </p>
+  <section class="v-sec">
+    <div class="v-wrap">
+      <div class="v-head">
+        <div><h2 class="v-h2">Why this needs building</h2></div>
+        <a class="v-link" href="about/index.html#problem">The problem we are building for &rarr;</a>
       </div>
-      <figure class="kone__shot">
-        <img src="assets/screens3d/home.webp" alt="The KAARVAN app home screen" width="320" height="666" loading="lazy">
-      </figure>
+      <div class="v-grid v-grid--3">
+        <div class="v-card v-stat"><p class="v-stat__n">12.5M</p><p class="v-stat__k">trucks on India&rsquo;s roads</p><p class="v-card__body">Run by about three and a half million owners, most of whom are one man with one or two vehicles.</p><p class="v-stat__src">Source: Redseer</p></div>
+        <div class="v-card v-stat"><p class="v-stat__n">75%</p><p class="v-stat__k">own fewer than five trucks</p><p class="v-card__body">Only one operator in ten owns more than ten. The industry is not fleets; it is individuals.</p><p class="v-stat__src">Source: NITI Aayog / NTDPC</p></div>
+        <div class="v-card v-stat v-stat--orange"><p class="v-stat__n">&lt;2%</p><p class="v-stat__k">use any digital freight platform</p><p class="v-card__body">The trip is a phone call, the expense is a receipt in the glovebox, and the bill is written by hand.</p><p class="v-stat__src">Source: Redseer</p></div>
+      </div>
     </div>
   </section>
 
-  <section class="band on-dark">
-    <div class="wrap band__in">
-      <div>
-        <h2 class="display">Partner with KAARVAN</h2>
-        <p>Offer the fleets you already serve tolls, tracking, safety and trip accounts &mdash; from one platform, with your name on the relationship.</p>
+  <section class="v-sec v-sec--tight">
+    <div class="v-wrap">
+      <div class="v-head">
+        <div><p class="v-eyebrow">Who it is for</p><h2 class="v-h2">One platform. Many use cases.</h2></div>
+        <a class="v-link" href="solutions/index.html">See all solutions &rarr;</a>
       </div>
-      <a class="btn" href="contact/index.html">About partnering</a>
+      <div class="v-grid v-grid--5"><a class="v-card" href="solutions/index.html#truck-owners"><p class="v-card__title">Truck owners</p><p class="v-card__body">Simple technology for one or two vehicles, run by the person who owns them.</p><p class="v-card__foot">Tolls &middot; GPS &middot; Phone app</p></a><a class="v-card" href="solutions/index.html#fleet-owners"><p class="v-card__title">Fleet owners</p><p class="v-card__body">One place to monitor and manage multiple vehicles, drivers and tags.</p><p class="v-card__foot">Dashboard &middot; Alerts</p></a><a class="v-card" href="solutions/index.html#transporters"><p class="v-card__title">Transporters</p><p class="v-card__body">Visibility across trips, vehicles and drivers, and the account behind each one.</p><p class="v-card__foot">Safar Khata &middot; Playback</p></a><a class="v-card" href="solutions/index.html#drivers"><p class="v-card__title">Drivers and cab partners</p><p class="v-card__body">Tools that make every journey safer, more productive and better rewarded.</p><p class="v-card__foot">Cab booking &middot; Khata</p></a><a class="v-card" href="solutions/index.html#enterprises"><p class="v-card__title">Enterprises</p><p class="v-card__body">Technology that scales with branches, operational complexity and reporting.</p><p class="v-card__foot">Reports &middot; API access</p></a></div>
     </div>
   </section>
-  <section class="enquire light" id="enquire">
-    <div class="wrap enq-grid">
-      <div class="enq-aside">
-        <h2 class="display">Ready to connect your fleet?</h2>
-        <p>Tell us about your fleet and we'll come back with what fits, and what it costs.</p>
-        <div class="enq-contact">
-          <div><a class="inline-link" href="mailto:sales@kaarvan.in">sales@kaarvan.in</a></div>
-          <address>
-            Kaarvan Mobility<br>
-            Dhabai Complex, Alwar<br>
-            Rajasthan 301001
-          </address>
-        </div>
+
+  <section class="v-sec v-navy">
+    <div class="v-wrap">
+      <div class="v-head">
+        <div><h2 class="v-h2">How getting started works</h2></div>
+        <p class="v-muted">Three steps, and a person on the phone at each one.</p>
       </div>
-      <form action="mailto:sales@kaarvan.in" method="post" enctype="text/plain" novalidate data-endpoint="https://formsubmit.co/ajax/sales@kaarvan.in" data-subject="KAARVAN enquiry">
-        <div class="field"><label for="f-name">Your name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="f-company">Company</label>
-          <input id="f-company" name="company" type="text" autocomplete="organization"></div>
-        <div class="field"><label for="f-mobile">Mobile</label>
-          <input id="f-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" required></div>
-        <div class="field"><label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" autocomplete="email"></div>
-        <div class="field"><label for="f-city">City</label>
-          <input id="f-city" name="city" type="text" autocomplete="address-level2"></div>
-        <div class="field"><label for="f-state">State</label>
-          <input id="f-state" name="state" type="text" autocomplete="address-level1"></div>
-        <div class="field"><label for="f-fleet">Fleet size</label>
-          <select id="f-fleet" name="fleet_size">
-            <option value="">Select</option>
-            <option>1&ndash;5 vehicles</option><option>6&ndash;20 vehicles</option>
-            <option>21&ndash;50 vehicles</option><option>51&ndash;200 vehicles</option>
-            <option>200+ vehicles</option>
-          </select></div>
-        <div class="field"><label for="f-need">What do you need</label>
-          <select id="f-need" name="need">
-            <option value="">Select</option>
-            <option>Safar Khata and receipts</option><option>GPS tracking</option><option>AI Dashcam</option><option>FASTag</option>
-            <option>Dealer or fitment partnership</option>
-            <option>Not sure yet</option>
-          </select></div>
-        <div class="field field--full"><label for="f-msg">Anything else we should know</label>
-          <textarea id="f-msg" name="message" rows="4"></textarea></div>
-        <div class="hp" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
-        <div class="field--full"><button class="btn" type="submit">Send enquiry</button></div>
-        <p class="form-status" role="status" aria-live="polite"></p>
-        <p class="form-note">We use these details to answer your enquiry and nothing else.</p>
-      </form>
+      <div class="v-steps">
+        <div><p class="n">01</p><b>Tell us what you run</b><span>Fleet size, routes, and what&rsquo;s giving you trouble. We&rsquo;ll say what applies to your vehicles and what doesn&rsquo;t, including the parts you don&rsquo;t need to buy.</span></div>
+        <div><p class="n">02</p><b>We fit and activate</b><span>Tags issued by our partner bank, devices installed, and the AIS-140 paperwork handled where the regulation requires it.</span></div>
+        <div><p class="n">03</p><b>Run it from one place</b><span>Tolls, location, video and trip accounts in one view, on the web or on the phone.</span></div>
+      </div>
     </div>
   </section>
+
+  <section class="v-sec" id="enquire">
+    <div class="v-wrap">
+      <div class="v-cta">
+        <div><h2>Ready to connect your fleet?</h2><p>Tell us about your fleet and we&rsquo;ll come back with what fits, and what it costs.</p></div>
+        <div class="v-btns"><a class="v-btn v-btn--dark" href="contact/index.html">Send an enquiry</a><a class="v-btn v-btn--outline-dark" href="mailto:sales@kaarvan.in">sales@kaarvan.in</a></div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
   <div class="luma">
@@ -543,73 +259,50 @@
       <span class="luma__label">Chat with LUMA</span>
     </label>
   </div>
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <p class="foot__brand"><img src="assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></p>
-        <p class="foot__tag">Connecting every mile of India.</p>
+<footer class="v-foot">
+  <div class="v-wrap">
+    <div class="v-foot__top">
+      <div class="v-foot__brand">
+        <img src="assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160">
+        <p class="v-foot__tag">Connecting every mile of India.</p>
+        <a class="v-foot__mail" href="mailto:sales@kaarvan.in">sales@kaarvan.in</a>
+        <address class="v-foot__addr">Kaarvan Mobility, Dhabai Complex<br>Alwar, Rajasthan 301001</address>
       </div>
-      <div>
-        <h2>Products</h2>
-        <ul>
-          <li><a href="products/index.html#fastag">FASTag</a></li>
-          <li><a href="products/index.html#gps">GPS</a></li>
-          <li><a href="products/index.html#dashcam">AI Dashcam</a></li>
-          <li><a href="products/index.html#safar-khata">Safar Khata</a></li>
-        </ul>
+      <div class="v-foot__col"><h2>Products</h2>
+        <a href="products/safar-khata/index.html">Safar Khata</a>
+        <a href="products/gps/index.html">GPS</a>
+        <a href="products/dashcam/index.html">AI Dashcam</a>
+        <a href="products/fastag/index.html">Toll Manager</a>
+        <a href="toll-calculator/index.html">Toll Calculator</a>
       </div>
-      <div>
-        <h2>Company</h2>
-        <ul>
-          <li><a href="about/index.html">About KAARVAN</a></li>
-          <li><a href="solutions/index.html">Who it is for</a></li>
-          <li><a href="products/index.html#how-built">Platform</a></li>
-          <li><a href="partners/index.html">Partners</a></li>
-          <li><a href="contact/index.html#share-idea">Share your idea</a></li>
-        </ul>
+      <div class="v-foot__col"><h2>Company</h2>
+        <a href="about/index.html">About KAARVAN</a>
+        <a href="solutions/index.html">Who it is for</a>
+        <a href="products/index.html#how-built">Platform</a>
+        <a href="partners/index.html">Partners</a>
+        <a href="milepost/index.html">The Milepost</a>
       </div>
-      <div>
-        <h2>Customers</h2>
-        <ul>
-          <li>KAARVAN One</li>
-          <li class="foot__muted">Sign-in opening shortly</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <ul>
-          <li><a href="contact/index.html">Send an enquiry</a></li>
-          <li><a href="mailto:sales@kaarvan.in">sales@kaarvan.in</a></li>
-          <li>Alwar, Rajasthan</li>
-        </ul>
+      <div class="v-foot__col"><h2>Customers</h2>
+        <span>KAARVAN One</span>
+        <span class="v-foot__muted">Sign-in opening shortly</span>
+        <a href="contact/index.html">Send an enquiry</a>
+        <a href="contact/index.html#share-idea">Share your idea</a>
       </div>
     </div>
-    <div class="foot__base">
+    <div class="v-foot__base">
       <span>&copy; 2026 Kaarvan Mobility. All rights reserved.</span>
-      <span class="foot__legal"><a href="privacy/index.html">Privacy notice</a> <a href="terms/index.html">Terms of use</a></span>
-      <span>Dhabai Complex, Alwar, Rajasthan 301001</span>
+      <span><a href="privacy/index.html">Privacy notice</a><a href="terms/index.html">Terms of use</a></span>
     </div>
   </div>
 </footer>
 <script src="assets/form.js" defer></script>
 <script>
-(function(){var v=document.querySelector('.hero__video');if(!v)return;
-var hero=v.closest('.hero');
-var s=function(){v.classList.add('is-ready')};if(v.readyState>=2)s();
-v.addEventListener('loadeddata',s);
-/* the film ends on its own KAARVAN card: step the overlay aside for it,
-   then bring it back as the loop restarts. */
+(function(){var v=document.querySelector('.v-hero__video');if(!v)return;var hero=v.closest('.v-hero');
+/* the film ends on its own KAARVAN card: step the copy aside for it, bring it back as the loop restarts */
 var OUT=6.3,BACK=0.45,hidden=false;
-var sync=function(){
-  var t=v.currentTime,d=v.duration||8;
-  var card=(t>=OUT&&t<=d)||false;
-  if(t<BACK)card=false;
-  if(card!==hidden){hidden=card;hero.classList.toggle('is-endcard',card);}
-};
-v.addEventListener('timeupdate',sync);
-v.addEventListener('seeked',sync);
-v.addEventListener('play',sync);})();
+var sync=function(){var t=v.currentTime,d=v.duration||8;var card=(t>=OUT&&t<=d);if(t<BACK)card=false;
+if(card!==hidden){hidden=card;hero.classList.toggle('is-endcard',card);}};
+v.addEventListener('timeupdate',sync);v.addEventListener('seeked',sync);v.addEventListener('play',sync);})();
 </script>
 </body>
 </html>
