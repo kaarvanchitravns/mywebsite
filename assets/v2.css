@@ -339,3 +339,9 @@ html body .light .step p{color:rgba(11,16,38,.68)}
 .v-monitor .v-eyebrow{color:var(--orange)}
 /* Toll Calculator: keep long routes tidy; the plaza list scrolls inside the result card */
 html body .v-tollwrap .toll-list{max-height:440px;overflow-y:auto;overscroll-behavior:contain;padding-right:.5rem;scrollbar-width:thin;scrollbar-color:rgba(228,232,239,.35) transparent}
+/* device renders on light studio backdrops */
+.v-pcard__device{margin:auto 1.75rem 1.75rem;padding-top:1.75rem}
+.v-pcard__device img{display:block;width:100%;height:auto;border-radius:20px}
+html body .product__head .product__shot{max-width:340px}
+html body .product__head .product__shot img{filter:none;border-radius:20px}
+html body .art--row img{border-radius:22px;background:#E8ECF2}
