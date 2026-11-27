@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toll Calculator for trucks and buses | KAARVAN</title>
+<meta name="description" content="KAARVAN Toll Calculator: see every toll plaza on your route and what it charges, for every vehicle class from car to 7+ axle truck. An estimate for fleet owners and transporters.">
+<link rel="canonical" href="https://kaarvan.in/toll-calculator/">
+<meta property="og:title" content="Toll Calculator for trucks and buses | KAARVAN">
+<meta property="og:description" content="KAARVAN Toll Calculator: see every toll plaza on your route and what it charges, for every vehicle class from car to 7+ axle truck. An estimate for fleet owners and transporters.">
+<meta property="og:url" content="https://kaarvan.in/toll-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KAARVAN">
+<meta property="og:locale" content="en_IN">
+<meta property="og:image" content="https://kaarvan.in/assets/og-kaarvan.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KAARVAN &mdash; connecting every mile of India">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Toll Calculator for trucks and buses | KAARVAN">
+<meta name="twitter:description" content="KAARVAN Toll Calculator: see every toll plaza on your route and what it charges, for every vehicle class from car to 7+ axle truck. An estimate for fleet owners and transporters.">
+<meta name="twitter:image" content="https://kaarvan.in/assets/og-kaarvan.jpg">
+<meta name="theme-color" content="#00186C">
+<link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/icons/icon-180.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/toll.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kaarvan.in/"},{"@type":"ListItem","position":2,"name":"Toll Calculator","item":"https://kaarvan.in/toll-calculator/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="../index.html"><img src="../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></a>
+    <ul class="nav__links">
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../products/index.html">Products</a></li>
+      <li><a href="../solutions/index.html">Solutions</a></li>
+      <li><a href="../partners/index.html">Partners</a></li>
+      <li><a href="../milepost/index.html">The Milepost</a></li>
+      <li class="nav__tool-item"><a class="nav__tool" href="../toll-calculator/index.html" aria-current="page"><svg class="nav__tool-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8.5 7.5h7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="9" cy="12.5" r="1.25" fill="currentColor"/><circle cx="15" cy="12.5" r="1.25" fill="currentColor"/><circle cx="9" cy="16.5" r="1.25" fill="currentColor"/><circle cx="15" cy="16.5" r="1.25" fill="currentColor"/></svg><span>Toll Calculator</span></a></li>
+      <li class="nav__cta-item"><a class="nav__cta" href="../contact/index.html">Talk to KAARVAN</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+
+  <header class="phero">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--dark">KAARVAN Toll Calculator</p>
+      <h1 class="display">Know the toll before the truck leaves the yard.</h1>
+      <p class="lede">Toll Calculator shows every toll plaza between any two places in India, what each one charges for your vehicle, and what the route costs you in a month.</p>
+    </div>
+  </header>
+  <hr class="road road--marker">
+
+  <section class="light toll-sec">
+    <div class="wrap">
+      <div class="section-head toll-head"><h2 class="display">How to start</h2></div>
+      <ol class="toll-steps">
+        <li><b>Pick the route.</b> Type the city or town where the trip starts in <em>From</em> and choose it from the suggestions, then do the same for where it ends in <em>To</em>. Any two places in India work.</li>
+        <li><b>Pick the vehicle class.</b> Toll is charged by axles, not wheels. A 6-wheeler is a 2-axle truck, a 10-wheeler is 3-axle, a 12-, 14- or 16-wheeler is 4&ndash;6 axle, and long trailers with seven or more axles are 7+ axle.</li>
+        <li><b>Pick the trip.</b> <em>Single</em> for one way. <em>Return in 24 h</em> if the truck comes back through the same plazas within 24 hours, which is cheaper than two single trips.</li>
+        <li><b>Read the toll.</b> The total, every plaza on the way, the cost per km and the monthly cost for the trips you enter.</li>
+      </ol>
+      <p class="toll-banner" id="tollSample" role="note" hidden>Test version. Fares are still being checked, so do not rely on them yet.</p>
+      <div class="toll-app" id="tollApp">
+        <form class="toll-form" id="tollForm" onsubmit="return false">
+          <div class="toll-pair">
+            <div class="field"><label for="tollFromBox">From</label><input id="tollFromBox" class="toll-combo__in" type="text" placeholder="Type a city or town" autocomplete="off" spellcheck="false"></div>
+            <div class="field"><label for="tollToBox">To</label><input id="tollToBox" class="toll-combo__in" type="text" placeholder="Type a city or town" autocomplete="off" spellcheck="false"></div>
+          </div>
+          <fieldset class="toll-fieldset">
+            <legend>Vehicle class</legend>
+            <div class="toll-chips">
+              <label class="toll-chip"><input type="radio" name="tollClass" value="car"><span>Car / jeep / van</span></label>
+              <label class="toll-chip"><input type="radio" name="tollClass" value="lcv"><span>LCV</span></label>
+              <label class="toll-chip"><input type="radio" name="tollClass" value="bus_2axle"><span>Bus / 2-axle truck</span></label>
+              <label class="toll-chip"><input type="radio" name="tollClass" value="axle3"><span>3-axle</span></label>
+              <label class="toll-chip"><input type="radio" name="tollClass" value="axle4to6" checked><span>4&ndash;6 axle</span></label>
+              <label class="toll-chip"><input type="radio" name="tollClass" value="axle7plus"><span>7+ axle</span></label>
+            </div>
+          </fieldset>
+          <div class="toll-row">
+            <fieldset class="toll-fieldset">
+              <legend>Trip</legend>
+              <div class="toll-segs">
+                <label class="toll-seg"><input type="radio" name="tollTrip" value="single" checked><span>Single</span></label>
+                <label class="toll-seg"><input type="radio" name="tollTrip" value="return"><span>Return in 24 h</span></label>
+              </div>
+            </fieldset>
+            <div class="field toll-trips-field"><label for="tollTrips">Trips a month</label><input id="tollTrips" type="number" min="0" max="500" step="1" value="25" inputmode="numeric"></div>
+          </div>
+        </form>
+        <div class="toll-result" aria-live="polite">
+          <p class="toll-error" id="tollError" role="alert" hidden></p>
+          <div class="toll-body" id="tollResultBody">
+            <div>
+              <p class="toll-k">Toll Calculator estimate</p>
+              <p class="toll-total" id="tollTotal">&ndash;</p>
+              <p class="toll-meta" id="tollMeta">Loading toll data&hellip;</p>
+            </div>
+            <div class="toll-stats">
+              <div class="toll-stat"><p class="toll-k">Per km</p><b id="tollPerKm">&ndash;</b></div>
+              <div class="toll-stat"><p class="toll-k" id="tollMonthlyLbl">Monthly</p><b id="tollMonthly">&ndash;</b></div>
+            </div>
+            <p class="toll-missing" id="tollMissing" hidden></p>
+            <ol class="toll-list" id="tollList" aria-label="Toll plazas on this route"></ol>
+            <div class="toll-cta">
+              <b>Running this route every week?</b>
+              <p>KAARVAN Toll Manager keeps every plaza paid from one fleet wallet, and Safar Khata puts each toll on the trip&rsquo;s hisab.</p>
+              <p class="toll-links"><a href="../products/fastag/index.html">KAARVAN Toll Manager</a><a href="../products/safar-khata/index.html">Safar Khata</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toll-disclaimer" role="note">
+        <p><b>Disclaimer:</b> Toll Calculator provides indicative toll fare estimates based on independently sourced information for general reference only. Actual toll charges may vary depending on prevailing rates, vehicle category, passes, exemptions and other applicable conditions. Users are advised to verify the charges with the respective toll plaza or road authority. These estimates shall not be used for commercial transactions, billing, invoicing or any legal or financial purpose. KAARVAN does not guarantee the accuracy or completeness of the information.</p>
+        <p class="toll-credit">Place names from <a href="https://www.geonames.org/" rel="noopener">GeoNames</a> (CC BY 4.0). Road routes &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <div class="luma">
+    <input type="checkbox" id="luma-open" class="luma__toggle" hidden>
+    <div class="luma__panel" role="dialog" aria-label="Chat with LUMA">
+      <div class="luma__head">
+        <span class="luma__ava luma__ava--sm"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <circle cx="32" cy="32" r="32" fill="#07237F"/>
+  <path d="M32 14c-9 0-15 6-15 14v6h30v-6c0-8-6-14-15-14z" fill="#1A1033"/>
+  <path d="M22 28h20v10a10 10 0 0 1-20 0z" fill="#E8B48C"/>
+  <path d="M32 19c-7 0-11 4-11 10v3c3 0 5-2 6-5 3 2 8 3 13 2 1 1 2 2 3 3v-3c0-6-4-10-11-10z" fill="#241640"/>
+  <path d="M19 44c3-3 8-5 13-5s10 2 13 5v8a32 32 0 0 1-26 0z" fill="#E4E8EF"/>
+  <path d="M17.5 27c-1.4 9-1.6 17.6-.6 25.8a32 32 0 0 0 5.6 2.7c-1.6-9-1.8-18.3-.6-27.6z" fill="#241640"/>
+  <path d="M46.5 27c1.4 9 1.6 17.6.6 25.8a32 32 0 0 1-5.6 2.7c1.6-9 1.8-18.3.6-27.6z" fill="#241640"/>
+  <path d="M26 39h12v4a6 6 0 0 1-12 0z" fill="#E8B48C"/>
+  <path d="M19 30a13 13 0 0 1 26 0v4" fill="none" stroke="#FC8418" stroke-width="3.2" stroke-linecap="round"/>
+  <rect x="15.5" y="28" width="6" height="9" rx="3" fill="#FC8418"/>
+  <rect x="42.5" y="28" width="6" height="9" rx="3" fill="#FC8418"/>
+  <path d="M45 34v3a4 4 0 0 1-4 4h-3" fill="none" stroke="#FC8418" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="27" cy="33" r="1.6" fill="#241640"/><circle cx="37" cy="33" r="1.6" fill="#241640"/>
+  <path d="M29.5 37.5c1.6 1.2 3.4 1.2 5 0" fill="none" stroke="#C98A63" stroke-width="1.5" stroke-linecap="round"/>
+</svg></span>
+        <span><b>LUMA</b>KAARVAN&rsquo;s assistant</span>
+        <label for="luma-open" class="luma__x" aria-label="Close">
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+        </label>
+      </div>
+      <div class="luma__body">
+        <p class="luma__msg">Hello. I am LUMA. Live chat is opening shortly.</p>
+        <p class="luma__msg">Until then, tell us what you run and we will come back to you ourselves.</p>
+      </div>
+      <a class="luma__cta" href="../contact/index.html">Leave a message</a>
+    </div>
+    <label for="luma-open" class="luma__btn">
+      <span class="luma__ava"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <circle cx="32" cy="32" r="32" fill="#07237F"/>
+  <path d="M32 14c-9 0-15 6-15 14v6h30v-6c0-8-6-14-15-14z" fill="#1A1033"/>
+  <path d="M22 28h20v10a10 10 0 0 1-20 0z" fill="#E8B48C"/>
+  <path d="M32 19c-7 0-11 4-11 10v3c3 0 5-2 6-5 3 2 8 3 13 2 1 1 2 2 3 3v-3c0-6-4-10-11-10z" fill="#241640"/>
+  <path d="M19 44c3-3 8-5 13-5s10 2 13 5v8a32 32 0 0 1-26 0z" fill="#E4E8EF"/>
+  <path d="M17.5 27c-1.4 9-1.6 17.6-.6 25.8a32 32 0 0 0 5.6 2.7c-1.6-9-1.8-18.3-.6-27.6z" fill="#241640"/>
+  <path d="M46.5 27c1.4 9 1.6 17.6.6 25.8a32 32 0 0 1-5.6 2.7c1.6-9 1.8-18.3.6-27.6z" fill="#241640"/>
+  <path d="M26 39h12v4a6 6 0 0 1-12 0z" fill="#E8B48C"/>
+  <path d="M19 30a13 13 0 0 1 26 0v4" fill="none" stroke="#FC8418" stroke-width="3.2" stroke-linecap="round"/>
+  <rect x="15.5" y="28" width="6" height="9" rx="3" fill="#FC8418"/>
+  <rect x="42.5" y="28" width="6" height="9" rx="3" fill="#FC8418"/>
+  <path d="M45 34v3a4 4 0 0 1-4 4h-3" fill="none" stroke="#FC8418" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="27" cy="33" r="1.6" fill="#241640"/><circle cx="37" cy="33" r="1.6" fill="#241640"/>
+  <path d="M29.5 37.5c1.6 1.2 3.4 1.2 5 0" fill="none" stroke="#C98A63" stroke-width="1.5" stroke-linecap="round"/>
+</svg></span>
+      <span class="luma__label">Chat with LUMA</span>
+    </label>
+  </div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot__brand"><img src="../assets/brand/logo-dark.png" alt="KAARVAN" width="320" height="160"></p>
+        <p class="foot__tag">Connecting every mile of India.</p>
+      </div>
+      <div>
+        <h2>Products</h2>
+        <ul>
+          <li><a href="../products/index.html#fastag">FASTag</a></li>
+          <li><a href="../products/index.html#gps">GPS</a></li>
+          <li><a href="../products/index.html#dashcam">AI Dashcam</a></li>
+          <li><a href="../products/index.html#safar-khata">Safar Khata</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="../about/index.html">About KAARVAN</a></li>
+          <li><a href="../solutions/index.html">Who it is for</a></li>
+          <li><a href="../products/index.html#how-built">Platform</a></li>
+          <li><a href="../partners/index.html">Partners</a></li>
+          <li><a href="../contact/index.html#share-idea">Share your idea</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Customers</h2>
+        <ul>
+          <li>KAARVAN One</li>
+          <li class="foot__muted">Sign-in opening shortly</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="../contact/index.html">Send an enquiry</a></li>
+          <li><a href="mailto:sales@kaarvan.in">sales@kaarvan.in</a></li>
+          <li>Alwar, Rajasthan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Kaarvan Mobility. All rights reserved.</span>
+      <span class="foot__legal"><a href="../privacy/index.html">Privacy notice</a> <a href="../terms/index.html">Terms of use</a></span>
+      <span>Dhabai Complex, Alwar, Rajasthan 301001</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/toll.js" defer></script>
+<script>
+(function(){
+  var box = document.getElementById('notes-list');
+  if (!box) return;
+  var empty = 'No notes have been published yet. Yours would be the first.';
+  function card(n){
+    var art = document.createElement('article');
+    art.className = 'note-card';
+    var q = document.createElement('p');
+    q.className = 'note-card__text';
+    q.textContent = n.note || '';
+    var who = document.createElement('p');
+    who.className = 'note-card__who';
+    var name = document.createElement('b');
+    name.textContent = n.name || 'Anonymous';
+    who.appendChild(name);
+    var bits = [n.role, n.town, n.date].filter(Boolean).join(' · ');
+    if (bits) { var sp = document.createElement('span'); sp.textContent = bits; who.appendChild(sp); }
+    art.appendChild(q); art.appendChild(who);
+    return art;
+  }
+  fetch(box.getAttribute('data-src'), {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+    .then(function(list){
+      box.textContent = '';
+      if (!Array.isArray(list) || !list.length){
+        var p = document.createElement('p'); p.className='note'; p.textContent = empty;
+        box.appendChild(p); return;
+      }
+      var wrap = document.createElement('div');
+      wrap.className = 'note-grid';
+      list.forEach(function(n){ wrap.appendChild(card(n)); });
+      box.appendChild(wrap);
+    })
+    .catch(function(){
+      box.textContent = '';
+      var p = document.createElement('p'); p.className='note'; p.textContent = empty;
+      box.appendChild(p);
+    });
+})();
+</script>
+</body>
+</html>

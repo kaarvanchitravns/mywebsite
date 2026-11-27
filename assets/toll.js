@@ -1,4 +1,4 @@
-/* KAARVAN Toll Meter: any city to any city.
+/* KAARVAN Toll Calculator: any city to any city.
    Data in assets/toll/: cities.csv (GeoNames, CC BY 4.0), plazas_all.csv (plaza positions and fares), meta.json.
    1. The user picks From and To from the city list.
    2. A routing service returns the road route between them (meta.json "router").
@@ -341,7 +341,7 @@
         app.removeAttribute('aria-busy');
         route = null;
         blank('');
-        note('Toll Meter could not find a road route from ' + a.name + ' to ' + b.name + ' right now. ' +
+        note('Toll Calculator could not find a road route from ' + a.name + ' to ' + b.name + ' right now. ' +
              (/set up/.test(err.message) ? err.message : 'Please try again in a minute.'));
       });
     }
