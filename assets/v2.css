@@ -312,3 +312,28 @@ html body .product{background:#fff;border:1px solid rgba(11,16,38,.08);border-ra
 html body .step{border-top:2px solid rgba(228,232,239,.25);padding-top:1.5rem}
 html body .light .step{border-top-color:rgba(11,16,38,.14)}
 html body .light .step p{color:rgba(11,16,38,.68)}
+
+/* ---------- product pages: device, monitor, compare ---------- */
+.v-feature__media{flex:1 1 460px!important;min-width:0}
+.v-device{margin:0;display:flex;flex-direction:column;gap:.6rem}
+.v-device img{width:100%;height:auto;display:block;border-radius:24px}
+.v-device figcaption{font-size:.8rem;color:rgba(11,16,38,.5)}
+.v-dashcam__view--hero{width:min(540px,100%);height:clamp(260px,32vw,380px);border-radius:24px 24px 0 0}
+.v-monitor{background:var(--navy-800);color:var(--cloud);border-radius:32px;padding:clamp(1.5rem,4vw,3.5rem);display:flex;flex-wrap:wrap;gap:clamp(2rem,4vw,3rem);align-items:center}
+.v-monitor figure{margin:0;flex:3 1 520px;min-width:0}
+.v-monitor figure img{width:100%;height:auto;display:block;border-radius:20px;box-shadow:0 0 0 1px rgba(228,232,239,.15)}
+.v-monitor .v-stack{flex:2 1 320px;min-width:0}
+.v-monitor .v-h2{color:#fff}
+.v-monitor .v-hair > div{background:var(--navy-800)}
+.v-compare{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}
+.v-compare__col{flex:1 1 220px;display:flex;flex-direction:column;gap:.6rem}
+.v-compare__col--app{align-items:center}
+.v-compare__col--app img{width:min(230px,70%);height:auto}
+.v-compare__k{margin:0 0 .25rem;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(11,16,38,.5)}
+.v-compare__note{margin:.35rem 0 0;font-size:.85rem;color:rgba(11,16,38,.6)}
+.v-compare .gb-alert{border:1px solid rgba(11,16,38,.06);box-shadow:0 10px 24px rgba(0,11,46,.1);padding:12px 14px}
+.v-compare .gb-alert__t{font-size:13.5px}
+.v-prodhero__shot--wide{flex:1 1 480px!important}
+.v-dashcam__view--hero{width:100%;max-width:540px}
+.v-monitor .v-muted{color:rgba(228,232,239,.8)}
+.v-monitor .v-eyebrow{color:var(--orange)}
