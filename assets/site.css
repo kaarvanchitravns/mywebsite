@@ -1038,3 +1038,13 @@ body{background:#FFFFFF}
   .nav__links a.nav__tool, .nav__cta{font-size:.84rem; padding:.45rem .55rem!important}
   .brand img{height:34px}
 }
+
+/* ---- About: "The problem we are building for" with the 100-operators graphic on the right. */
+.problem{display:grid;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.problem__art{margin:0;justify-self:center;width:100%;max-width:440px}
+.problem__art img{display:block;width:100%;height:auto}
+@media (min-width:960px){
+  .problem{grid-template-columns:minmax(0,1fr) minmax(320px,420px)}
+  .problem__art{justify-self:end}
+}
+.problem + .stat-list{margin-top:clamp(2rem,4vw,3rem)}
